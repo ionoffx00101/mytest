@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> <!-- 추가됨 -->
 <% String cp = request.getContextPath(); %> <%--ContextPath 선언 --%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -54,6 +55,7 @@
 
  $(function() {
 	 var stageOneEnd = false;
+	 
 		/* 	
 		//크기 조정 친구들
 		var windowWidth = $(window).width()*2/3; //document -350
@@ -125,6 +127,10 @@
  				{"word":"껌을 싶다","wordCheck":false},
  				{"word":"안 그레요","wordCheck":false}
  			]};
+ 		 
+ 		 var getWordBook = "asdasd";
+ 		 console.log(getWordBook);
+ 		 
  		// 단어장 DB에서 가져온 값을 여기다가 넣어야함니까  그럴꺼면 이 페이지로 이동 시킬때 모델안에 단어장DB가 JSON배열로 들어가있어야겠구뇽
  		// 힘내 미래의 나
  		// var hangulWord = "${wordDB}"; // 단어랑 단어 정답여부 두개 가져와야함

@@ -18,14 +18,17 @@ public class HomeService
 	private SqlSessionTemplate sqlSessionTemplate; // 설정파일에 빈으로 등록되었기 때문에 생성자나 Setter 없이 자동으로 주입
 	
 	public List<WordBookVO> getWordBook(){
-		System.out.println("1");
-		System.out.println(sqlSessionTemplate.getConnection());
-		
-		
 		HomeDAO dao = sqlSessionTemplate.getMapper(HomeDAO.class);
-		System.out.println("2");
+
 		List<WordBookVO> list = dao.getList();
-		System.out.println("3");
+
+		/*for (int i = 0; i < list.size(); i++)
+		{
+			WordBookVO word = list.get(i);
+			
+			System.out.println(word.toString());
+		}*/
+		
 		return list;
 
 	}

@@ -30,10 +30,8 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
-		System.out.println("4");
-		
 		List<WordBookVO> list = homeService.getWordBook();
-		model.addAttribute("List", list);
+		model.addAttribute("wordBook", list);
 		
 		return "index";
 	}
