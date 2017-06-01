@@ -14,6 +14,7 @@
 	<!-- dataSource -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"><!-- lazy-init="false" -->
+		<!-- oracle.jdbc.pool.OracleDataSource -->
 		<!-- dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" -->
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
@@ -23,11 +24,18 @@
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="configLocation" value="/WEB-INF/mappers/wordbook_mapper.xml" />
+		<!-- <property name="configLocation" value="/WEB-INF/mappers/wordbook_mapper.xml" />-->
+		<property name="mapperLocations" value="classpath:org/mine/www/dao/*.xml"/> 
 	</bean>
+	
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>  
+		</bean>
+
 	<!-- mapperLocations X configLocation O  -->
 		<!-- /WEB-INF/mapper/**/*_SQL.xml 
 		classpath*:sample/config/mappers/**/*.xml 
 		/WEB-INF/mappers/**/*.xml
+		<beans:property name="mapperLocations" value="classpath:org/kdea/spring/simpleboard/*.xml"/>
 		-->
 </beans>
