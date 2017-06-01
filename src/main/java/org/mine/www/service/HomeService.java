@@ -22,14 +22,22 @@ public class HomeService
 
 		List<WordBookVO> list = dao.getList();
 
-		/*for (int i = 0; i < list.size(); i++)
+	/*	for (int i = 0; i < list.size(); i++)
 		{
 			WordBookVO word = list.get(i);
 			
 			System.out.println(word.toString());
 		}*/
-		
+		System.out.println("DB가 서비스를 지났습니다");
 		return list;
-
+	}
+	
+	public int setWordBook(WordBookVO wordbook){
+	
+		HomeDAO dao = sqlSessionTemplate.getMapper(HomeDAO.class);
+		
+		int check = dao.insert(wordbook);
+		
+		return check;
 	}
 }

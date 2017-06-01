@@ -7,4 +7,5 @@ import org.mine.www.vo.WordBookVO;
 public interface HomeDAO
 {
 	public List<WordBookVO> getList();
+	public int insert(WordBookVO wordbook);
 }

@@ -1,54 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false" %>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> <!-- 추가됨 -->
-<% String cp = request.getContextPath(); %> <%--ContextPath 선언 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<!-- 추가됨 -->
+<% String cp = request.getContextPath(); %>
+<%--ContextPath 선언 --%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>Ik ben</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
-    <!-- Bootstrap Core CSS -->
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="<%=cp%>/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
-    <!-- Custom CSS -->
-    <!--  <link href="css/stylish-portfolio.css" rel="stylesheet"> -->
-	<link href="<%=cp%>/resources/bootstrap/css/stylish-portfolio.css" rel="stylesheet">
-	<!-- Custom CSS2 -->
-	<link href="<%=cp%>/resources/css/custom.css" rel="stylesheet">
-	
-    <!-- Custom Fonts -->
-    <!-- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"> 
-    <!-- Custom Fonts2 -->
-	<!-- <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet" type="text/css">  -->
-	<%-- <link href="<%=cp%>/resources/font/koverwatch.ttf" rel="stylesheet"  type="text/css"> --%>
-	
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<title>Ik ben</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Bootstrap Core CSS -->
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="<%=cp%>/resources/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- Custom CSS -->
+<!--  <link href="css/stylish-portfolio.css" rel="stylesheet"> -->
+<link href="<%=cp%>/resources/bootstrap/css/stylish-portfolio.css"
+	rel="stylesheet">
+<!-- Custom CSS2 -->
+<link href="<%=cp%>/resources/css/custom.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<!-- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+<link
+	href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+	rel="stylesheet" type="text/css">
+<!-- Custom Fonts2 -->
+<!-- <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet" type="text/css">  -->
+<%-- <link href="<%=cp%>/resources/font/koverwatch.ttf" rel="stylesheet"  type="text/css"> --%>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    
-    <!-- jQuery -->
-	<script type="text/javascript" src="<%=cp%>/resources/bootstrap/js/jquery.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-	
-    <!-- Bootstrap Core JavaScript -->
-	<script type="text/javascript" src="<%=cp%>/resources/bootstrap/js/bootstrap.js"></script>
 
- <script type="text/javascript">
+
+<!-- jQuery -->
+<script type="text/javascript"
+	src="<%=cp%>/resources/bootstrap/js/jquery.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript"
+	src="<%=cp%>/resources/bootstrap/js/bootstrap.js"></script>
+
+<script type="text/javascript">
 
  var stageTwoEnd = false;
  var stargeThreeEnd =false;
@@ -127,9 +137,7 @@
  				{"word":"껌을 싶다","wordCheck":false},
  				{"word":"안 그레요","wordCheck":false}
  			]};
- 		 
- 		 var getWordBook = "asdasd";
- 		 console.log(getWordBook);
+ 		// ajax로 단어 들어가면 이곳은 그냥 변수 메모리 생성용으로만 사용
  		 
  		// 단어장 DB에서 가져온 값을 여기다가 넣어야함니까  그럴꺼면 이 페이지로 이동 시킬때 모델안에 단어장DB가 JSON배열로 들어가있어야겠구뇽
  		// 힘내 미래의 나
@@ -480,9 +488,29 @@
  		// 스타트 버튼 클릭 시 
  		$('#startBtn').click(function(){
              $("#startBtn").hide();
-             /*$('#startBtn').remove(); // 스타트 버튼을 화면에서 없애기 */
+             /* $('#startBtn').remove(); // 스타트 버튼을 화면에서 없애기 */
+ 			 /* $('#startBtn').css("display", "none"); */
  			
- 			/* $('#startBtn').css("display", "none"); */
+ 			// 여기서 DB받아와서 var hangulWord에 집어넣으면 될거 같은데
+ 			
+ 			 $.ajax({
+	            url : "<c:url value="/WordBookJSON"/>",
+	            type : "post",
+	            dataType : "json",
+	            /* data :  ,*/
+	            success : function(json) {
+	            	
+	            	console.log("fff");
+	            	
+	           /*     $.each(json.items,function(i,item){
+	                  
+	               }); */
+	            },
+	            error : function(err) {
+	            	console.log("에러");
+	               /* alert("에러"); */
+	            }
+        	 });
  			
             $("#canvas").show();
  			
@@ -492,45 +520,36 @@
 </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a class="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top" class="menu-close">Ik ben</a>
-            </li>
-            <li>
-                <a href="#game" class="menu-close">Game</a>
-            </li>
-            <li>
-                <a href="#word" class="menu-close">Word</a>
-            </li>
-            <li>
-                <a href="#about" class="menu-close">about</a>
-            </li>
-             <li>
-                <a href="#callout" class="menu-close">picture</a>
-            </li>
-            <li>
-                <a href="#git" class="menu-close">git,blog</a>
-            </li>
-        </ul>
-    </nav>
+	<!-- Navigation -->
+	<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i
+		class="fa fa-bars"></i></a>
+	<nav id="sidebar-wrapper">
+	<ul class="sidebar-nav">
+		<a class="menu-close" href="#"
+			class="btn btn-light btn-lg pull-right toggle"><i
+			class="fa fa-times"></i></a>
+		<li class="sidebar-brand"><a href="#top" class="menu-close">Ik
+				ben</a></li>
+		<li><a href="#game" class="menu-close">Game</a></li>
+		<li><a href="#word" class="menu-close">Word</a></li>
+		<li><a href="#about" class="menu-close">about</a></li>
+		<li><a href="#callout" class="menu-close">picture</a></li>
+		<li><a href="#git" class="menu-close">git,blog</a></li>
+	</ul>
+	</nav>
 
-    <!-- Header -->
-    <header id="top" class="header">
-         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center" id="title">
-                    <h1>Ik ben</h1>
-                 </div>  
-                   
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </header>
+	<!-- Header -->
+	<header id="top" class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center" id="title">
+				<h1>Ik ben</h1>
+			</div>
+
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </header>
 
 	<!-- game -->
 	<section id="game" class="game">
@@ -538,12 +557,12 @@
 		<div class="row">
 			<div class="col-md-offset-1">
 				<!-- col-lg-12 glasspane -->
-				<canvas id="canvas" width="1000" height="500" style="display: none;"></canvas> <!-- style="display: none;" -->
+				<canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
+				<!-- style="display: none;" -->
 				<!-- display: block; none -->
 				<div class="row">
-					<div class="col-md-12">
-					</div><div class="col-md-12">
-					</div>
+					<div class="col-md-12"></div>
+					<div class="col-md-12"></div>
 					<div class="col-md-offset-5" id="playbutton">
 						<!--  col-lg-12  glasspane -->
 						<img id="startBtn" src="<%=cp%>/resources/images/play-button.png"
@@ -569,14 +588,14 @@
 					<div class="col-md-4 col-md-offset-1">
 						<input type="text" class="form-control" />
 					</div>
-					<div class="col-md-4" >
+					<div class="col-md-4">
 						<select class="form-control">
 							<option value="true">올바른 맞춤법</option>
 							<option value="false">잘못된 맞춤법</option>
 						</select>
 					</div>
 					<div class="col-md-2">
-					<button type="submit" class="btn btn-primary" style="float:left;">추가</button>
+						<button type="submit" class="btn btn-primary" style="float: left;">추가</button>
 					</div>
 				</form>
 			</div>
@@ -586,55 +605,56 @@
 	<!-- /.container --> </section>
 
 	<!-- / Services -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="about" class="about bg-primary">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2>캐릭터 정보</h2>
-                    <hr class="small">
-                    <div class="row">
-                    
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-user fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>상세 정보</strong>
-                                </h4>
-                                <p>이력서에 쓰던 자기소개 짧게 <br>
-                                		구글링을 잘해요!</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-bookmark fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>선호 하는 것</strong>
-                                </h4>
-                                <p>전시회 가기</p>
-                            </div>
-                        </div>
-                          <div class="col-md-4">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-code fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>수상 경력</strong>
-                                </h4>
-                                <p>써도 될까</p>
-                            </div>
-                        </div>
-                        
-        <!--                 <div class="col-md-3 col-sm-6">
+	<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+	<section id="about" class="about bg-primary">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-lg-10 col-lg-offset-1">
+				<h2>캐릭터 정보</h2>
+				<hr class="small">
+				<div class="row">
+
+					<div class="col-md-4">
+						<div class="service-item">
+							<span class="fa-stack fa-4x"> <i
+								class="fa fa-circle fa-stack-2x"></i> <i
+								class="fa fa-user fa-stack-1x text-primary"></i>
+							</span>
+							<h4>
+								<strong>상세 정보</strong>
+							</h4>
+							<p>
+								이력서에 쓰던 자기소개 짧게 <br> 구글링을 잘해요!
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="service-item">
+							<span class="fa-stack fa-4x"> <i
+								class="fa fa-circle fa-stack-2x"></i> <i
+								class="fa fa-bookmark fa-stack-1x text-primary"></i>
+							</span>
+							<h4>
+								<strong>선호 하는 것</strong>
+							</h4>
+							<p>전시회 가기</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service-item">
+							<span class="fa-stack fa-4x"> <i
+								class="fa fa-circle fa-stack-2x"></i> <i
+								class="fa fa-code fa-stack-1x text-primary"></i>
+							</span>
+							<h4>
+								<strong>수상 경력</strong>
+							</h4>
+							<p>써도 될까</p>
+						</div>
+					</div>
+
+					<!--                 <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -646,85 +666,86 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                         </div> -->
-                    </div>
-                    <!-- /.row (nested) -->
-                </div>
-                <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
+				</div>
+				<!-- /.row (nested) -->
+			</div>
+			<!-- /.col-lg-10 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </section>
 
-    <!-- Callout -->
-    <aside class="callout" id="callout">
-        <div class="text-vertical-center">
-            <h1></h1>
-        </div>
-    </aside>
+	<!-- Callout -->
+	<aside class="callout" id="callout">
+	<div class="text-vertical-center">
+		<h1></h1>
+	</div>
+	</aside>
 
-    <!-- Portfolio -->
-    <section id="git" class="git">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>코딩 일지</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="https://github.com/tehon"  target="_blank">
-                                   <img class="img-portfolio img-responsive" src="<%=cp%>/resources/images/GitHub.png" style="width: 100px; height: 100px;">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="http://teqoo.tistory.com/"  target="_blank">
-                                    <img class="img-portfolio img-responsive" src="<%=cp%>/resources/images/Tistory.png" style="width: 100px; height: 100px;">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.row (nested) -->
-                </div>
-                <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
+	<!-- Portfolio -->
+	<section id="git" class="git">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1 text-center">
+				<h2>코딩 일지</h2>
+				<hr class="small">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="portfolio-item">
+							<a href="https://github.com/tehon" target="_blank"> <img
+								class="img-portfolio img-responsive"
+								src="<%=cp%>/resources/images/GitHub.png"
+								style="width: 100px; height: 100px;">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="portfolio-item">
+							<a href="http://teqoo.tistory.com/" target="_blank"> <img
+								class="img-portfolio img-responsive"
+								src="<%=cp%>/resources/images/Tistory.png"
+								style="width: 100px; height: 100px;">
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- /.row (nested) -->
+			</div>
+			<!-- /.col-lg-10 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </section>
 
-    <!-- Call to Action -->
-    <aside class="call-to-action bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>스킬</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>사용할 줄 아는 스킬</h3>
-                            <br/>
-                            <p>Java</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h3>배우고 싶은 스킬</h3>
-                            <p>
-                            	Python <br/>
-                            	Node.js<br/>
-                         	</p>
-                        </div>
-                    </div>
-                    <!-- /.row (nested) -->
-                </div>
-                <!-- /.col-lg-10 -->
-            </div>
-        </div>
-    </aside>
+	<!-- Call to Action -->
+	<aside class="call-to-action bg-primary">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1 text-center">
+				<h2>스킬</h2>
+				<hr class="small">
+				<div class="row">
+					<div class="col-md-6">
+						<h3>사용할 줄 아는 스킬</h3>
+						<br />
+						<p>Java</p>
+					</div>
+					<div class="col-md-6">
+						<h3>배우고 싶은 스킬</h3>
+						<p>
+							Python <br /> Node.js<br />
+						</p>
+					</div>
+				</div>
+				<!-- /.row (nested) -->
+			</div>
+			<!-- /.col-lg-10 -->
+		</div>
+	</div>
+	</aside>
 
-    <!-- Footer -->
-   <!--  <footer>
+	<!-- Footer -->
+	<!--  <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -734,8 +755,8 @@
         <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer> -->
 
- <!-- Custom Theme JavaScript -->
-    <script>
+	<!-- Custom Theme JavaScript -->
+	<script>
     // Closes the sidebar menu
     $(".menu-close").click(function(e) {
         e.preventDefault();
