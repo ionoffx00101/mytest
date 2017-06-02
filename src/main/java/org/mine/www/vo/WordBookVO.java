@@ -4,7 +4,7 @@ public class WordBookVO
 {
 	private int wordbook_num;
 	private String wordbook_word;
-	private String wordbook_wordcheck;
+	private String wordbook_wordcheck; //
 
 	public int getWordbook_num()
 	{

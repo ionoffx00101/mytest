@@ -4,9 +4,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.mine.www.dao.HomeDAO"> <!--이 sql 문장과 매핑될 인터페이스의 완전한 경로-->
     <select id="getList" resultType="org.mine.www.vo.WordBookVO">
-        select * from wordbook
+        select * from WORDBOOK
     </select>
      <insert id="insert" parameterType="org.mine.www.vo.WordBookVO" >
-       INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,#{wordbook_word},#{wordbook_wordcheck});
+       INSERT INTO WORDBOOK (wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,#{wordbook_word},#{wordbook_wordcheck})
     </insert>
 </mapper>

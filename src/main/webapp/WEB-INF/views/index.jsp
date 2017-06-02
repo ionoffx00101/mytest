@@ -495,24 +495,18 @@
  		
  		// 추가버튼 클릭
  	 	$('#wordInsertBtn').click(function(){
- 	 		
-
  	 		 $.ajax({
  		         url : "<c:url value="/InsertWordBook"/>", 
  		         type : "get", //post
  		         dataType : "json",
- 		         data: 
- 		        	 {'wordbook_word':$('#newWord').val()}, //,'wordbook_wordcheck':$('#newWordCheck').val() $('#newWord').val()
- 		         //$('form').eq(0).serialize(),
+ 		         data: $('form').eq(0).serialize(),
+ 		        	 //{'wordbook_word':$('#newWord').val()}, // $('#newWordCheck').val()
  		         contentType : 'application/json',
  		         success : function(json) {
  		        	 // check 한줄온다
  		        	 console.log(json.check);
  		        	 if(json.check){
- 		        		console.log("잘 들어감");
- 		        		
- 		    	 		var j = $('#newWordCheck').val();
- 		    	 		console.log(j);
+ 		        		console.log("잘 들어감");		
  		    	 		
  		        	 }else{
  		        		console.log("ㄴㄴ 큰일남");
@@ -591,18 +585,18 @@
 			<div class="col-md-12 text-center">
 				<h2>단어 추가</h2>
 				<hr class="small">
-				<form action="" > <!-- method ="post" -->
+				<form>
 					<div class="col-md-4 col-md-offset-1">
 						<input type="text" class="form-control" id="newWord" name="wordbook_word"/>
 					</div>
 					<div class="col-md-4">
 						<select class="form-control" id="newWordCheck" name="wordbook_wordcheck">
-							<option value="1">올바른 맞춤법</option>
-							<option value="0">잘못된 맞춤법</option>
+							<option value="true">올바른 맞춤법</option>
+							<option value="false">잘못된 맞춤법</option>
 						</select>
 					</div>
 					<div class="col-md-2">
-						<button  id="wordInsertBtn" class="btn btn-primary" style="float: left;">추가</button><!-- type="submit" -->
+						<button type="button" name="submit" id="wordInsertBtn" class="btn btn-primary" style="float: left;">추가</button>
 					</div>
 				</form>
 			</div>

@@ -66,33 +66,18 @@ public class HomeController
 	
 	@ResponseBody
 	@RequestMapping(value="InsertWordBook", method=RequestMethod.GET,produces = "application/json; charset=utf8") //post
-	public String InsertWordBook(@RequestParam("wordbook_word") String word,HttpServletRequest request){ //http request , request 값으로 받기 WordBookVO wordbook, @requestParam
-		// ,@RequestParam("wordbook_wordCheck") String wordCheck
+	public String InsertWordBook(WordBookVO wordbook,Model model,HttpServletRequest request){ //http request , request 값으로 받기 WordBookVO wordbook, @requestParam
+
 		System.out.println("컨트롤러 : 들어옴");
-		// System.out.println("컨트롤러 : "+wordbook.toString());
-		// System.out.println("컨트롤러 Request: "+request.getAttribute("wordbook_word"));
-		// System.out.println("컨트롤러 Request: "+request.getSession());
-		// 
 		
-		System.out.println("컨트롤러 @RequestParam: "+word);
+		JSONObject json = new JSONObject();
+		
+		boolean check = homeService.setWordBook(wordbook)>0 ? true:false; // = 1 ;
+		
+		json.put("check", check);
 		
 		System.out.println("컨트롤러 : 서비스 갔다왔고 체크값을 JSP로 보낼거임");
 		
-		JSONObject json = new JSONObject();
-		WordBookVO wordbook = new WordBookVO();
-		
-		wordbook.setWordbook_word(word);
-		wordbook.setWordbook_wordcheck("1");
-		
-		int check = 1 ;//homeService.setWordBook(wordbook);
-		
-		if(check>0){
-			json.put("check", true);
-		}
-		else{
-			json.put("check", false);
-		}
-	
 		return json.toString();
 	}
 
