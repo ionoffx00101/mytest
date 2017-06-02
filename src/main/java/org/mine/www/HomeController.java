@@ -42,14 +42,14 @@ public class HomeController
 	{
 		return "index";
 	}
-	
+
 	@ResponseBody
-	@RequestMapping(value="WordBookJSON", method= RequestMethod.POST,produces = "application/json; charset=utf8")
+	@RequestMapping(value = "WordBookJSON", method = RequestMethod.POST, produces = "application/json; charset=utf8")
 	public String WordBookJSON(Model model)
 	{
 		List<WordBookVO> list = homeService.getWordBook();
 		JSONArray jsonArr = new JSONArray();
-		
+
 		for (int i = 0; i < list.size(); i++)
 		{
 			JSONObject json = new JSONObject();
@@ -57,27 +57,21 @@ public class HomeController
 			json.put("num", vo.getWordbook_num());
 			json.put("word", vo.getWordbook_word());
 			json.put("check", vo.getWordbook_wordcheck());
-			
+
 			jsonArr.put(json); // [{"num":1,"check":"1","word":"멍멍이"}]
 			//jsonArr.put(vo); // "[WordBookVO [wordbook_num=1, wordbook_word=멍멍이, wordbook_wordcheck=1]]"
 		}
-		return jsonArr.toString(); /*"redirect:경로"*/
+		return jsonArr.toString(); /* "redirect:경로" */
 	}
-	
-	@ResponseBody
-	@RequestMapping(value="InsertWordBook", method=RequestMethod.GET,produces = "application/json; charset=utf8") //post
-	public String InsertWordBook(WordBookVO wordbook,Model model,HttpServletRequest request){ //http request , request 값으로 받기 WordBookVO wordbook, @requestParam
 
-		System.out.println("컨트롤러 : 들어옴");
-		
+	@ResponseBody
+	@RequestMapping(value = "InsertWordBook", method = RequestMethod.GET, produces = "application/json; charset=utf8") //post
+	public String InsertWordBook(WordBookVO wordbook, Model model, HttpServletRequest request)
+	{
+		boolean check = homeService.setWordBook(wordbook) > 0 ? true : false; // = 1 ;
+
 		JSONObject json = new JSONObject();
-		
-		boolean check = homeService.setWordBook(wordbook)>0 ? true:false; // = 1 ;
-		
 		json.put("check", check);
-		
-		System.out.println("컨트롤러 : 서비스 갔다왔고 체크값을 JSP로 보낼거임");
-		
 		return json.toString();
 	}
 

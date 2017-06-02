@@ -129,6 +129,7 @@
 
  		var stageOneInterval; // 타이머 변수용
  		var scoreOne = 0; // 스코어 체크
+ 		var scoreMax = 1; // 끝나는 스코어 
  		
  		// 시동 걸기
  		function loadGame() {
@@ -197,14 +198,14 @@
  				 			
  				 			if(oneHangul.y-playerUnit.y==70){//아래
  				 				// 적 객체 체크가 true면 +1 false면 -1
- 	 				 			if(oneHangul.wordCheck){
+ 	 				 			if(oneHangul.wordCheck == true || oneHangul.wordCheck == 'true'){
  	 				 				scoreOne++;	
  	 				 			}
  				 				EnemyHangul[i].use=false;
  				 			
  		 				 	}else if (oneHangul.y-playerUnit.y==92){ // 위
  		 				 		// 적 객체 체크가 true면 +1 false면 -1
- 	 				 			if(oneHangul.wordCheck){
+ 	 				 			if(oneHangul.wordCheck == true || oneHangul.wordCheck == 'true'){
  	 				 				scoreOne++;	
  	 				 			}
  		 				 		EnemyHangul[i].use=false;
@@ -216,7 +217,7 @@
  				renderGame();
  				
  				// 게임 끝나는 지 여부 확인 하고 엔딩 화면 그려줌..?
- 				if(scoreOne>=5){
+ 				if(scoreOne>=scoreMax){
  					stageOneEnd=true;
  					clearInterval(stageOneInterval);
  					clearGame();
@@ -500,7 +501,6 @@
  		         type : "get", //post
  		         dataType : "json",
  		         data: $('form').eq(0).serialize(),
- 		        	 //{'wordbook_word':$('#newWord').val()}, // $('#newWordCheck').val()
  		         contentType : 'application/json',
  		         success : function(json) {
  		        	 // check 한줄온다
@@ -591,8 +591,8 @@
 					</div>
 					<div class="col-md-4">
 						<select class="form-control" id="newWordCheck" name="wordbook_wordcheck">
-							<option value="true">올바른 맞춤법</option>
-							<option value="false">잘못된 맞춤법</option>
+							<option value="1">올바른 맞춤법</option>
+							<option value="0">잘못된 맞춤법</option>
 						</select>
 					</div>
 					<div class="col-md-2">
