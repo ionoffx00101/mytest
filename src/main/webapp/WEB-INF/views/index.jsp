@@ -504,10 +504,9 @@
  		         data: $('form').eq(0).serialize(),
  		         contentType : 'application/json',
  		         success : function(json) {
- 		        	 // check 한줄온다
- 		        	 console.log(json.check);
  		        	 if(json.check){
- 		        		console.log("잘 들어감");		 		
+  		        		$('#newWord').val("");
+ 		        		alert("잘 들어감");
  		        	 }else{
  		        		console.log("ㄴㄴ 큰일남");
  		        	 }
