@@ -72,16 +72,27 @@ public class HomeController
 		// System.out.println("컨트롤러 : "+wordbook.toString());
 		// System.out.println("컨트롤러 Request: "+request.getAttribute("wordbook_word"));
 		// System.out.println("컨트롤러 Request: "+request.getSession());
-		// int check = homeService.setWordBook(wordbook);
+		// 
 		
 		System.out.println("컨트롤러 @RequestParam: "+word);
 		
 		System.out.println("컨트롤러 : 서비스 갔다왔고 체크값을 JSP로 보낼거임");
 		
 		JSONObject json = new JSONObject();
+		WordBookVO wordbook = new WordBookVO();
 		
-		json.put("check", true);
+		wordbook.setWordbook_word(word);
+		wordbook.setWordbook_wordcheck("1");
 		
+		int check = 1 ;//homeService.setWordBook(wordbook);
+		
+		if(check>0){
+			json.put("check", true);
+		}
+		else{
+			json.put("check", false);
+		}
+	
 		return json.toString();
 	}
 

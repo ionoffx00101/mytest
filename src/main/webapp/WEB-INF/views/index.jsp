@@ -495,6 +495,8 @@
  		
  		// 추가버튼 클릭
  	 	$('#wordInsertBtn').click(function(){
+ 	 		
+
  	 		 $.ajax({
  		         url : "<c:url value="/InsertWordBook"/>", 
  		         type : "get", //post
@@ -508,6 +510,10 @@
  		        	 console.log(json.check);
  		        	 if(json.check){
  		        		console.log("잘 들어감");
+ 		        		
+ 		    	 		var j = $('#newWordCheck').val();
+ 		    	 		console.log(j);
+ 		    	 		
  		        	 }else{
  		        		console.log("ㄴㄴ 큰일남");
  		        	 }

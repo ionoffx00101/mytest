@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="getList" resultType="org.mine.www.vo.WordBookVO">
         select * from wordbook
     </select>
-     <insert id="insert" parameterType="org.mine.www.vo.WordBookVO">
+     <insert id="insert" parameterType="org.mine.www.vo.WordBookVO" >
        INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,#{wordbook_word},#{wordbook_wordcheck});
     </insert>
 </mapper>
