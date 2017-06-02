@@ -484,8 +484,6 @@
 	            	for(var i in json){
 	            		hangulWord[i]=json[i];
 	                }
-	            	
-	            	
 	            	loadGame(); // 시작버튼을 누르면 해당 함수가 실행되게 변경
 	            },
 	            error : function(xhr, status, error) {
@@ -494,6 +492,31 @@
         	 });
  			 $("#canvas").show();
  		});
+ 		
+ 		// 추가버튼 클릭
+ 	 	$('#wordInsertBtn').click(function(){
+ 	 		 $.ajax({
+ 		         url : "<c:url value="/InsertWordBook"/>", 
+ 		         type : "get", //post
+ 		         dataType : "json",
+ 		         data: 
+ 		        	 {'wordbook_word':$('#newWord').val()}, //,'wordbook_wordcheck':$('#newWordCheck').val() $('#newWord').val()
+ 		         //$('form').eq(0).serialize(),
+ 		         contentType : 'application/json',
+ 		         success : function(json) {
+ 		        	 // check 한줄온다
+ 		        	 console.log(json.check);
+ 		        	 if(json.check){
+ 		        		console.log("잘 들어감");
+ 		        	 }else{
+ 		        		console.log("ㄴㄴ 큰일남");
+ 		        	 }
+ 		         },
+ 		         error : function(request,status,error) { //xhr, status, 
+ 		        	 console.log("code:"+request.status+"\n"+"error:"+error);
+ 		         }
+ 	        });
+ 	 	});
  	});
 </script>
 </head>
@@ -562,18 +585,18 @@
 			<div class="col-md-12 text-center">
 				<h2>단어 추가</h2>
 				<hr class="small">
-				<form action="">
+				<form action="" > <!-- method ="post" -->
 					<div class="col-md-4 col-md-offset-1">
-						<input type="text" class="form-control" />
+						<input type="text" class="form-control" id="newWord" name="wordbook_word"/>
 					</div>
 					<div class="col-md-4">
-						<select class="form-control">
-							<option value="true">올바른 맞춤법</option>
-							<option value="false">잘못된 맞춤법</option>
+						<select class="form-control" id="newWordCheck" name="wordbook_wordcheck">
+							<option value="1">올바른 맞춤법</option>
+							<option value="0">잘못된 맞춤법</option>
 						</select>
 					</div>
 					<div class="col-md-2">
-						<button type="submit" class="btn btn-primary" style="float: left;">추가</button>
+						<button  id="wordInsertBtn" class="btn btn-primary" style="float: left;">추가</button><!-- type="submit" -->
 					</div>
 				</form>
 			</div>

@@ -8,6 +8,7 @@ import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.Response;
 
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -43,7 +45,7 @@ public class HomeController
 	
 	@ResponseBody
 	@RequestMapping(value="WordBookJSON", method= RequestMethod.POST,produces = "application/json; charset=utf8")
-	public String WordBookJSON(Model model,HttpServletResponse response)
+	public String WordBookJSON(Model model)
 	{
 		List<WordBookVO> list = homeService.getWordBook();
 		JSONArray jsonArr = new JSONArray();
@@ -63,15 +65,24 @@ public class HomeController
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="empInsert", method=RequestMethod.POST)
-	public String InsertWordBook(WordBookVO wordbook){ //http request , request 값으로 받기
+	@RequestMapping(value="InsertWordBook", method=RequestMethod.GET,produces = "application/json; charset=utf8") //post
+	public String InsertWordBook(@RequestParam("wordbook_word") String word,HttpServletRequest request){ //http request , request 값으로 받기 WordBookVO wordbook, @requestParam
+		// ,@RequestParam("wordbook_wordCheck") String wordCheck
 		System.out.println("컨트롤러 : 들어옴");
-		int check = homeService.setWordBook(wordbook);
-		// int 값이 돌아오는 걸 보고 잘 들어갔는지 못 들어갔는 지 확인할 수 있음
-		// 0이 ㄴㄴ 고 1이 ㅇㅋ였나
-		// -1 1 이였나 그게 좀 기억 안 날뿐임
+		// System.out.println("컨트롤러 : "+wordbook.toString());
+		// System.out.println("컨트롤러 Request: "+request.getAttribute("wordbook_word"));
+		// System.out.println("컨트롤러 Request: "+request.getSession());
+		// int check = homeService.setWordBook(wordbook);
+		
+		System.out.println("컨트롤러 @RequestParam: "+word);
+		
 		System.out.println("컨트롤러 : 서비스 갔다왔고 체크값을 JSP로 보낼거임");
-		return "[{\"check\":\""+check+"\"}]";
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("check", true);
+		
+		return json.toString();
 	}
 
 }
