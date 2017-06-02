@@ -485,6 +485,7 @@
 	            	for(var i in json){
 	            		hangulWord[i]=json[i];
 	                }
+	            	EnemyHangulMax=hangulWord.length; // 배열 크기만큼 최대값 설정
 	            	loadGame(); // 시작버튼을 누르면 해당 함수가 실행되게 변경
 	            },
 	            error : function(xhr, status, error) {
@@ -506,8 +507,7 @@
  		        	 // check 한줄온다
  		        	 console.log(json.check);
  		        	 if(json.check){
- 		        		console.log("잘 들어감");		
- 		    	 		
+ 		        		console.log("잘 들어감");		 		
  		        	 }else{
  		        		console.log("ㄴㄴ 큰일남");
  		        	 }
