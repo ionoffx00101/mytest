@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -125,24 +124,9 @@
  		var EnemyHangul; // 스테이지1 적객체 배열
  		var hangulViewCount=1; // 화면에 보이는 적객체 수 설정
  		var EnemyHangulMax = 10; // 미리 준비해두는 적객체 최대수
- 		var hangulWord = {"wordDB":[
- 				{"word":"댕댕","wordCheck":false},
- 				{"word":"강하다","wordCheck":true},
- 				{"word":"마춤뻡","wordCheck":false},
- 				{"word":"맞춤법","wordCheck":true},
- 				{"word":"낭낭하다","wordCheck":false},
- 				{"word":"배고프다","wordCheck":true},
- 				{"word":"외않되","wordCheck":false},
- 				{"word":"왜 안돼","wordCheck":true},
- 				{"word":"껌을 싶다","wordCheck":false},
- 				{"word":"안 그레요","wordCheck":false}
- 			]};
- 		// ajax로 단어 들어가면 이곳은 그냥 변수 메모리 생성용으로만 사용
- 		 
- 		// 단어장 DB에서 가져온 값을 여기다가 넣어야함니까  그럴꺼면 이 페이지로 이동 시킬때 모델안에 단어장DB가 JSON배열로 들어가있어야겠구뇽
- 		// 힘내 미래의 나
- 		// var hangulWord = "${wordDB}"; // 단어랑 단어 정답여부 두개 가져와야함
- 		
+ 		var hangulWord= new Array(); // 한글 저장용
+
+
  		var stageOneInterval; // 타이머 변수용
  		var scoreOne = 0; // 스코어 체크
  		
@@ -386,8 +370,8 @@
  						
  						EnemyHangul[randomNum].x=1000; // x바꿈
  						EnemyHangul[randomNum].y=startY; // Y바꿈
- 						EnemyHangul[randomNum].word = hangulWord.wordDB[randomNum].word;
- 						EnemyHangul[randomNum].wordCheck = hangulWord.wordDB[randomNum].wordCheck;
+ 						EnemyHangul[randomNum].word = hangulWord[randomNum].word; 
+ 						EnemyHangul[randomNum].wordCheck = hangulWord[randomNum].check;
  						EnemyHangul[randomNum].use=true;
  					}
  				}
@@ -491,30 +475,24 @@
              /* $('#startBtn').remove(); // 스타트 버튼을 화면에서 없애기 */
  			 /* $('#startBtn').css("display", "none"); */
  			
- 			// 여기서 DB받아와서 var hangulWord에 집어넣으면 될거 같은데
- 			
  			 $.ajax({
-	            url : "<c:url value="/WordBookJSON"/>",
+	            url : "<c:url value="/WordBookJSON"/>", 
 	            type : "post",
 	            dataType : "json",
-	            /* data :  ,*/
+	            contentType : 'application/json',
 	            success : function(json) {
+	            	for(var i in json){
+	            		hangulWord[i]=json[i];
+	                }
 	            	
-	            	console.log("fff");
 	            	
-	           /*     $.each(json.items,function(i,item){
-	                  
-	               }); */
+	            	loadGame(); // 시작버튼을 누르면 해당 함수가 실행되게 변경
 	            },
-	            error : function(err) {
-	            	console.log("에러");
-	               /* alert("에러"); */
+	            error : function(xhr, status, error) {
+	            	console.log("에러"+error);
 	            }
         	 });
- 			
-            $("#canvas").show();
- 			
- 			loadGame(); // 시작버튼을 누르면 해당 함수가 실행되게 변경
+ 			 $("#canvas").show();
  		});
  	});
 </script>

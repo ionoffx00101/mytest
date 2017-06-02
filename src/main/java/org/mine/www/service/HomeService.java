@@ -33,10 +33,15 @@ public class HomeService
 	}
 	
 	public int setWordBook(WordBookVO wordbook){
-	
+		System.out.println("서비스 : 들어옴");
+		
 		HomeDAO dao = sqlSessionTemplate.getMapper(HomeDAO.class);
 		
+		System.out.println("서비스 : 새 워드 넣을 준비");
+		
 		int check = dao.insert(wordbook);
+		
+		System.out.println("서비스 : 새 워드 넣고 나옴");
 		
 		return check;
 	}
