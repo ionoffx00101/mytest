@@ -710,7 +710,11 @@
 							</a>
 						</div>
 						<div class="row">
-						<p> ddd <br> aaa
+						<p><%-- ${tistoryJson} --%>
+						<c:out value="${tistoryJson.item[0]}" />
+						<%-- <c:forEach items="${tistoryJson}" var="i" varStatus="Status">
+						name : ${Status.current} <br/>
+						</c:forEach> --%>
 						</p>
 						</div>
 					</div>
