@@ -287,8 +287,10 @@
  			ctx.clearRect(0, 0, canvas.width, canvas.height);
  		
  			ctx.font="50px Georgia";
-				ctx.fillStyle = 'black';
-				ctx.fillText("끝",500,250); // x, y
+			ctx.fillStyle = 'black';
+			ctx.fillText("끝",500,250); // x, y
+				
+			// 여기서 돔객체 생성하고 추가시켜야함
  		
  		}
  		
@@ -706,6 +708,10 @@
 								src="<%=cp%>/resources/images/Tistory.png"
 								style="width: 100px; height: 100px;">
 							</a>
+						</div>
+						<div class="row">
+						<p> ddd <br> aaa
+						</p>
 						</div>
 					</div>
 				</div>
