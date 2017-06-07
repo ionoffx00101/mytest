@@ -55,7 +55,7 @@ public class HomeController
 	{
 		//processRequest(request,response);
 		String tistoryJson = getTistory();
-		System.out.println(tistoryJson);
+		//System.out.println(tistoryJson);
 		model.addAttribute("tistoryJson", tistoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
 		return "index";
 	}

@@ -1,11 +1,29 @@
+<%@page import="org.json.simple.JSONArray"%>
+<%@page import="org.json.simple.JSONObject"%>
+<%@page import="org.json.simple.JSONValue"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!-- 추가됨 -->
-<% String cp = request.getContextPath(); %>
-<%--ContextPath 선언 --%>
-
+<% String cp = request.getContextPath(); %> <%--ContextPath 선언 --%>
+<!-- Json 파싱 하는 곳 -->
+<% 
+	String temp = (String) request.getAttribute("tistoryJson");
+	Object obj = JSONValue.parse(temp);
+	JSONObject object = (JSONObject) obj;
+	
+	JSONObject tistory = (JSONObject) object.get("tistory"); //"tistory"
+	JSONObject item = (JSONObject) tistory.get("item"); //"item"
+	JSONArray posts = (JSONArray)item.get("posts"); //"posts" 
+	
+	/* 
+	for(int i=0; i<posts.size();i++){
+		JSONObject post = (JSONObject) posts.get(i);
+	} 
+	*/
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -63,6 +81,9 @@
  var stargeThreeEnd =false;
 
  $(function() {
+	 
+	 var tistoryArr = <%=posts %>;
+	 console.log(tistoryArr);
 	 var stageOneEnd = false;
 	 
 		/* 	
@@ -710,12 +731,11 @@
 							</a>
 						</div>
 						<div class="row">
-						<p><%-- ${tistoryJson} --%>
-						<c:out value="${tistoryJson.item[0]}" />
-						<%-- <c:forEach items="${tistoryJson}" var="i" varStatus="Status">
-						name : ${Status.current} <br/>
-						</c:forEach> --%>
-						</p>
+							<p>
+								<c:forEach items="<%=posts%>" var="i" varStatus="Status">
+									<a href="${i.postUrl}" target="_blank">${i.title}</a><br/>
+								</c:forEach>
+							</p>
 						</div>
 					</div>
 				</div>
