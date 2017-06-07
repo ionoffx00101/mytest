@@ -2,12 +2,14 @@
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="org.json.simple.JSONValue"%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!-- 추가됨 -->
-<% String cp = request.getContextPath(); %> <%--ContextPath 선언 --%>
+<!-- ContextPath 선언 -->
+<% String cp = request.getContextPath(); %>
 <!-- Json 파싱 하는 곳 -->
 <% 
 	String temp = (String) request.getAttribute("tistoryJson");
@@ -65,7 +67,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
 <!-- jQuery -->
 <script type="text/javascript"
 	src="<%=cp%>/resources/bootstrap/js/jquery.js"></script>
@@ -81,9 +82,6 @@
  var stargeThreeEnd =false;
 
  $(function() {
-	 
-	 var tistoryArr = <%=posts %>;
-	 console.log(tistoryArr);
 	 var stageOneEnd = false;
 	 
 		/* 	
@@ -557,7 +555,8 @@
 		<li><a href="#word" class="menu-close">Word</a></li>
 		<li><a href="#about" class="menu-close">about</a></li>
 		<li><a href="#callout" class="menu-close">picture</a></li>
-		<li><a href="#git" class="menu-close">git,blog</a></li>
+		<li><a href="#git" class="menu-close">코딩 일지</a></li>
+		<li><a href="#skill" class="menu-close">skill</a></li>
 	</ul>
 	</nav>
 
@@ -609,16 +608,19 @@
 				<hr class="small">
 				<form>
 					<div class="col-md-4 col-md-offset-1">
-						<input type="text" class="form-control" id="newWord" name="wordbook_word"/>
+						<input type="text" class="form-control" id="newWord"
+							name="wordbook_word" />
 					</div>
 					<div class="col-md-4">
-						<select class="form-control" id="newWordCheck" name="wordbook_wordcheck">
+						<select class="form-control" id="newWordCheck"
+							name="wordbook_wordcheck">
 							<option value="1">올바른 맞춤법</option>
 							<option value="0">잘못된 맞춤법</option>
 						</select>
 					</div>
 					<div class="col-md-2">
-						<button type="button" name="submit" id="wordInsertBtn" class="btn btn-primary" style="float: left;">추가</button>
+						<button type="button" name="submit" id="wordInsertBtn"
+							class="btn btn-primary" style="float: left;">추가</button>
 					</div>
 				</form>
 			</div>
@@ -704,6 +706,55 @@
 		<h1></h1>
 	</div>
 	</aside>
+	
+	<!-- picture -->
+	<div id="carousel-example-generic" class="carousel slide"
+		data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0"
+				class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="<%=cp%>/resources/images/carousel/IMG_4938.jpg" alt="...">
+				<div class="carousel-caption">...</div>
+			</div>
+			<div class="item">
+				<img src="<%=cp%>/resources/images/carousel/IMG_5491.jpg" alt="...">
+				<div class="carousel-caption">...</div>
+			</div>
+			<div class="item">
+				<img src="<%=cp%>/resources/images/carousel/IMG_5513.jpg" alt="...">
+				<div class="carousel-caption">...</div>
+			</div>
+			<div class="item">
+				<img src="<%=cp%>/resources/images/carousel/IMG_5655.jpg" alt="...">
+				<div class="carousel-caption">...</div>
+			</div>
+			<div class="item">
+				<img src="<%=cp%>/resources/images/carousel/game_capture.png" alt="...">
+				<div class="carousel-caption">...</div>
+			</div>
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic"
+			role="button" data-slide="prev"> <span
+			class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span
+			class="sr-only">Previous</span>
+		</a> <a class="right carousel-control" href="#carousel-example-generic"
+			role="button" data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
 
 	<!-- Portfolio -->
 	<section id="git" class="git">
@@ -733,7 +784,8 @@
 						<div class="row">
 							<p>
 								<c:forEach items="<%=posts%>" var="i" varStatus="Status">
-									<a href="${i.postUrl}" target="_blank">${i.title}</a><br/>
+									<a href="${i.postUrl}" target="_blank">${i.title}</a>
+									<br />
 								</c:forEach>
 							</p>
 						</div>
@@ -748,7 +800,7 @@
 	<!-- /.container --> </section>
 
 	<!-- Call to Action -->
-	<aside class="call-to-action bg-primary">
+	<aside class="call-to-action bg-primary" id="skill">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1 text-center">
