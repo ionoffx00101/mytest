@@ -554,7 +554,7 @@
 		<li><a href="#game" class="menu-close">Game</a></li>
 		<li><a href="#word" class="menu-close">Word</a></li>
 		<li><a href="#about" class="menu-close">about</a></li>
-		<li><a href="#callout" class="menu-close">picture</a></li>
+		<li><a href="#picture" class="menu-close">picture</a></li>
 		<li><a href="#git" class="menu-close">코딩 일지</a></li>
 		<li><a href="#skill" class="menu-close">skill</a></li>
 	</ul>
@@ -700,14 +700,8 @@
 	</div>
 	<!-- /.container --> </section>
 
-	<!-- Callout -->
-	<aside class="callout" id="callout">
-	<div class="text-vertical-center">
-		<h1></h1>
-	</div>
-	</aside>
-	
 	<!-- picture -->
+	<section id="picture">
 	<div id="carousel-example-generic" class="carousel slide"
 		data-ride="carousel">
 		<!-- Indicators -->
@@ -723,24 +717,19 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<img src="<%=cp%>/resources/images/carousel/IMG_4938.jpg" alt="...">
-				<div class="carousel-caption">...</div>
+				<img src="<%=cp%>/resources/images/dumo.png">
 			</div>
 			<div class="item">
-				<img src="<%=cp%>/resources/images/carousel/IMG_5491.jpg" alt="...">
-				<div class="carousel-caption">...</div>
+				<img src="<%=cp%>/resources/images/carousel/IMG_5491.jpg">
 			</div>
 			<div class="item">
-				<img src="<%=cp%>/resources/images/carousel/IMG_5513.jpg" alt="...">
-				<div class="carousel-caption">...</div>
+				<img src="<%=cp%>/resources/images/carousel/IMG_5513.JPG">
 			</div>
 			<div class="item">
-				<img src="<%=cp%>/resources/images/carousel/IMG_5655.jpg" alt="...">
-				<div class="carousel-caption">...</div>
+				<img src="<%=cp%>/resources/images/carousel/IMG_5655.jpg">
 			</div>
 			<div class="item">
-				<img src="<%=cp%>/resources/images/carousel/game_capture.png" alt="...">
-				<div class="carousel-caption">...</div>
+				<img src="<%=cp%>/resources/images/carousel/IMG_4948.jpg">
 			</div>
 		</div>
 
@@ -755,7 +744,7 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
-
+	</section>
 	<!-- Portfolio -->
 	<section id="git" class="git">
 	<div class="container">
