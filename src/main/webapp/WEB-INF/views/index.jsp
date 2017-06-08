@@ -726,7 +726,7 @@
 				<img src="<%=cp%>/resources/images/carousel/IMG_5513.JPG">
 			</div>
 			<div class="item">
-				<img src="<%=cp%>/resources/images/carousel/IMG_5655.jpg">
+				<img src="<%=cp%>/resources/images/carousel/IMG_5655_3.jpg">
 			</div>
 			<div class="item">
 				<img src="<%=cp%>/resources/images/carousel/IMG_4948.jpg">

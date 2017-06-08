@@ -1120,12 +1120,29 @@ img {
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-/*   display: block;
+	   display: none;
   max-width: 100%;
-  height: auto; */
-      display: table;
+  height: auto; 
+	  /*    display: block;
+     max-width: 100%;
+     height: 400px !important; */
+/* 	    display: table;
+	 max-width: 100%;
+  	height: auto; 
+	 */
+/* float:left;
+    margin:.5em 10px .5em 0;
+    overflow:hidden; this is important
+    border:1px solid #ccc;
+    height:70px; */
+	
+   /* 원래
+
+  */
+    /* 
+     display: table;
     width: 100%;
-    height: 400px;
+    height: 400px; */
 }
 .img-rounded {
   border-radius: 6px;
