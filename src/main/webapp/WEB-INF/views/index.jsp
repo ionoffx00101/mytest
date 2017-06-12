@@ -706,8 +706,7 @@
 		data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
-			<li data-target="#carousel-example-generic" data-slide-to="0"
-				class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
@@ -716,22 +715,20 @@
 
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
-			<div class="item active" >
-			<div class="myImg" style="background-image: url('<%=cp%>/resources/images/dumo.png') no-repeat center center scroll">
-			</div>
-				<%-- <img src="<%=cp%>/resources/images/dumo.png"> --%>
+			<div class="item active">
+				<img src="<%=cp%>/resources/images/carousel/dumo_fix.png">
 			</div>
 			<div class="item">
-				<img src="<%=cp%>/resources/images/carousel/IMG_5491.jpg">
+				<img src="<%=cp%>/resources/images/carousel/IMG_5491_fix.png">
 			</div>
 			<div class="item">
-				<img src="<%=cp%>/resources/images/carousel/IMG_5513.JPG">
+				<img src="<%=cp%>/resources/images/carousel/IMG_5513_fix.png">
 			</div>
 			<div class="item">
-				<img src="<%=cp%>/resources/images/carousel/IMG_5655_3.jpg">
+				<img src="<%=cp%>/resources/images/carousel/IMG_5655_fix.png">
 			</div>
 			<div class="item">
-				<img src="<%=cp%>/resources/images/carousel/IMG_4948.jpg">
+				<img src="<%=cp%>/resources/images/carousel/IMG_4948_fix.png">
 			</div>
 		</div>
 	</div>
