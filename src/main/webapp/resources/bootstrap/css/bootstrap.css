@@ -1121,12 +1121,12 @@ img {
 }
 .carousel-inner > .item > img{
 	/* max- */
-	width: 100%;
-	/* 여기서 height조절해도 소용없음 */
+	/* width: 100%;
+	여기서 height조절해도 소용없음 */
 	
-	/*  사진 크기 그대로 나옴
-		max-width : 100%;
-	width: 100%; */
+	/*	  사진 크기 그대로 나옴 */
+	max-width : 100%;
+	width: 100%;
 }
 .img-responsive,
 .thumbnail > img,
