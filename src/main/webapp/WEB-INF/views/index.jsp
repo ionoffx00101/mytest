@@ -537,6 +537,10 @@
  		         }
  	        });
  	 	});
+ 		// 캔버스 영역 터치시 발동
+  		$("canvas").on("tap",function(){
+  		    console.log("asdsd");
+  	    });        
  	});
 </script>
 </head>
@@ -566,7 +570,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center" id="title">
 				<!-- <h1>Ik ben</h1> -->
-				<img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix.png">
+				<img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" style="width: 250px; height: auto;">
 			</div>
 
 		</div>
