@@ -585,8 +585,6 @@
 			<div class="col-md-offset-1">
 				<!-- col-lg-12 glasspane -->
 				<canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
-				<!-- style="display: none;" -->
-				<!-- display: block; none -->
 				<div class="row">
 					<div class="col-md-12"></div>
 					<div class="col-md-12"></div>
