@@ -38,8 +38,9 @@
 
 <!-- Bootstrap Core CSS -->
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-<link href="<%=cp%>/resources/bootstrap/css/bootstrap.min.css"
+<link href="<%=cp%>/resources/bootstrap/css/bootstrap.css"
 	rel="stylesheet">
+	 <!-- min버전 -->
 
 <!-- Custom CSS -->
 <!--  <link href="css/stylish-portfolio.css" rel="stylesheet"> -->
