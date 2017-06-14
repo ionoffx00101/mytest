@@ -19,7 +19,7 @@
 	JSONObject tistory = (JSONObject) object.get("tistory"); //"tistory"
 	JSONObject item = (JSONObject) tistory.get("item"); //"item"
 	JSONArray posts = (JSONArray)item.get("posts"); //"posts" 
-	
+
 	/* 
 	for(int i=0; i<posts.size();i++){
 		JSONObject post = (JSONObject) posts.get(i);
@@ -764,8 +764,8 @@
 						<div class="row">
 							<p>
 								<c:forEach items="<%=posts%>" var="i" varStatus="Status">
-									<a href="${i.postUrl}" target="_blank">${i.title}</a>
-									<br />
+									<a href="${i.postUrl}" target="_blank">${i.title}</a> 
+									<c:if test="${!Status.last}"> | </c:if>
 								</c:forEach>
 							</p>
 						</div>
