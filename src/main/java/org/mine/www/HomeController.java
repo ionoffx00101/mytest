@@ -59,6 +59,24 @@ public class HomeController
 		model.addAttribute("tistoryJson", tistoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
 		return "index";
 	}
+	
+	// 임시
+	@RequestMapping(value = "maybe", method = RequestMethod.GET)
+	public String maybe(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		//String tistoryJson = getTistory();
+		//model.addAttribute("tistoryJson", tistoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
+		return "maybe";
+	}
+	
+	// 임시
+	@RequestMapping(value = "sad", method = RequestMethod.GET)
+	public String sad(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		String tistoryJson = getTistory();
+		model.addAttribute("tistoryJson", tistoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
+		return "sad";
+	}
 
 	@ResponseBody
 	@RequestMapping(value = "WordBookJSON", method = RequestMethod.POST, produces = "application/json; charset=utf8")
