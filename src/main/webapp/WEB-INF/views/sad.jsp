@@ -33,7 +33,8 @@
 <title>Insert title here</title>
     <link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/examples.css" />
-
+    <!-- customeCSS -->
+	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/ikbencustome.css" />
     <!--[if IE]>
         <script type="text/javascript">
              var console = { log: function() {} };
@@ -102,7 +103,12 @@
     <div class="section" id="section3">
         <div class="intro">
             <h1>블로그도 있어요</h1>
-            <p>AJAX json 한글 물음표 | 유니티내에서 타켓이미지가 하얀색으로 나오면 | 타켓이미지가 인식되면 할 일 만들어주기 | 타켓 DB를 유니티에 넣기 | 타켓 이미지 DB 만들기 | Eclipse UTF-8 설정 | Gradle 프로젝트 생성하기 | app이 쓰는 model 생성 | cloud9 django 실행 | django 와 oracle</p>
+            <p>
+				<c:forEach items="<%=posts%>" var="i" varStatus="Status">
+					<a href="${i.postUrl}" target="_blank">${i.title}</a> 
+					<c:if test="${!Status.last}"> | </c:if>
+				</c:forEach>
+			</p>
         </div>
     </div>
     
