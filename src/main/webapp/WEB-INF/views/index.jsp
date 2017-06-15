@@ -116,7 +116,7 @@
  		var imgHeight = 0;
  		var imageData = {};
  		var scrollVal = 0;
- 		var speed = 1; // 스크롤 속도
+ 		var speed = 2; // 스크롤 속도
  		
  		// 스크롤 이미지 크기
  		var canvasWidth = 2937;//canvas.width;
@@ -124,6 +124,13 @@
  		
  		// 스크롤 이미지
  		var scrollImg= new Image();
+ 		
+ 		// 시작 이미지
+ 		var startImg = new Image();
+ 		
+ 		// 끝난 이미지 두개
+ 		var goodEndImg = new Image();
+ 		var sadEndImg = new Image();
  				
  		// 기본 객체
  		var backGroundMusic; // 배경음악 객체 생성
@@ -149,7 +156,8 @@
 
  		var stageOneInterval; // 타이머 변수용
  		var scoreOne = 0; // 스코어 체크
- 		var scoreMax = 1; // 끝나는 스코어 
+ 		var scoreMax = 3; // 끝나는 스코어
+ 		var checkScore = 0; // 맞는 문법 체크
  		
  		// 시동 걸기
  		function loadGame() {
@@ -161,7 +169,11 @@
  			scrollImg.onload = loadImage; // 스크롤 이미지 불러오기 완료되야 loadimage를 호출한다
  			
  			// 배경음악 객체 채워주는 함수 호출
- 			makeBackGroungMusic(); 
+ 			makeBackGroungMusic();
+ 			
+ 			// 엔딩 이미지 추가 
+ 			// var goodEndImg = new Image();
+ 			sadEndImg.src = "<%=cp%>/resources/images/End1.png";
 
  			// 플레이어 객체들 채워주기
  			makePlayerUnit();
@@ -217,16 +229,18 @@
  				 		if(bamX<=playerUnit.width && (playerUnit.width-bamX<playerUnit.width || playerUnit.width-bamX<playerUnit.width+5)){
  				 			
  				 			if(oneHangul.y-playerUnit.y==70){//아래
+	 				 			scoreOne++;	
  				 				// 적 객체 체크가 true면 +1 false면 -1
  	 				 			if(oneHangul.wordCheck == true || oneHangul.wordCheck == 'true'){
- 	 				 				scoreOne++;	
+ 	 				 				checkScore++;
  	 				 			}
  				 				EnemyHangul[i].use=false;
  				 			
  		 				 	}else if (oneHangul.y-playerUnit.y==92){ // 위
+	 				 			scoreOne++;	
  		 				 		// 적 객체 체크가 true면 +1 false면 -1
  	 				 			if(oneHangul.wordCheck == true || oneHangul.wordCheck == 'true'){
- 	 				 				scoreOne++;	
+ 	 				 				checkScore++;
  	 				 			}
  		 				 		EnemyHangul[i].use=false;
  							}	
@@ -303,18 +317,22 @@
  		}
  		// 게임 끝났을 때 화면
  		function clearGame(){
- 		// 지우기
+ 			// 지우기
  			ctx.clearRect(0, 0, canvas.width, canvas.height);
- 		
- 			ctx.font="50px Georgia";
-			ctx.fillStyle = 'black';
-			ctx.fillText("끝",500,250); // x, y
-				
-			// 여기서 돔객체 생성하고 추가시켜야함
- 		
+
+	 		if(checkScore>Math.floor(scoreMax/2)){ //scoreMax/2 Math.Floor
+	 			// 굿 엔딩
+	 			ctx.font="50px Georgia";
+				ctx.fillStyle = 'black';
+				ctx.fillText("굿",500,250); // x, y
+	 		}
+	 		else {
+				// 새드 엔딩
+				ctx.drawImage(sadEndImg,0,0);
+			}
+
  		}
  		
- 	
  		// 배경 이미지 로딩
  		function loadImage() {
  			/* 사용된 이미지의 폭과 너비를 저장하고 그림용 펜의 역할을 수행하는 캔버스 템프에도 담아둔다  */
