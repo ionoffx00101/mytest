@@ -56,13 +56,14 @@
               menu: '#menu',
             });
         });
+        <%--  sectionsImage : ['<%=cp%>/resources/fullpage/js/examples.js', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'], --%><%-- '<%=cp%>/resources/fullpage/js/examples.js' --%>
     </script>
     
 <!-- for RotatingWord -->
 	<link href='http://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/css/RotatingWords/demo.css" />
-	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/css/RotatingWords/style.css" />
-	<script src="<%=cp%>/resources/js/RotatingWords/modernizr.custom.72111.js"></script>
+	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/RotatingWords/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/RotatingWords/css/style.css" />
+	<script src="<%=cp%>/resources/RotatingWords/js/modernizr.custom.72111.js"></script>
 	<style>
 	.no-cssanimations .rw-wrapper .rw-sentence span:first-child {
 		opacity: 1;
@@ -85,12 +86,12 @@
 					<span><img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/></span>
 					<br />
 					<div class="rw-words rw-words-1">
-						<span>spice</span>
-						<span>colors</span>
-						<span>happiness</span>
-						<span>wonder</span>
-						<span>sugar</span>
-						<span>happiness</span>
+						<span>황인영</span>
+						<span>취업준비생</span>
+						<span>뉴비개발자</span>
+						<span>게이머</span>
+						<span>24살</span>
+						<span>파랑색</span>
 					</div>
 				</h2>
     </div>

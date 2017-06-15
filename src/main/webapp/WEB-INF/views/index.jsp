@@ -612,7 +612,7 @@
 					<div class="col-md-12"></div> -->
 					<div class="" id="playbutton"> <!--  col-md-offset-4-->
 						<!--  col-lg-12  glasspane -->
-						<img id="startBtn" src="<%=cp%>/resources/images/startDemo2.png" alt="PlayButton"
+						<img id="startBtn" src="<%=cp%>/resources/images/startImg02.png" alt="PlayButton"
 							>
 						<!-- align="middle"  play-button width: 150px; height: 150px; -->
 					</div>
