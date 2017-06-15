@@ -30,7 +30,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
+<!-- for Fullpage -->
     <link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/examples.css" />
     <!-- customeCSS -->
@@ -55,24 +57,42 @@
             });
         });
     </script>
-
+    
+<!-- for RotatingWord -->
+	<link href='http://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/css/RotatingWords/demo.css" />
+	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/css/RotatingWords/style.css" />
+	<script src="<%=cp%>/resources/js/RotatingWords/modernizr.custom.72111.js"></script>
+	<style>
+	.no-cssanimations .rw-wrapper .rw-sentence span:first-child {
+		opacity: 1;
+	}
+	</style>
+	<!--[if lt IE 9]> 
+			<style>
+				.rw-wrapper{ display: none; } 
+				.rw-sentence-IE{ display: block;  }
+			</style>
+	<![endif]-->
+	
 <!-- 내 스크립트 -->
 
 </head>
 <body>
-
-<!-- <ul id="menu">
-    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First slide</a></li>
-    <li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
-    <li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
-    <li data-menuanchor="4thpage"><a href="#4thpage">fourth slide</a></li>
-    <li data-menuanchor="lastPage"><a href="#lastPage">last slide</a></li>
-</ul> -->
-
 <div id="fullpage">
     <div class="section active" id="section0">
-        <img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/>
-        <h1>황인영</h1>
+    			<h2 class="rw-sentence">
+					<span><img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/></span>
+					<br />
+					<div class="rw-words rw-words-1">
+						<span>spice</span>
+						<span>colors</span>
+						<span>happiness</span>
+						<span>wonder</span>
+						<span>sugar</span>
+						<span>happiness</span>
+					</div>
+				</h2>
     </div>
    
     <div class="section" id="section1">

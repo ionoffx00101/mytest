@@ -1,263 +1,485 @@
-
-var stageOneEnd = false;
-var stageTwoEnd = false;
-var stargeThreeEnd =false;
 $(function() {
-	
-		// 캔버스 친구들
+	 var stageOneEnd = false;
+	 
+		/* 	
+		//크기 조정 친구들
+		var windowWidth = $(window).width()*2/3; //document -350
+		$("canvas").attr("width", windowWidth).attr("height", 500);
+		//$("#startBtn").attr("width", canvas.getWidth()/2).attr("height", canvas.getHeigth()/2);
+		 
+		// 창 크기 바뀌면 할 것...
+	    $( window ).resize(function() {
+	    	 windowWidth = $(window).width()*2/3; //document -350
+	    	 $("canvas").attr("width", windowWidth).attr("height", 500);
+	    }); 
+		*/
+		
+	 	// 캔버스 친구들
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d"); // 캔버스 객체 생성
+		
+		// 플레이 버튼 위치 설정
+		//$("#startBtn").css('top',(canvas.width/2)+75+'px');
+	/* 	$("#startBtn").css('left',(canvas.height/2)+75+'px');
+		console.log((canvas.width/2)+150);
+		console.log((canvas.height/2)+150); */
+		
+		// 배경화면 그려주는 친구들
+ 		var canvasTemp = document.createElement("canvas");
+ 		var tempContext = canvasTemp.getContext("2d");
+ 		var canvasBuffer;
+ 		var imgWidth = 0;
+ 		var imgHeight = 0;
+ 		var imageData = {};
+ 		var scrollVal = 0;
+ 		var speed = 1; // 스크롤 속도 // 빠른 거 2
+ 		
+ 		// 스크롤 이미지 크기
+ 		var canvasWidth = 2937;//canvas.width;
+ 		var canvasHeight = 532;//canvas.height;
+ 		
+ 		// 스크롤 이미지
+ 		var scrollImg= new Image();
+ 		
+ 		// 시작 이미지
+ 		var startImg = new Image();
+ 		
+ 		// 끝난 이미지 두개
+ 		var goodEndImg = new Image();
+ 		var sadEndImg = new Image();
+ 				
+ 		// 기본 객체
+ 		var backGroundMusic; // 배경음악 객체 생성
+ 		var canvasPen; // 캔버스에 그림을 그리는 펜
+ 		var keyPressOn = {}; //키 배열, pressed - true
+ 		var spacekey = false; // 스페이스 키
+ 		var oneSpacekey = false; // 스페이스 키 중복 처리 방지용
+ 		
+ 		// 플레이어 객체
+ 		var playerUnit={}; // 플레이어
+ 		var playerImgWalk1= new Image();
+ 		var playerImgWalk2= new Image();
+ 		var playerImgJump= new Image();
+ 		var playerWalkTime = 0;
+ 		var playerWalkTimeLimit =20; // 걷는 애니메이션 반복 속도
+ 		
+ 		// 스테이지 1 적 객체
+ 		var EnemyHangul; // 스테이지1 적객체 배열
+ 		var hangulViewCount=1; // 화면에 보이는 적객체 수 설정
+ 		var EnemyHangulMax = 10; // 미리 준비해두는 적객체 최대수
+ 		var hangulWord= new Array(); // 한글 저장용
+ 		var hangulSpeed = 4; // 한글 적 객체 스피드
 
-		var canvasTemp;
-		var tempContext;
-		var canvasBuffer ;
-		
-		// 스크롤 이미지
-		var scrollImg= new Image();
-				
-		// 기본 객체
-		var backGroundMusic; // 배경음악 객체 생성
-		var canvasPen; // 캔버스에 그림을 그리는 펜
-		var keyPressOn = {}; //키 배열, pressed - true
-		var spacekey = false; // 스페이스 키
-		var oneSpacekey =false; 
-		
-		// 플레이어 객체
-		var playerUnit={}; // 플레이어
-		
-		// 스테이지 1 적 객체
-		var EnemyHangul; // 스테이지1 적객체
-		var EnemyHangulWord = 
-		{
-				"EnemyHangulWord":
-		[
-				{"boolean":"false","word":"댕댕이"},
-				{"boolean":"true","word":"아버지가 방에 들어가신다"},
-				{"boolean":"true","word":"지친다"}
-		]
-		};
-		
-		
-		// 시동 걸기
-		function loadGame() {
-			// 기본 객체들 채워주기
-			canvasBuffer = document.createElement("canvas"); // 캔버스에 펜있다고 넣어주기
-			makeBackGroungMusic(); // 배경음악 객체 채워주는 함수 호출
-			
-			// 백그라운드 이미지
-			// scrollImg.src = "<c:url value="../resources/img/backGround2.jpg"/>";
-			// scrollImg.onload = loadImage;
-		
-			scrollImg.src = "../images/city.png";
-			
-			// 플레이 객체들 채워주기
-			makePlayerUnit();
-			
-			// 한글 객체 채우기
-			
-			makeEnemyHangulUnit();
-			
-			// 창 자체에 이벤트 리스너를 설정 //document O, canvas X , window O
-			document.addEventListener("keydown", getKeyDown, false);
-			document.addEventListener("keyup", getKeyUp, false);
-			
-			// 게임 스타트
-			// loopGame(); // 게임 스타트 함수 호출
-			scrollImg.onload = loopGame;
-		}
-		
-		// 게임 실행
-		function loopGame(){
-			// 한번 실행
-			// backGroundMusic.play(); // 배경음악 객체 플레이
-			
-			// 반복 실행
-			// 배경 
+ 		var stageOneInterval; // 타이머 변수용
+ 		var scoreOne = 0; // 스코어 체크
+ 		var scoreMax = 3; // 끝나는 스코어
+ 		var checkScore = 0; // 맞는 문법 체크
+ 		
+ 		// 시동 걸기
+ 		function loadGame() {
+ 			// 기본 객체들 채워주기
+ 			canvasBuffer = document.createElement("canvas"); // 캔버스에 펜있다고 넣어주기
+ 			
+ 			// 백그라운드 이미지
+ 			scrollImg.src = "<%=cp%>/resources/images/city.png";
+ 			scrollImg.onload = loadImage; // 스크롤 이미지 불러오기 완료되야 loadimage를 호출한다
+ 			
+ 			// 배경음악 객체 채워주는 함수 호출
+ 			makeBackGroungMusic();
+ 			
+ 			// 엔딩 이미지 추가 
+ 			goodEndImg.src = "<%=cp%>/resources/images/End2.png";
+ 			sadEndImg.src = "<%=cp%>/resources/images/End1.png";
 
-		/* setInterval(() => {
-				// 사용된 이미지의 폭과 너비를 저장하고 그림용 펜의 역할을 수행하는 캔버스 템프에도 담아둔다 
-				imgWidth = scrollImg.width, imgHeight = scrollImg.height;
-				canvasTemp.width = imgWidth;
-				canvasTemp.height = imgHeight;
-	
-				// 그림을 그리고 현재 그림의 테이터를 담아둔다 
-				tempContext.drawImage(scrollImg, 0, 0, imgWidth, imgHeight);
-				imageData = tempContext.getImageData(0, 0, imgWidth, imgHeight);
-	
-				//캔버스 버퍼 객체에 펜을 담는다
-				canvasBuffer = document.createElement("canvas");
+ 			// 플레이어 객체들 채워주기
+ 			makePlayerUnit();
+ 			// 플레이어 이미지 추가
+ 			playerImgWalk1.src = "<%=cp%>/resources/images/charactor/female_walk1_re.png";
+ 			playerImgWalk2.src = "<%=cp%>/resources/images/charactor/female_walk2_re.png";
+ 			playerImgJump.src = "<%=cp%>/resources/images/charactor/female_jump_re.png";
+ 			
+ 			// 한글 적 객체 채우기
+ 			EnemyHangul= new Array();
+ 			createEnemyHangul(EnemyHangulMax); // 최대값 만큼 객체 생성 / 최대값은 DB에 있는 단어만큼 생성하는게 어떨까 / 그리고 서버가 터졌다 
+ 		
+ 			// 창 자체에 이벤트 리스너를 설정 //document O, canvas X , window O
+ 			document.addEventListener("keydown", getKeyDown, false);
+ 			document.addEventListener("keyup", getKeyUp, false);
+ 			
+ 			// 게임 스타트
+ 			startGame();
+ 		}
+ 		
+ 		// 게임 실행
+ 		function startGame(){
+ 			
+ 			// 캐릭터 짬프는 키보드 입력 받는 곳에서 해결됨
+ 			// 캐릭터 짬프 애니메이션 - 3씩 올라갔다가 3씩 내려옴
+ 			// 점프 애니메이션이 실행되는 동안에는 점프 키 입력을 받아도 모른척 해야함
+ 			// 라잌 쿠키런
+ 						
+ 			// 적이 지정된 시간마다 움직임
+ 			stageOneInterval = setInterval(() => {
+ 				// 배경화면 스크롤 함수
+ 				// 스크롤 한바퀴 다돌아 간경우 스크롤을 초기화한다
+ 				if (scrollVal <= speed) { //1 5 0 2가 0오류 안남
+ 					scrollVal = canvasWidth - speed;
+ 				}
+ 				
+ 				// 지정된 속도를 기준으로 스크롤의 값이 늘어난다(그리는 위치가 변경된다)
+ 				scrollVal -= speed;
+ 				
+ 				// 단어 움직임 로직
+ 				useEnemyHangul();
+ 				
+ 				// 적객체와 플레이어 충돌 처리 // 됨 범위 좁힌 버전
+				for(var i=0;i<EnemyHangul.length;i++){ // 적객 체 돌려
+ 					
+ 					var oneHangul = EnemyHangul[i];
+ 				
+ 					//일단 쓰는 한글인지 조사
+ 				 	if(oneHangul.use){
+ 				 		//  Y 거리 확인 > X충돌값 확인  > 처리
+ 				 		var bamX = oneHangul.x - playerUnit.x;
+ 				 		
+ 				 		if(bamX<=playerUnit.width && (playerUnit.width-bamX<playerUnit.width || playerUnit.width-bamX<playerUnit.width+5)){
+ 				 			
+ 				 			if(oneHangul.y-playerUnit.y==70){//아래
+	 				 			scoreOne++;	
+ 				 				// 적 객체 체크가 true면 +1 false면 -1
+ 	 				 			if(oneHangul.wordCheck == true || oneHangul.wordCheck == 'true'){
+ 	 				 				checkScore++;
+ 	 				 			}
+ 				 				EnemyHangul[i].use=false;
+ 				 			
+ 		 				 	}else if (oneHangul.y-playerUnit.y==92){ // 위
+	 				 			scoreOne++;	
+ 		 				 		// 적 객체 체크가 true면 +1 false면 -1
+ 	 				 			if(oneHangul.wordCheck == true || oneHangul.wordCheck == 'true'){
+ 	 				 				checkScore++;
+ 	 				 			}
+ 		 				 		EnemyHangul[i].use=false;
+ 							}	
+				 		}
+ 					}
+ 				}
+ 				// 그리기
+ 				renderGame();
+ 				
+ 				// 게임 끝나는 지 여부 확인 하고 엔딩 화면 그려줌..?
+ 				if(scoreOne>=scoreMax){
+ 					stageOneEnd=true;
+ 					clearInterval(stageOneInterval);
+ 					clearGame();
+ 				}
+ 			},  1000 / 60);  //60
+ 		}
+ 		
+ 		// 지우고 전체 다 다시 그려주는 곳
+ 		function renderGame(){
+ 			// 지우기
+ 			ctx.clearRect(0, 0, canvas.width, canvas.height);
+ 			
+ 			// 배경 그리기
+ 			imageData = tempContext.getImageData(canvasWidth - scrollVal,0, canvasWidth, canvasHeight);
+ 			ctx.putImageData(imageData, 0, 0, 0, 0, canvasWidth, imgHeight);
 
-				renderGame();
-			},  1000);  //60
-			*/
-			
-			
-			
-			// 적이 지정된 시간마다 움직임 // setTimeout, setInterval
-			setInterval(() => {
-				// 값 계산
-				renderGame();
-			},  1000 / 60);  //60
-		
-		}
-		
-		// 지우고 전체 다 다시 그려주는 곳
-		function renderGame(){
-			// 지우기
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			
-			// 배경 그리기
-			ctx.drawImage(scrollImg, 0, 0);
-			// ,새로 받은 배경의 값을 넣어야함 스크롤 이미지를 넣는게 아니고 위에서 반복되는 이미지 캡쳐부분만 그리는 걸걸
-			// 원하는 부분만 캡처하는 방법이 뭐드라
-			
-			// 플레이어 그리기
-			var rectangle = new Path2D();
-  			rectangle.rect(playerUnit.x, playerUnit.y, playerUnit.width, playerUnit.height);
-			ctx.fill(rectangle);
-			
-			// 단어장들 그리기
+ 			// 배경 스크롤을 그려주는 부분
+ 			imageData = tempContext.getImageData(0, 0, canvasWidth - scrollVal, canvasHeight);
+ 			ctx.putImageData(imageData, scrollVal,0 , 0, 0, imgWidth, canvasHeight);
+ 			
+ 			// ctx.fillText(scoreOne+"",playerUnit.x,playerUnit.y); // x, y 점수 체크용
+ 			
+ 			// 플레이어 그리기
+ 			if(!spacekey){ //playerUnit.jump
+ 				if(playerUnit.walk){
+ 					ctx.drawImage(playerImgWalk1,playerUnit.x,playerUnit.y);
+ 					
+ 					playerWalkTime++;
+ 					if(playerWalkTime>playerWalkTimeLimit){
+ 						playerUnit.walk=false;
+ 						playerWalkTime=0;
+ 					}
+ 				}
+ 				else{
+ 					ctx.drawImage(playerImgWalk2,playerUnit.x,playerUnit.y);
+ 					
+ 					playerWalkTime++;
+ 					if(playerWalkTime>playerWalkTimeLimit){
+ 						playerUnit.walk=true;
+ 						playerWalkTime=0;
+ 					}
+ 				}
+ 			}
+ 			else{
+ 				ctx.drawImage(playerImgJump,playerUnit.x,playerUnit.y);
+ 			}
+ 			
+ 			// 단어 그림
+ 			for(var i=0;i<EnemyHangul.length;i++){ // 적객 체 돌려
+ 				
+ 				var oneHangul = EnemyHangul[i];
+ 				
+ 			 	 if(oneHangul.use){
+ 					ctx.font="30px Noto Sans KR";
+ 					// 그냥 글씨
+ 					//ctx.fillStyle = 'white';
+ 					//ctx.fillText(oneHangul.word,oneHangul.x,oneHangul.y); // x, y
+ 					
+ 					// 두꺼운 글씨
+ 					ctx.lineWidth = 2;
+ 				    // stroke color
+ 				    ctx.strokeStyle = 'blue'; // grey black blue red 
+ 				   	ctx.strokeText(oneHangul.word,oneHangul.x,oneHangul.y);
+ 				   	
+ 					if(oneHangul.x<-10){ //0
+ 						oneHangul.use= false;
+ 					}
+ 				}
+ 			}		
+ 		}
+ 		// 게임 끝났을 때 화면
+ 		function clearGame(){
+ 			// 지우기
+ 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-			
-		}
-	
-		// 배경 이미지 로딩
-		function loadImage() {
-			
-			if (scrollVal >= canvasHeight - speed) {
-				scrollVal = 0;
+	 		if(checkScore>Math.floor(scoreMax/2)){ //scoreMax/2 Math.Floor
+	 			// 굿 엔딩
+	 			ctx.drawImage(goodEndImg,0,0);
+	 		}
+	 		else {
+				// 새드 엔딩
+				ctx.drawImage(sadEndImg,0,0);
 			}
-			/* 혹시 스크롤 한바퀴 다돌아 간경우 스크롤을 초기화한다 */
 
-			scrollVal += speed;
-			/* 지정된 속도를 기준으로 스크롤의 값이 늘어난다(그리는 위치가 변경된다) */
-			
-			/* 사용된 이미지의 폭과 너비를 저장하고 그림용 펜의 역할을 수행하는 캔버스 템프에도 담아둔다  */
-			imgWidth = scrollImg.width;
-			imgHeight = scrollImg.height;
-			canvasTemp.width = imgWidth;
-			canvasTemp.height = imgHeight;
+ 		}
+ 		
+ 		// 배경 이미지 로딩
+ 		function loadImage() {
+ 			/* 사용된 이미지의 폭과 너비를 저장하고 그림용 펜의 역할을 수행하는 캔버스 템프에도 담아둔다  */
+ 			imgWidth =  scrollImg.width || scrollImg.naturalWidth;//scrollImg.width;
+ 			imgHeight = scrollImg.height || scrollImg.naturalHeight;//scrollImg.height;
+ 			canvasTemp.width = imgWidth;
+ 			canvasTemp.height = imgHeight;
 
-			/* 그림을 그리고 현재 그림의 테이터를 담아둔다 */
-			tempContext.drawImage(scrollImg, 0, 0, imgWidth, imgHeight);
-			imageData = tempContext.getImageData(0, 0, imgWidth, imgHeight);
+ 			/* 그림을 그리고 현재 그림의 테이터를 담아둔다 */
+ 			tempContext.drawImage(scrollImg, 0, 0, imgWidth, imgHeight);
+ 			imageData = tempContext.getImageData(0, 0, imgWidth, imgHeight);
 
-			/* 캔버스 버퍼 객체에 펜을 담는다 */
-			canvasBuffer = document.createElement("canvas");
-		}
-		
-		// 플레이어 객체 만드는 곳
-		function makePlayerUnit(){
-			playerUnit = {
-					x : 100,
-					y : 330,
-					width : 150,
-					height : 150
-			};
-		}
+ 			/* 캔버스 버퍼 객체에 펜을 담는다 */
+ 			canvasBuffer = document.createElement("canvas");
+ 		}
+ 		
+ 		// 플레이어 객체 만드는 곳
+ 		function makePlayerUnit(){
+ 			
+ 			var imgWalkWidth = 80;
+ 			var imgWalkHeight = 92;
+ 			
+ 			playerUnit = {
+ 					x : 150,
+ 					y : 350,
+ 					width : imgWalkWidth,
+ 					height : imgWalkHeight,
+ 					walk:true
+ 			};
+ 		}
 
-		// 한글 객체를 만드는 곳
-		function makeEnemyHangulUnit(){
-			EnemyHangul={
-				x:0,
-				y:0,
-				width:0,
-				height:0
-			};
-		}
-		
-		// 키 누름 
-		function getKeyDown(event) { 
-			var keyValue;
-			if (event == null) {
-				return;
-			} else {
-				keyValue = event.keyCode;
-				//event.preventDefault(); 키값 들어오면 js에서만 해당 키를 이용함
-			}
-			if (keyValue == "87")
-				keyValue = "287"; //up 38
-			else if (keyValue == "83")
-				keyValue = "283"; //down 40
-			else if (keyValue == "65")
-				keyValue = "265"; //left 37
-			else if (keyValue == "68")
-				keyValue = "268"; //right 39
-			keyPressOn[keyValue] = true;
-				
-			// 점프
-			if (keyValue == "32") {
-				spacekey = true;
-			}
-			
-			calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
-		}
-		// 키 뗌 
-		function getKeyUp(event) {
-			var keyValue;
-			if (event == null) {
-				keyValue = window.event.keyCode;
-				window.event.preventDefault();
-			} else {
-				keyValue = event.keyCode;
-				//event.preventDefault();
-			}
-			if (keyValue == "87")
-				keyValue = "287"; //up 38
-			else if (keyValue == "83")
-				keyValue = "283"; //down 40
-			else if (keyValue == "65")
-				keyValue = "265"; //left 37
-			else if (keyValue == "68")
-				keyValue = "268"; //right 39
-			keyPressOn[keyValue] = false;
+ 		// 한글 객체를 만드는 곳
+ 		function createEnemyHangul(wordcount){
+ 			for (var i = 0; i < wordcount; i++) {
+ 				var enemy = {
+ 					x : 1000,
+ 					y : 600,
+ 					width:0,
+ 					height:0,
+ 					word:"",//Math.floor(Math.random() * 10);// 랜덤수 // 그냥 123 할까
+ 					wordCheck:false, // 단어의 정답 여부
+ 					use :false //1 캔버스에 그려주는 지 스킵하는지 용도
+ 				};
+ 				EnemyHangul.push(enemy);
+ 			}
+ 		}
+ 		// 한글 객체를 쓰는 곳
+ 		function useEnemyHangul() {
+ 			
+ 			// DB에서 가져온 배열중 
+ 			// 한개를 뽑아서 밑에 집어넣는다
+ 			//hangulWord
+ 			
+ 			var useCount = 0;
+ 			// 화면에 보이는 단어 3개로 조정하기 위해서
+ 			for(var i=0; i<EnemyHangul.length;i++){
+ 				if(EnemyHangul[i].use){
+ 					useCount++;
+ 					// true인 친구들은 왼쪽으로 보냄
+ 					// 한글 객체 속도
+ 					EnemyHangul[i].x=EnemyHangul[i].x-hangulSpeed;
+ 				}
+ 			}
+ 			// 화면에 보이는 게 hangulViewCount이하면 한개 내보냄
+ 			if(useCount<hangulViewCount){
+ 				// 랜덤 Y값 준비
+ 				var startY=((Math.random() <= 0.5) ? 350 : 420);//)*150;
+ 				// X값 초기화, Y값이랑 word값, use 값을 고쳐야함
+ 				
+ 				var bool = true;
+ 				while(bool){
+ 					var randomNum = Math.floor((Math.random() * 10));
+ 					console.log();
+ 					
+ 					if(!EnemyHangul[randomNum].use){
+ 						bool=false; // 반복문 내보냄
+ 						
+ 						EnemyHangul[randomNum].x=1000; // x바꿈
+ 						EnemyHangul[randomNum].y=startY; // Y바꿈
+ 						EnemyHangul[randomNum].word = hangulWord[randomNum].word; 
+ 						EnemyHangul[randomNum].wordCheck = hangulWord[randomNum].check;
+ 						EnemyHangul[randomNum].use=true;
+ 					}
+ 				}
+ 				
+ 			}
+ 		}
 
-			// 점프
-			if (keyValue == "32") {
-				// 점프 꾸욱 누른다고 연점 되는거 아니니까 그냥 up에서 점프 처리하게 바꾸기
-				spacekey = false;
-			}
-			calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
-		}
-		// 방향키 입력 처리
-		function calcKeyInnput() {
-			if (keyPressOn["287"] && playerUnit.y >= -playerUnit.height / 2)
-				//console.log("287");
-			if (keyPressOn["283"] && playerUnit.y <= canvas.height - playerUnit.height / 2)
-				//console.log("283");
-			if (keyPressOn["265"] && playerUnit.x >= -playerUnit.width / 2)
-				//console.log("265");
-			if (keyPressOn["268"] && playerUnit.x <= canvas.width - playerUnit.width / 2)
-				//console.log("268");
-			
-			console.log("spacekey"+spacekey);
+ 		// 키 누름 
+ 		function getKeyDown(event) { 
+ 			var keyValue;
+ 			if (event == null) {
+ 				return;
+ 			} else {
+ 				keyValue = event.keyCode;
+ 				
+ 				if (keyValue == "123" || keyValue == "116"){} // f12 ,f5
+ 				else{
+ 					event.preventDefault(); //키값 들어오면 js에서만 해당 키를 이용함
+ 				}
+ 			}
+ 			if (keyValue == "87")
+ 				keyValue = "287"; //up 38
+ 			else if (keyValue == "83")
+ 				keyValue = "283"; //down 40
+ 			else if (keyValue == "65")
+ 				keyValue = "265"; //left 37
+ 			else if (keyValue == "68")
+ 				keyValue = "268"; //right 39
+ 			keyPressOn[keyValue] = true;
+ 				
+ 			// 점프
+ 			if (keyValue == "32") {
+ 				spacekey = true;
+ 	 			calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
+ 			}
+ 			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함
+ 		}
+ 		// 키 뗌 
+ 		function getKeyUp(event) {
+ 			var keyValue;
+ 			if (event == null) {
+ 				keyValue = window.event.keyCode;
+ 				window.event.preventDefault();
+ 			} else {
+ 				keyValue = event.keyCode;
+ 				
+ 				if (keyValue == "123" || keyValue == "116"){} // f12 ,f5
+ 				else{
+ 					event.preventDefault(); //키값 들어오면 js에서만 해당 키를 이용함
+ 				}
+ 			}
+ 			if (keyValue == "87")
+ 				keyValue = "287"; //up 38
+ 			else if (keyValue == "83")
+ 				keyValue = "283"; //down 40
+ 			else if (keyValue == "65")
+ 				keyValue = "265"; //left 37
+ 			else if (keyValue == "68")
+ 				keyValue = "268"; //right 39
+ 			keyPressOn[keyValue] = false;
 
-			if(spacekey){
-				if(!oneSpacekey){
-				playerUnit.y-=75;
-				oneSpacekey=true;
-				}
-			}else{
-				playerUnit.y+=75;
-				oneSpacekey=false;
-			}
-			// 그림 다시 그리기
-			renderGame();
-		}
-		
-		// 배경음악 객체 채워주기
-		function makeBackGroungMusic(){
-			backGroundMusic = document.createElement("audio");
-			backGroundMusic.volume = 1.0;
-			// BackGroundMusic.src = "<c:url value="../resources/sound/war.mp3"/>"; // 안됨
-			backGroundMusic.src = "../resources/sound/war.mp3";
-			backGroundMusic.setAttribute('id', 'backGroundMusic');
-			document.body.appendChild(backGroundMusic);
-		}
-		
-		// 스타트 버튼 클릭 시 
-		$('#startBtn').click(function(){
-    		$('#startBtn').remove(); // 스타트 버튼을 화면에서 없애기
-			loadGame(); // 시작버튼을 누르면 해당 함수가 실행되게 변경
-		});
-	});
+ 			// 점프
+ 			if (keyValue == "32") {
+ 				// 점프 꾸욱 누른다고 연점 되는거 아니니까 그냥 up에서 점프 처리하게 바꾸기
+ 				spacekey = false;
+ 				calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
+ 			}
+ 			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함
+ 		}
+ 		// 방향키 입력 처리
+ 		function calcKeyInnput() {
+ 
+ 			if(spacekey){
+ 				if(!oneSpacekey){
+ 				playerUnit.y-=92;
+ 				oneSpacekey=true;
+ 				}
+ 			}else{
+ 				playerUnit.y+=92;
+ 				oneSpacekey=false;
+ 			}
+ 			// 게임 상태가 아닐때만 그림 다시 그리기
+ 			if(!stageOneEnd){
+ 				renderGame();
+ 			}
+ 		}
+ 		
+ 		// 배경음악 객체 채워주기
+ 		function makeBackGroungMusic(){
+ 			backGroundMusic = document.createElement("audio");
+ 			backGroundMusic.volume = 1.0;
+ 			// BackGroundMusic.src = "<c:url value="../resources/sound/war.mp3"/>"; // 안됨
+ 			backGroundMusic.src = "<%=cp%>/resources/sound/war.mp3";
+ 			backGroundMusic.setAttribute('id', 'backGroundMusic');
+ 			document.body.appendChild(backGroundMusic);
+ 		}
+ 		
+ 		// 스타트 버튼 클릭 시 
+ 		$('#startBtn').click(function(){
+             $("#startBtn").hide();
+             /* $('#startBtn').remove(); // 스타트 버튼을 화면에서 없애기 */
+ 			 /* $('#startBtn').css("display", "none"); */
+ 			
+ 			 $.ajax({
+	            url : "<c:url value="/WordBookJSON"/>", 
+	            type : "post",
+	            dataType : "json",
+	            contentType : 'application/json',
+	            success : function(json) {
+	            	for(var i in json){
+	            		hangulWord[i]=json[i];
+	                }
+	            	EnemyHangulMax=hangulWord.length; // 배열 크기만큼 최대값 설정
+	            	loadGame(); // 시작버튼을 누르면 해당 함수가 실행되게 변경
+	            },
+	            error : function(xhr, status, error) {
+	            	console.log("에러"+error);
+	            }
+        	 });
+ 			 $("#canvas").show();
+ 		});
+ 		
+ 		// 추가버튼 클릭
+ 	 	$('#wordInsertBtn').click(function(){
+ 	 		 $.ajax({
+ 		         url : "<c:url value="/InsertWordBook"/>", 
+ 		         type : "get", //post
+ 		         dataType : "json",
+ 		         data: $('form').eq(0).serialize(),
+ 		         contentType : 'application/json',
+ 		         success : function(json) {
+ 		        	 if(json.check){
+  		        		$('#newWord').val("");
+ 		        		alert("잘 들어감");
+ 		        	 }else{
+ 		        		console.log("ㄴㄴ 큰일남");
+ 		        	 }
+ 		         },
+ 		         error : function(request,status,error) { //xhr, status, 
+ 		        	 console.log("code:"+request.status+"\n"+"error:"+error);
+ 		         }
+ 	        });
+ 	 	});
+ 		// 캔버스 영역 터치시 발동
+  		$("canvas").on("tap",function(){
+  		    console.log("asdsd");
+  	    });        
+ 	});

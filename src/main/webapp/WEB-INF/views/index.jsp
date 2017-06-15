@@ -78,10 +78,6 @@
 	src="<%=cp%>/resources/bootstrap/js/bootstrap.js"></script>
 
 <script type="text/javascript">
-
- var stageTwoEnd = false;
- var stargeThreeEnd =false;
-
  $(function() {
 	 var stageOneEnd = false;
 	 
@@ -306,9 +302,16 @@
  				
  			 	 if(oneHangul.use){
  					ctx.font="30px Noto Sans KR";
- 					ctx.fillStyle = 'white';
- 					ctx.fillText(oneHangul.word,oneHangul.x,oneHangul.y); // x, y
- 						
+ 					// 그냥 글씨
+ 					//ctx.fillStyle = 'white';
+ 					//ctx.fillText(oneHangul.word,oneHangul.x,oneHangul.y); // x, y
+ 					
+ 					// 두꺼운 글씨
+ 					ctx.lineWidth = 2;
+ 				    // stroke color
+ 				    ctx.strokeStyle = 'blue'; // grey black blue red 
+ 				   	ctx.strokeText(oneHangul.word,oneHangul.x,oneHangul.y);
+ 				   	
  					if(oneHangul.x<-10){ //0
  						oneHangul.use= false;
  					}
@@ -605,13 +608,13 @@
 				<canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
 				
 				<div class="row">
-					<div class="col-md-12"></div>
-					<div class="col-md-12"></div>
-					<div class="col-md-offset-4" id="playbutton">
+<!-- 					<div class="col-md-12"></div>
+					<div class="col-md-12"></div> -->
+					<div class="" id="playbutton"> <!--  col-md-offset-4-->
 						<!--  col-lg-12  glasspane -->
-						<img id="startBtn" src="<%=cp%>/resources/images/play-button.png" alt="PlayButton"
-							style="width: 150px; height: 150px; display: block;">
-						<!-- align="middle"  -->
+						<img id="startBtn" src="<%=cp%>/resources/images/startDemo2.png" alt="PlayButton"
+							>
+						<!-- align="middle"  play-button width: 150px; height: 150px; -->
 					</div>
 				</div>
 				
