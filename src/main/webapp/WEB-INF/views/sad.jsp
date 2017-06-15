@@ -182,8 +182,8 @@
  			EnemyHangul= new Array();
  			createEnemyHangul(EnemyHangulMax); // 최대값 만큼 객체 생성 / 최대값은 DB에 있는 단어만큼 생성하는게 어떨까 / 그리고 서버가 터졌다 
  		
- 			// 창 자체에 이벤트 리스너를 설정 //document O, canvas X , window O
- 			document.addEventListener("keydown", getKeyDown, false);
+ 			// 창 자체에 이벤트 리스너를 설정 //document O // 버블 일어남, canvas X , window O
+ 			document.addEventListener("keydown", getKeyDown, false); // true 여도 같음
  			document.addEventListener("keyup", getKeyUp, false);
  			
  			// 게임 스타트
@@ -430,23 +430,30 @@
  			} else {
  				keyValue = event.keyCode;
  				
- 				if (keyValue == "123" || keyValue == "116"){} // f12 ,f5
+ 				if (keyValue == "123" || keyValue == "116"){
+ 					 // f12 ,f5 누르게 해주는 if문
+ 				}
  				else{
  					event.preventDefault(); //키값 들어오면 js에서만 해당 키를 이용함
  				}
  			}
- 			if (keyValue == "87")
+ 			if (keyValue == "87"){
  				keyValue = "287"; //up 38
- 			else if (keyValue == "83")
+ 				}
+ 			else if (keyValue == "83"){
  				keyValue = "283"; //down 40
- 			else if (keyValue == "65")
+ 			}
+ 			else if (keyValue == "65"){
  				keyValue = "265"; //left 37
- 			else if (keyValue == "68")
+ 			}
+ 			else if (keyValue == "68"){
  				keyValue = "268"; //right 39
+ 			}
  			keyPressOn[keyValue] = true;
  				
  			// 점프
  			if (keyValue == "32") {
+ 				
  				spacekey = true;
  	 			calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
  			}

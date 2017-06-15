@@ -783,7 +783,13 @@
 								</c:forEach>
 							</p>
 					</div>
-					
+					<%-- <div class="portfolio-item">
+							<a href="https://github.com/tehon" target="_blank"> <img
+								class="img-portfolio img-responsive"
+								src="<%=cp%>/resources/images/GitHub.png"
+								style="width: 100px; height: 100px;">
+							</a>
+						</div> --%>
 				</div>
 				<!-- /.row (nested) -->
 			</div>
