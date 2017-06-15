@@ -763,7 +763,12 @@
             if (typeof options.sectionsColor[index] !==  'undefined') {
                 section.css('background-color', options.sectionsColor[index]);
             }
-
+            // 내가 추가함 image로 
+            if (typeof options.sectionsImage[index] !==  'undefined') {
+                section.css('background-image', options.sectionsImage[index]);
+            }
+            // url("name.jpeg")
+            
             if (typeof options.anchors[index] !== 'undefined') {
                 section.attr('data-anchor', options.anchors[index]);
             }
