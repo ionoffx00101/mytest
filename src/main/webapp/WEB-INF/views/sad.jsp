@@ -596,14 +596,10 @@
             <div class="intro">
                 <h1>게임</h1>
                 <canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
-				
+
 				<div class="row">
-<!-- 					<div class="col-md-12"></div>
-					<div class="col-md-12"></div> -->
-					<div class="" id="playbutton"> <!--  col-md-offset-4-->
-						<!--  col-lg-12  glasspane -->
-						<img id="startBtn" src="<%=cp%>/resources/images/startImg02.png" alt="PlayButton"
-							>
+					<div class="" id="playbutton">
+						<img id="startBtn" src="<%=cp%>/resources/images/startImg02.png" alt="PlayButton">
 						<!-- align="middle"  play-button width: 150px; height: 150px; -->
 					</div>
 				</div>
