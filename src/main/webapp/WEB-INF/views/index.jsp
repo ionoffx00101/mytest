@@ -695,7 +695,7 @@
 							<h4>
 								<strong>수상 경력</strong>
 							</h4>
-							<p>써도 될까</p>
+							<p>1 <br> 2 <br> 3 </p>
 						</div>
 					</div>
 
@@ -761,32 +761,24 @@
 				<h2>코딩 일지</h2>
 				<hr class="small">
 				<div class="row">
+				
 					<div class="col-md-6">
-						<div class="portfolio-item">
-							<a href="https://github.com/tehon" target="_blank"> <img
-								class="img-portfolio img-responsive"
-								src="<%=cp%>/resources/images/GitHub.png"
-								style="width: 100px; height: 100px;">
-							</a>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="portfolio-item">
-							<a href="http://teqoo.tistory.com/" target="_blank"> <img
+						<a href="http://teqoo.tistory.com/" target="_blank"> <img
 								class="img-portfolio img-responsive"
 								src="<%=cp%>/resources/images/Tistory.png"
 								style="width: 100px; height: 100px;">
-							</a>
-						</div>
-						<div class="row">
+						</a>
+					</div>
+					
+					<div class="col-md-6">
 							<p>
 								<c:forEach items="<%=posts%>" var="i" varStatus="Status">
 									<a href="${i.postUrl}" target="_blank">${i.title}</a> 
 									<c:if test="${!Status.last}"> | </c:if>
 								</c:forEach>
 							</p>
-						</div>
 					</div>
+					
 				</div>
 				<!-- /.row (nested) -->
 			</div>
