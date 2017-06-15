@@ -116,7 +116,7 @@
  		var imgHeight = 0;
  		var imageData = {};
  		var scrollVal = 0;
- 		var speed = 2; // 스크롤 속도
+ 		var speed = 1; // 스크롤 속도 // 빠른 거 2
  		
  		// 스크롤 이미지 크기
  		var canvasWidth = 2937;//canvas.width;
@@ -152,7 +152,7 @@
  		var hangulViewCount=1; // 화면에 보이는 적객체 수 설정
  		var EnemyHangulMax = 10; // 미리 준비해두는 적객체 최대수
  		var hangulWord= new Array(); // 한글 저장용
-
+ 		var hangulSpeed = 4; // 한글 적 객체 스피드
 
  		var stageOneInterval; // 타이머 변수용
  		var scoreOne = 0; // 스코어 체크
@@ -390,7 +390,8 @@
  				if(EnemyHangul[i].use){
  					useCount++;
  					// true인 친구들은 왼쪽으로 보냄
- 					EnemyHangul[i].x=EnemyHangul[i].x-3;
+ 					// 한글 객체 속도
+ 					EnemyHangul[i].x=EnemyHangul[i].x-hangulSpeed;
  				}
  			}
  			// 화면에 보이는 게 hangulViewCount이하면 한개 내보냄
@@ -602,17 +603,18 @@
 			<div class="col-md-offset-1">
 				<!-- col-lg-12 glasspane -->
 				<canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
+				
 				<div class="row">
 					<div class="col-md-12"></div>
 					<div class="col-md-12"></div>
-					<div class="col-md-offset-5" id="playbutton">
+					<div class="col-md-offset-4" id="playbutton">
 						<!--  col-lg-12  glasspane -->
-						<img id="startBtn" src="<%=cp%>/resources/images/play-button.png"
-							alt="PlayButton"
+						<img id="startBtn" src="<%=cp%>/resources/images/play-button.png" alt="PlayButton"
 							style="width: 150px; height: 150px; display: block;">
 						<!-- align="middle"  -->
 					</div>
 				</div>
+				
 			</div>
 		</div>
 		<!-- /.row -->
@@ -758,7 +760,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1 text-center">
-				<h2>코딩 일지</h2>
+				<h2>코딩 일기</h2>
 				<hr class="small">
 				<div class="row">
 				
