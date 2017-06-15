@@ -172,7 +172,7 @@
  			makeBackGroungMusic();
  			
  			// 엔딩 이미지 추가 
- 			// var goodEndImg = new Image();
+ 			goodEndImg.src = "<%=cp%>/resources/images/End2.png";
  			sadEndImg.src = "<%=cp%>/resources/images/End1.png";
 
  			// 플레이어 객체들 채워주기
@@ -322,9 +322,7 @@
 
 	 		if(checkScore>Math.floor(scoreMax/2)){ //scoreMax/2 Math.Floor
 	 			// 굿 엔딩
-	 			ctx.font="50px Georgia";
-				ctx.fillStyle = 'black';
-				ctx.fillText("굿",500,250); // x, y
+	 			ctx.drawImage(goodEndImg,0,0);
 	 		}
 	 		else {
 				// 새드 엔딩
