@@ -4,7 +4,7 @@ body{
 .rw-wrapper{
 	width: 80%;
 	position: relative;
-	margin: 110px auto 0 auto;
+	/* margin: 110px auto 0 auto; */
 	font-family: 'Bree Serif';
 	padding: 10px;
 }
@@ -25,7 +25,7 @@ body{
 .rw-words-1 span{
 	position: absolute;
 	opacity: 0;
-	font-size: 150px; /* 원래는 ㄴㄴ하고 건들이니까 폰트 사이즈 커짐 */
+	font-size: 200%; /* 원래는 ㄴㄴ하고 건들이니까 폰트 사이즈 커짐 */
 	overflow: hidden;
 	color: #6b969d;/* 6b969d */
 	-webkit-animation: rotateWord 18s linear infinite 0s; /* 추가된 만큼 초 수정 */

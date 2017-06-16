@@ -51,7 +51,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#fullpage').fullpage({
-              sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+              sectionsColor: ['#FFEFAB', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
               anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
               menu: '#menu',
             });
@@ -610,13 +610,13 @@
      <div class="intro">
     			<h2 class="rw-sentence">
 					<span><img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/></span>
-					<br />
+					<!-- <br /> -->
 					<div class="rw-words rw-words-1"><!-- 추가 되면 span:nth-child(num)에도 추가 -->
 						<span>황인영</span>
 						<span>취업준비생</span>
 						<span>뉴비개발자</span>
 						<span>게이머</span>
-						<span>24살</span>
+						<span>사자</span>
 						<span>파랑색</span>
 					</div>
 				</h2>
@@ -696,11 +696,27 @@
     <!-- 프로젝트 사진 / 설명 -->
     <div class="section" id="section4">
         <div class="slide active" id="slide1">
-            <h1>프로젝트1</h1>
-        </div>
+            <h1>Shooting Game Project</h1>
+            <div class="main clearfix">
+							<div id="st-trigger-effects" class="column">
+								<button data-effect="st-effect-1">Slide in on top</button>
+								<button data-effect="st-effect-2">Reveal</button>
+								<button data-effect="st-effect-3">Push</button>
+								<button data-effect="st-effect-4">Slide along</button>
+								<button data-effect="st-effect-5">Reverse slide out</button>
+							</div>
+							<div class="column">
+								<p>Sidebar menus or off-canvas navigations can be revealed in many creative ways.</p>
+								<p>Here is some inspiration for showing them in style using CSS transitions.</p>
+							</div>
+						
+						</div><!-- /main -->
+       		 </div>
+        
         <div class="slide" id="slide2">
             <h1>프로젝트2</h1>
         </div>
+        
         <div class="slide" id="slide3">
             <h1>프로젝트3</h1>
         </div>
