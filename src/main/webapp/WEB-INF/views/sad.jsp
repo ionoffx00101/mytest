@@ -688,28 +688,11 @@
     <div class="section" id="section3">
         <div class="intro">
             <h1>블로그도 있어요</h1>
-            <p>
-				<c:forEach items="<%=posts%>" var="i" varStatus="Status">
-					<a href="${i.postUrl}" target="_blank">${i.title}</a> 
-					<c:if test="${!Status.last}"> | </c:if>
-				</c:forEach>
-			</p>
 			<div id="st-trigger-effects" >
-								<button data-effect="st-effect-1">Slide in on top</button>
-								<button data-effect="st-effect-2">Reveal</button>
-								<button data-effect="st-effect-3">Push</button>
-								<button data-effect="st-effect-4">Slide along</button>
-								<button data-effect="st-effect-5">Reverse slide out</button>
-								<button data-effect="st-effect-6">Rotate pusher</button>
-								<button data-effect="st-effect-7">3D rotate in</button>
-								<button data-effect="st-effect-8">3D rotate out</button>
-								<button data-effect="st-effect-9">Scale down pusher</button>
-								<button data-effect="st-effect-10">Scale Up</button>
-								<button data-effect="st-effect-11">Scale &amp; rotate pusher</button>
-								<button data-effect="st-effect-12">Open door</button>
-								<button data-effect="st-effect-13">Fall down</button>
-								<button data-effect="st-effect-14">Delayed 3D Rotate</button>
-							</div>
+				<c:forEach items="<%=posts%>" var="i" varStatus="Status">
+					<a href="${i.postUrl}" target="_blank"><button data-effect="st-effect-\${Status}">${i.title}</button></a> 
+				</c:forEach>
+			</div>
         </div>
     </div>
     
