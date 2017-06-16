@@ -96,12 +96,7 @@
 	<link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">	
 
 <!-- for metroUI -->
-    <link href="<%=cp%>/resources/metroUI/css/metro.css" rel="stylesheet">
-    <link href="<%=cp%>/resources/metroUI/css/metro-icons.css" rel="stylesheet">
-    <link href="<%=cp%>/resources/metroUI/css/metro-responsive.css" rel="stylesheet">
 
-     <script src="<%=cp%>/resources/metroUI/js/jquery-2.1.3.min.js"></script> 
-    <script src="<%=cp%>/resources/metroUI/js/metro.js"></script>
 
 <!-- 내 css -->	
 	<link href="<%=cp%>/resources/css/custom.css" rel="stylesheet">
@@ -678,18 +673,6 @@
             <h1>단어추가</h1>
             <div class="form">
             		<form>
-<div class="input-control text">
-    <input type="text">
-</div>
-<div class="input-control select">
-    <select>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-    </select>
-</div>
-<button class="button primary">Primary</button>
-				
 					<div class="col-md-4 col-md-offset-1">
 						<input type="text" class="form-control" id="newWord" name="wordbook_word" placeholder="단어 입력"/>
 					</div>
@@ -706,14 +689,6 @@
 					
 					</form>
         </div>
-        <!-- 단어 추가 버튼을 눌러야만 나옴 -->
-       <%--  
-       <div class="slide" id="slide3"> 
-            <h1>단어추가 하기 전에 확인했나요</h1>
-            <img src="<%=cp%>/resources/images/carouselFix/sleep.jpeg" alt="logo" style="width: 250px; height: auto;"/>
-            <input type="button" name="input" value="등록">
-        </div> 
-        --%>
         
     </div>
     
