@@ -605,12 +605,13 @@
 </head>
 <body>
 <div id="fullpage">
+	<!-- 메인 -->
     <div class="section active" id="section0">
      <div class="intro">
     			<h2 class="rw-sentence">
 					<span><img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/></span>
 					<br />
-					<div class="rw-words rw-words-1">
+					<div class="rw-words rw-words-1"><!-- 추가 되면 span:nth-child(num)에도 추가 -->
 						<span>황인영</span>
 						<span>취업준비생</span>
 						<span>뉴비개발자</span>
@@ -622,13 +623,15 @@
 			</div>
     </div>
    
+   <!-- 자기 소개 -->
     <div class="section" id="section1">
         <div class="intro">
             <h1>개발자가 되고 싶어요</h1>
-            <p>코딩 할 때가 제일 행복했어요.</p>
+            <p>코딩 할 때가 제일 행복했어요. 코딩 너무 즐겁다.. </p>
         </div>
     </div>
     
+    <!-- 게임 -->
     <div class="section" id="section2">
         <div class="slide active" id="slide1">
             <div class="intro">
@@ -655,13 +658,6 @@
 					</label>
 					</span>
 				
-					<span class="input input--hoshi">
-						<input class="input__field input__field--hoshi" type="text" id="input-6" />
-						<label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
-							<span class="input__label-content input__label-content--hoshi">Town</span>
-						</label>
-					</span>
-				
 					<div class="col-md-4 col-md-offset-1">
 						<input type="text" class="form-control" id="newWord" name="wordbook_word" placeholder="단어 입력"/>
 					</div>
@@ -685,6 +681,7 @@
         </div>
     </div>
     
+    <!-- 블로그 -->
     <div class="section" id="section3">
         <div class="intro">
             <h1>블로그도 있어요</h1>
@@ -696,6 +693,7 @@
         </div>
     </div>
     
+    <!-- 프로젝트 사진 / 설명 -->
     <div class="section" id="section4">
         <div class="slide active" id="slide1">
             <h1>프로젝트1</h1>
@@ -703,7 +701,7 @@
         <div class="slide" id="slide2">
             <h1>프로젝트2</h1>
         </div>
-        <div class="slide" id="slide3"> <!-- 단어 추가 버튼을 눌러야만 나옴 -->
+        <div class="slide" id="slide3">
             <h1>프로젝트3</h1>
         </div>
     </div>
