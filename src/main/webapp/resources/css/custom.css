@@ -9,6 +9,7 @@
 	position:relative; /* relative */
 	display:block; /* block */
 	margin-bottom:15px;
+	margin-left : 200px; /* 프로그레스 바 위치 강제로 지정 / 임시 */
 	width:70%; /* 100% 브라우저에 비례한 프로세스 바 길이 */
 	background:#eee;
 	height:35px;

@@ -488,7 +488,7 @@
  			keyPressOn[keyValue] = true;
  				
  			// 점프
- 			if (keyValue == "32") {
+ 			if (keyValue == "90") { /* z : 90 / alt :18 / ctrl : 17 / shift : 16 / space : 32 */
  				
  				spacekey = true;
  	 			calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
@@ -504,6 +504,8 @@
  				window.event.preventDefault();
  			} else {
  				keyValue = event.keyCode;
+ 				
+ 				console.log(keyValue);
  				
  				if (keyValue == "123" || keyValue == "116"){} // f12 ,f5
  				else{
@@ -521,7 +523,7 @@
  			keyPressOn[keyValue] = false;
 
  			// 점프
- 			if (keyValue == "32") {
+ 			if (keyValue == "90") { /* z : 90 / alt :18 / ctrl : 17 / shift : 16 / space : 32 */
  				// 점프 꾸욱 누른다고 연점 되는거 아니니까 그냥 up에서 점프 처리하게 바꾸기
  				spacekey = false;
  				calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
