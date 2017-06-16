@@ -96,8 +96,8 @@
 	<link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">	
 
 <!-- 내 css -->	
-	<%-- <link href="<%=cp%>/resources/css/custom.css" rel="stylesheet"> --%>
-		
+	<link href="<%=cp%>/resources/css/custom.css" rel="stylesheet">
+
 <!-- 내 스크립트 -->
 <script type="text/javascript">
  $(function() {
@@ -602,9 +602,16 @@
  		         }
  	        });
  	 	});
- 
+ 		
+ 		// 스킬 바
+  		jQuery('.skillbar').each(function(){
+  		       jQuery(this).find('.skillbar-bar').animate({
+  		        	width:jQuery(this).attr('data-percent')
+  		       },6000);
+  		});
  	});
 </script>
+
 </head>
 <body>
 <div id="fullpage">
@@ -724,25 +731,38 @@
     <div class="section" id="section5">
            <div class="intro">
             <h1>기술</h1>
-			<p>HTML</p>
-				<div class="container">
-				  <div class="skills html">90%</div>
-				</div>
+            
+				<div class="skillbar clearfix " data-percent="20%">
+					<div class="skillbar-title" style="background: #d35400;"><span>HTML5</span></div>
+					<div class="skillbar-bar" style="background: #e67e22;"></div>
+					<div class="skill-bar-percent">40%</div>
+				</div> <!-- End Skill Bar -->
 				
-				<p>CSS</p>
-				<div class="container">
-				  <div class="skills css">80%</div>
-				</div>
+				<div class="skillbar clearfix " data-percent="25%">
+					<div class="skillbar-title" style="background: #2980b9;"><span>CSS3</span></div>
+					<div class="skillbar-bar" style="background: #3498db;"></div>
+					<div class="skill-bar-percent">25%</div>
+				</div> <!-- End Skill Bar -->
 				
-				<p>JavaScript</p>
-				<div class="container">
-				  <div class="skills js">65%</div>
-				</div>
+				<div class="skillbar clearfix " data-percent="50%">
+					<div class="skillbar-title" style="background: #2c3e50;"><span>jQuery</span></div>
+					<div class="skillbar-bar" style="background: #2c3e50;"></div>
+					<div class="skill-bar-percent">60%</div>
+				</div> <!-- End Skill Bar -->
 				
-				<p>PHP</p>
-				<div class="container">
-				  <div class="skills php">60%</div>
-				</div>
+				<div class="skillbar clearfix " data-percent="40%">
+					<div class="skillbar-title" style="background: #46465e;"><span>JAVA</span></div>
+					<div class="skillbar-bar" style="background: #5a68a5;"></div>
+					<div class="skill-bar-percent">80%</div>
+				</div> <!-- End Skill Bar -->
+				
+				<div class="skillbar clearfix " data-percent="75%">
+					<div class="skillbar-title" style="background: #333333;"><span>Oracle</span></div>
+					<div class="skillbar-bar" style="background: #525252;"></div>
+					<div class="skill-bar-percent">75%</div>
+				</div> <!-- End Skill Bar -->
+			
+    		</div>
     </div>
     
     <!-- special으로 능력치 -->
