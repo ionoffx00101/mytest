@@ -95,6 +95,14 @@
 <!-- for fontawesome -->
 	<link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">	
 
+<!-- for metroUI -->
+    <link href="<%=cp%>/resources/metroUI/css/metro.css" rel="stylesheet">
+    <link href="<%=cp%>/resources/metroUI/css/metro-icons.css" rel="stylesheet">
+    <link href="<%=cp%>/resources/metroUI/css/metro-responsive.css" rel="stylesheet">
+
+     <script src="<%=cp%>/resources/metroUI/js/jquery-2.1.3.min.js"></script> 
+    <script src="<%=cp%>/resources/metroUI/js/metro.js"></script>
+
 <!-- 내 css -->	
 	<link href="<%=cp%>/resources/css/custom.css" rel="stylesheet">
 
@@ -669,91 +677,18 @@
         <div class="slide" id="slide2">
             <h1>단어추가</h1>
             <div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up for Free</h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
-
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
-        </div>
-        
-      </div><!-- tab-content -->
-      
-</div> <!-- /form -->
             		<form>
-            		<span class="input input--hoshi">
-					<input class="input__field input__field--hoshi" type="text" id="input-4" />
-					<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
-						<span class="input__label-content input__label-content--hoshi">단어</span>
-					</label>
-					</span>
+<div class="input-control text">
+    <input type="text">
+</div>
+<div class="input-control select">
+    <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+</div>
+<button class="button primary">Primary</button>
 				
 					<div class="col-md-4 col-md-offset-1">
 						<input type="text" class="form-control" id="newWord" name="wordbook_word" placeholder="단어 입력"/>
@@ -768,6 +703,7 @@
 					<div class="col-md-2">
 						<button type="button" name="submit" id="wordInsertBtn" class="btn btn-primary">추가</button>
 					</div>
+					
 					</form>
         </div>
         <!-- 단어 추가 버튼을 눌러야만 나옴 -->
