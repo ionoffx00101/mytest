@@ -561,8 +561,14 @@
  		// 스타트 버튼 클릭 시 
  		$('#startBtn').click(function(){
              $("#startBtn").hide();
-             /* $('#startBtn').remove(); // 스타트 버튼을 화면에서 없애기 */
- 			 /* $('#startBtn').css("display", "none"); */
+    
+ 			 $("#gameGuideBtn").show();
+ 		});
+ 		
+ 		// 게임 가이드 버튼 클릭 시
+ 		$('#gameGuideBtn').click(function(){
+ 			
+             $("#gameGuideBtn").hide();
  			
  			 $.ajax({
 	            url : "<c:url value="/WordBookJSON"/>", 
@@ -652,8 +658,9 @@
 
 				<div class="row">
 					<div class="" id="playbutton">
-						<img id="startBtn" src="<%=cp%>/resources/images/startImgInvi.png" alt="PlayButton"><!-- startImg02 -->
-						<!-- align="middle"  play-button width: 150px; height: 150px; -->
+						<img id="startBtn" src="<%=cp%>/resources/images/startImgInvi.png" alt="PlayButton">
+						<img id="gameGuideBtn" src="<%=cp%>/resources/images/gameG.png" alt="gameguide" style="display: none;">
+
 					</div>
 				</div>
             </div>
