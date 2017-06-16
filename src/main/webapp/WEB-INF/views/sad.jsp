@@ -51,8 +51,8 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#fullpage').fullpage({
-              sectionsColor: ['#FFEFAB', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+              sectionsColor: ['#FFEFAB', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#ccddff', '#ccddff'],
+              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage'],
               menu: '#menu',
             });
         });
@@ -699,11 +699,7 @@
             <h1>Shooting Game Project</h1>
             <div class="main clearfix">
 							<div id="st-trigger-effects" class="column">
-								<button data-effect="st-effect-1">Slide in on top</button>
-								<button data-effect="st-effect-2">Reveal</button>
-								<button data-effect="st-effect-3">Push</button>
-								<button data-effect="st-effect-4">Slide along</button>
-								<button data-effect="st-effect-5">Reverse slide out</button>
+								<img src="<%=cp%>/resources/images/project/SGP01.png">
 							</div>
 							<div class="column">
 								<p>Sidebar menus or off-canvas navigations can be revealed in many creative ways.</p>
@@ -721,6 +717,23 @@
             <h1>프로젝트3</h1>
         </div>
     </div>
+    
+     <!-- 뇌구조 -->
+    <div class="section" id="section5">
+           <div class="intro">
+            <h1>기술</h1>
+			<div id="progressbar" value="37"></div>
+        	</div>
+    </div>
+    
+    <!-- special으로 능력치 -->
+    <div class="section" id="section6">
+           <div class="intro">
+            <h1>SPECIAL</h1>
+			
+        	</div>
+    </div>
+    
 </div>
 
 </body>
