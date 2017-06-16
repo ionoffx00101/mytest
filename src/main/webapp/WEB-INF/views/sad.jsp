@@ -76,9 +76,14 @@
 			</style>
 	<![endif]-->
 
-<!-- for jqueryMobile -->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<!-- for input text ui -->
+		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/css/set1.css" />
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	
 <!-- 내 스크립트 -->
 <script type="text/javascript">
@@ -635,8 +640,23 @@
         <div class="slide" id="slide2">
             <h1>단어추가</h1>
             		<form>
+            		
+            		<span class="input input--hoshi">
+					<input class="input__field input__field--hoshi" type="text" id="input-4" />
+					<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+						<span class="input__label-content input__label-content--hoshi">단어</span>
+					</label>
+					</span>
+				
+					<span class="input input--hoshi">
+						<input class="input__field input__field--hoshi" type="text" id="input-6" />
+						<label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
+							<span class="input__label-content input__label-content--hoshi">Town</span>
+						</label>
+					</span>
+				
 					<div class="col-md-4 col-md-offset-1">
-						<input type="text" class="form-control" id="newWord" name="wordbook_word" />
+						<input type="text" class="form-control" id="newWord" name="wordbook_word" placeholder="단어 입력"/>
 					</div>
 					<div class="col-md-4">
 						<select class="form-control" id="newWordCheck"
