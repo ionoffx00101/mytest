@@ -668,8 +668,86 @@
         
         <div class="slide" id="slide2">
             <h1>단어추가</h1>
+            <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Get Started</button>
+          
+          </form>
+
+        </div>
+        
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          <button class="button button-block"/>Log In</button>
+          
+          </form>
+
+        </div>
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
             		<form>
-            		
             		<span class="input input--hoshi">
 					<input class="input__field input__field--hoshi" type="text" id="input-4" />
 					<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
@@ -677,7 +755,7 @@
 					</label>
 					</span>
 				
-					<!-- <div class="col-md-4 col-md-offset-1">
+					<div class="col-md-4 col-md-offset-1">
 						<input type="text" class="form-control" id="newWord" name="wordbook_word" placeholder="단어 입력"/>
 					</div>
 					<div class="col-md-4">
@@ -686,18 +764,21 @@
 							<option value="1">올바른 맞춤법</option>
 							<option value="0">잘못된 맞춤법</option>
 						</select>
-					</div> -->
+					</div>
 					<div class="col-md-2">
 						<button type="button" name="submit" id="wordInsertBtn" class="btn btn-primary">추가</button>
 					</div>
 					</form>
         </div>
-        
-        <div class="slide" id="slide3"> <!-- 단어 추가 버튼을 눌러야만 나옴 -->
+        <!-- 단어 추가 버튼을 눌러야만 나옴 -->
+       <%--  
+       <div class="slide" id="slide3"> 
             <h1>단어추가 하기 전에 확인했나요</h1>
             <img src="<%=cp%>/resources/images/carouselFix/sleep.jpeg" alt="logo" style="width: 250px; height: auto;"/>
             <input type="button" name="input" value="등록">
-        </div>
+        </div> 
+        --%>
+        
     </div>
     
     <!-- 블로그 -->
