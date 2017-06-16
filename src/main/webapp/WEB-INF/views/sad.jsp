@@ -92,6 +92,12 @@
 		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/Transitions/css/component.css" />
 		<script src="<%=cp%>/resources/Transitions/js/modernizr.custom.js"></script>
 		
+<!-- for fontawesome -->
+	<link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">	
+
+<!-- 내 css -->	
+	<%-- <link href="<%=cp%>/resources/css/custom.css" rel="stylesheet"> --%>
+		
 <!-- 내 스크립트 -->
 <script type="text/javascript">
  $(function() {
@@ -596,10 +602,7 @@
  		         }
  	        });
  	 	});
- 		// 캔버스 영역 터치시 발동
-  		$("canvas").on("tap",function(){
-  		    console.log("asdsd");
-  	    });        
+ 
  	});
 </script>
 </head>
@@ -699,11 +702,10 @@
             <h1>Shooting Game Project</h1>
             <div class="main clearfix">
 							<div id="st-trigger-effects" class="column">
-								<img src="<%=cp%>/resources/images/project/SGP01.png">
+								<img src="<%=cp%>/resources/images/project/SGP01.png" width="300" height="auto">
 							</div>
 							<div class="column">
-								<p>Sidebar menus or off-canvas navigations can be revealed in many creative ways.</p>
-								<p>Here is some inspiration for showing them in style using CSS transitions.</p>
+								<p>게임 화면</p>
 							</div>
 						
 						</div><!-- /main -->
@@ -722,15 +724,32 @@
     <div class="section" id="section5">
            <div class="intro">
             <h1>기술</h1>
-			<div id="progressbar" value="37"></div>
-        	</div>
+			<p>HTML</p>
+				<div class="container">
+				  <div class="skills html">90%</div>
+				</div>
+				
+				<p>CSS</p>
+				<div class="container">
+				  <div class="skills css">80%</div>
+				</div>
+				
+				<p>JavaScript</p>
+				<div class="container">
+				  <div class="skills js">65%</div>
+				</div>
+				
+				<p>PHP</p>
+				<div class="container">
+				  <div class="skills php">60%</div>
+				</div>
     </div>
     
     <!-- special으로 능력치 -->
     <div class="section" id="section6">
            <div class="intro">
             <h1>SPECIAL</h1>
-			
+            
         	</div>
     </div>
     
