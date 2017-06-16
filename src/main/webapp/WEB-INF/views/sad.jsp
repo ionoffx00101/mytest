@@ -75,7 +75,10 @@
 				.rw-sentence-IE{ display: block;  }
 			</style>
 	<![endif]-->
-	
+
+<!-- for Bootstrap -->
+
+
 <!-- 내 스크립트 -->
 <script type="text/javascript">
  $(function() {
@@ -627,15 +630,30 @@
 				</div>
             </div>
         </div>
+        
         <div class="slide" id="slide2">
             <h1>단어추가</h1>
-            <input type="button" name="input" value="등록"><!-- 버튼 누르면 slide3이 생기고 해당 페이지로 이동  -->
+            		<form>
+					<div class="col-md-4 col-md-offset-1">
+						<input type="text" class="form-control" id="newWord" name="wordbook_word" />
+					</div>
+					<div class="col-md-4">
+						<select class="form-control" id="newWordCheck"
+							name="wordbook_wordcheck">
+							<option value="1">올바른 맞춤법</option>
+							<option value="0">잘못된 맞춤법</option>
+						</select>
+					</div>
+					<div class="col-md-2">
+						<button type="button" name="submit" id="wordInsertBtn" class="btn btn-primary">추가</button>
+					</div>
+					</form>
         </div>
+        
         <div class="slide" id="slide3"> <!-- 단어 추가 버튼을 눌러야만 나옴 -->
             <h1>단어추가 하기 전에 확인했나요</h1>
             <img src="<%=cp%>/resources/images/carouselFix/sleep.jpeg" alt="logo" style="width: 250px; height: auto;"/>
             <input type="button" name="input" value="등록">
-            
         </div>
     </div>
     

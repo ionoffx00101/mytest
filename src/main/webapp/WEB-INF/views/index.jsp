@@ -633,8 +633,7 @@
 				<hr class="small">
 				<form>
 					<div class="col-md-4 col-md-offset-1">
-						<input type="text" class="form-control" id="newWord"
-							name="wordbook_word" />
+						<input type="text" class="form-control" id="newWord" name="wordbook_word" />
 					</div>
 					<div class="col-md-4">
 						<select class="form-control" id="newWordCheck"
