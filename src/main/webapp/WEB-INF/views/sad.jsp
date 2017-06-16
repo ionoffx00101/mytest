@@ -93,10 +93,7 @@
 		<script src="<%=cp%>/resources/Transitions/js/modernizr.custom.js"></script>
 		
 <!-- for fontawesome -->
-	<link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">	
-
-<!-- for metroUI -->
-
+	<link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 <!-- 내 css -->	
 	<link href="<%=cp%>/resources/css/custom.css" rel="stylesheet">
@@ -691,7 +688,7 @@
         </div>
         
     </div>
-    
+    </div>
     <!-- 블로그 -->
     <div class="section" id="section3">
         <div class="intro">
