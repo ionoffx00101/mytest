@@ -1790,7 +1790,7 @@
                 var keyCode = e.which;
 
                 //preventing the scroll with arrow keys & spacebar & Page Up & Down keys
-                var keyControls = [40, 38, 32, 33, 34];
+                var keyControls = [40, 38, 32, 33, 34]; // 32 spacebar
                 if($.inArray(keyCode, keyControls) > -1){
                     e.preventDefault();
                 }

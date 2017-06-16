@@ -424,7 +424,21 @@
 
  		// 키 누름 
  		function getKeyDown(event) { 
- 			var keyValue;
+
+ 			/* 버블 해결용 근데 안됨 */
+ 		/* 	event = event || window.event;
+		    if (typeof event.stopPropagation != "undefined") {
+		    	event.stopPropagation();
+		    } else {
+		    	event.cancelBubble = true;
+		    }
+		    if (event.keyCode == 32) { 
+		        $(this).val($(this).val() + "-"); // append '-' to input
+		        return false; // return false to prevent space from being added
+		    } */
+		    /* 버블 해결용 근데 안됨 */
+		    
+ 	 		var keyValue;		
  			if (event == null) {
  				return;
  			} else {
@@ -458,6 +472,7 @@
  	 			calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
  			}
  			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함
+ 			
  		}
  		// 키 뗌 
  		function getKeyUp(event) {
@@ -489,7 +504,7 @@
  				spacekey = false;
  				calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
  			}
- 			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함
+ 			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함		
  		}
  		// 방향키 입력 처리
  		function calcKeyInnput() {
@@ -606,7 +621,7 @@
 
 				<div class="row">
 					<div class="" id="playbutton">
-						<img id="startBtn" src="<%=cp%>/resources/images/startImg02.png" alt="PlayButton">
+						<img id="startBtn" src="<%=cp%>/resources/images/startImgInvi.png" alt="PlayButton"><!-- startImg02 -->
 						<!-- align="middle"  play-button width: 150px; height: 150px; -->
 					</div>
 				</div>
