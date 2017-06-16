@@ -668,7 +668,7 @@
 					</label>
 					</span>
 				
-					<div class="col-md-4 col-md-offset-1">
+					<!-- <div class="col-md-4 col-md-offset-1">
 						<input type="text" class="form-control" id="newWord" name="wordbook_word" placeholder="단어 입력"/>
 					</div>
 					<div class="col-md-4">
@@ -677,7 +677,7 @@
 							<option value="1">올바른 맞춤법</option>
 							<option value="0">잘못된 맞춤법</option>
 						</select>
-					</div>
+					</div> -->
 					<div class="col-md-2">
 						<button type="button" name="submit" id="wordInsertBtn" class="btn btn-primary">추가</button>
 					</div>
@@ -712,7 +712,8 @@
 								<img src="<%=cp%>/resources/images/project/SGP01.png" width="300" height="auto">
 							</div>
 							<div class="column">
-								<p>게임 화면</p>
+								<!-- <p>게임 화면</p> -->
+								<p>좌측에는 내가 플레이 하는 화면이 보여지고 <br/>우측에는 상대방의 플레이 화면이 실시간으로 보여진다.</p>
 							</div>
 						
 						</div><!-- /main -->
@@ -732,25 +733,25 @@
            <div class="intro">
             <h1>기술</h1>
             
-				<div class="skillbar clearfix " data-percent="20%">
+				<div class="skillbar clearfix " data-percent="40%">
 					<div class="skillbar-title" style="background: #d35400;"><span>HTML5</span></div>
 					<div class="skillbar-bar" style="background: #e67e22;"></div>
 					<div class="skill-bar-percent">40%</div>
 				</div> <!-- End Skill Bar -->
 				
-				<div class="skillbar clearfix " data-percent="25%">
+				<div class="skillbar clearfix" data-percent="25%"> <!--  clearfix -->
 					<div class="skillbar-title" style="background: #2980b9;"><span>CSS3</span></div>
 					<div class="skillbar-bar" style="background: #3498db;"></div>
 					<div class="skill-bar-percent">25%</div>
 				</div> <!-- End Skill Bar -->
 				
-				<div class="skillbar clearfix " data-percent="50%">
+				<div class="skillbar clearfix " data-percent="60%">
 					<div class="skillbar-title" style="background: #2c3e50;"><span>jQuery</span></div>
 					<div class="skillbar-bar" style="background: #2c3e50;"></div>
 					<div class="skill-bar-percent">60%</div>
 				</div> <!-- End Skill Bar -->
 				
-				<div class="skillbar clearfix " data-percent="40%">
+				<div class="skillbar clearfix " data-percent="80%">
 					<div class="skillbar-title" style="background: #46465e;"><span>JAVA</span></div>
 					<div class="skillbar-bar" style="background: #5a68a5;"></div>
 					<div class="skill-bar-percent">80%</div>
@@ -765,13 +766,15 @@
     		</div>
     </div>
     
-    <!-- special으로 능력치 -->
-    <div class="section" id="section6">
+   <!-- special으로 능력치 -->
+     <!-- 
+     <div class="section" id="section6">
            <div class="intro">
-            <h1>SPECIAL</h1>
+            <h1>새로운 것이 들어올 공간</h1>
             
         	</div>
-    </div>
+    </div> 
+    -->
     
 </div>
 
