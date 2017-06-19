@@ -1,9 +1,0 @@
-@CHARSET "UTF-8";
-/* 링크 글씨 색 변경용 */
-a:hover{
-	color: #000000;
-}
-a:FOCUS {
-	color: #000000;
-	text-decoration: none;
-}

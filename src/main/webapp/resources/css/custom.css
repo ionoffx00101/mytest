@@ -1,10 +1,20 @@
-/* @CHARSET "UTF-8"; */
+@CHARSET "UTF-8";
  /************* Common *************/ 
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css); /* 폰트 많이 이상함 */
 @import url(//fonts.googleapis.com/earlyaccess/notosansoriyaui.css);
 
+/* 링크 글씨 색 변경용 */
+a:hover{
+	color: #000000;
+}
+a:FOCUS {
+	color: #000000;
+	text-decoration: none;
+}
+
+/* 스킬바 관련 css */
 .skillbar {
 	position:relative; /* relative */
 	display:block; /* block */

@@ -19,24 +19,18 @@
 	JSONObject tistory = (JSONObject) object.get("tistory"); //"tistory"
 	JSONObject item = (JSONObject) tistory.get("item"); //"item"
 	JSONArray posts = (JSONArray)item.get("posts"); //"posts" 
-
-	/* 
-	for(int i=0; i<posts.size();i++){
-		JSONObject post = (JSONObject) posts.get(i);
-	} 
-	*/
 %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
+
 <!-- for Fullpage -->
     <link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/examples.css" />
-    <!-- customeCSS -->
-	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/ikbencustome.css" />
     <!--[if IE]>
         <script type="text/javascript">
              var console = { log: function() {} };
@@ -56,6 +50,7 @@
               menu: '#menu',
             });
         });
+        /* 이미지를 배열을 이용해 넣고 싶었다 */
         <%--  sectionsImage : ['<%=cp%>/resources/fullpage/js/examples.js', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'], --%><%-- '<%=cp%>/resources/fullpage/js/examples.js' --%>
     </script>
     
@@ -75,15 +70,6 @@
 				.rw-sentence-IE{ display: block;  }
 			</style>
 	<![endif]-->
-
-<!-- for input text ui -->
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/css/set1.css" />
-		<!--[if IE]>
-  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 		
 <!-- for blog category ui -->
 		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/Transitions/css/normalize.css" />
