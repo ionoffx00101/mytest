@@ -3,9 +3,9 @@
 <%@page import="org.json.simple.JSONValue"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!-- 추가됨 -->
 <!-- ContextPath 선언 -->
@@ -29,76 +29,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<title>Ik ben</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
-<!-- for Fullpage -->
-    <link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/examples.css" />
-    <!-- customeCSS -->
-	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/ikbencustome.css" />
-    <!--[if IE]>
-        <script type="text/javascript">
-             var console = { log: function() {} };
-        </script>
+
+<!-- Bootstrap Core CSS -->
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="<%=cp%>/resources/bootstrap/css/bootstrap.css"
+	rel="stylesheet">
+	 <!-- min버전 -->
+
+<!-- Custom CSS -->
+<!--  <link href="css/stylish-portfolio.css" rel="stylesheet"> -->
+<link href="<%=cp%>/resources/bootstrap/css/stylish-portfolio.css"
+	rel="stylesheet">
+<!-- Custom CSS2 -->
+<link href="<%=cp%>/resources/css/custom.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<!-- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+<link
+	href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+	rel="stylesheet" type="text/css">
+<!-- Custom Fonts2 -->
+<!-- <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet" type="text/css">  -->
+<%-- <link href="<%=cp%>/resources/font/koverwatch.ttf" rel="stylesheet"  type="text/css"> --%>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
-    <script type="text/javascript" src="<%=cp%>/resources/fullpage/js/jquery.fullPage.js"></script>
-    <script type="text/javascript" src="<%=cp%>/resources/fullpage/js/examples.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#fullpage').fullpage({
-              sectionsColor: ['#FFEFAB', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#ccddff', '#ccddff'],
-              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage'],
-              menu: '#menu',
-            });
-        });
-        <%--  sectionsImage : ['<%=cp%>/resources/fullpage/js/examples.js', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'], --%><%-- '<%=cp%>/resources/fullpage/js/examples.js' --%>
-    </script>
-    
-<!-- for RotatingWord -->
-	<link href='http://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/RotatingWords/css/demo.css" />
-	<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/RotatingWords/css/style.css" />
-	<script src="<%=cp%>/resources/RotatingWords/js/modernizr.custom.72111.js"></script>
-	<style>
-	.no-cssanimations .rw-wrapper .rw-sentence span:first-child {
-		opacity: 1;
-	}
-	</style>
-	<!--[if lt IE 9]> 
-			<style>
-				.rw-wrapper{ display: none; } 
-				.rw-sentence-IE{ display: block;  }
-			</style>
-	<![endif]-->
+<!-- jQuery -->
+<script type="text/javascript"
+	src="<%=cp%>/resources/bootstrap/js/jquery.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
-<!-- for input text ui -->
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/InputEffects/css/set1.css" />
-		<!--[if IE]>
-  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		
-<!-- for blog category ui -->
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/Transitions/css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/Transitions/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/Transitions/css/icons.css" />
-		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/Transitions/css/component.css" />
-		<script src="<%=cp%>/resources/Transitions/js/modernizr.custom.js"></script>
-		
-<!-- for fontawesome -->
-	<link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript"
+	src="<%=cp%>/resources/bootstrap/js/bootstrap.js"></script>
 
-<!-- 내 css -->	
-	<link href="<%=cp%>/resources/css/custom.css" rel="stylesheet">
-
-<!-- 내 스크립트 -->
 <script type="text/javascript">
  $(function() {
 	 var stageOneEnd = false;
@@ -204,8 +182,8 @@
  			EnemyHangul= new Array();
  			createEnemyHangul(EnemyHangulMax); // 최대값 만큼 객체 생성 / 최대값은 DB에 있는 단어만큼 생성하는게 어떨까 / 그리고 서버가 터졌다 
  		
- 			// 창 자체에 이벤트 리스너를 설정 //document O // 버블 일어남, canvas X , window O
- 			document.addEventListener("keydown", getKeyDown, false); // true 여도 같음
+ 			// 창 자체에 이벤트 리스너를 설정 //document O, canvas X , window O
+ 			document.addEventListener("keydown", getKeyDown, false);
  			document.addEventListener("keyup", getKeyUp, false);
  			
  			// 게임 스타트
@@ -446,55 +424,33 @@
 
  		// 키 누름 
  		function getKeyDown(event) { 
-
- 			/* 버블 해결용 근데 안됨 */
- 		/* 	event = event || window.event;
-		    if (typeof event.stopPropagation != "undefined") {
-		    	event.stopPropagation();
-		    } else {
-		    	event.cancelBubble = true;
-		    }
-		    if (event.keyCode == 32) { 
-		        $(this).val($(this).val() + "-"); // append '-' to input
-		        return false; // return false to prevent space from being added
-		    } */
-		    /* 버블 해결용 근데 안됨 */
-		    
- 	 		var keyValue;		
+ 			var keyValue;
  			if (event == null) {
  				return;
  			} else {
  				keyValue = event.keyCode;
  				
- 				if (keyValue == "123" || keyValue == "116"){
- 					 // f12 ,f5 누르게 해주는 if문
- 				}
+ 				if (keyValue == "123" || keyValue == "116"){} // f12 ,f5
  				else{
  					event.preventDefault(); //키값 들어오면 js에서만 해당 키를 이용함
  				}
  			}
- 			if (keyValue == "87"){
+ 			if (keyValue == "87")
  				keyValue = "287"; //up 38
- 				}
- 			else if (keyValue == "83"){
+ 			else if (keyValue == "83")
  				keyValue = "283"; //down 40
- 			}
- 			else if (keyValue == "65"){
+ 			else if (keyValue == "65")
  				keyValue = "265"; //left 37
- 			}
- 			else if (keyValue == "68"){
+ 			else if (keyValue == "68")
  				keyValue = "268"; //right 39
- 			}
  			keyPressOn[keyValue] = true;
  				
  			// 점프
- 			if (keyValue == "90") { /* z : 90 / alt :18 / ctrl : 17 / shift : 16 / space : 32 */
- 				
+ 			if (keyValue == "32") {
  				spacekey = true;
  	 			calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
  			}
  			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함
- 			
  		}
  		// 키 뗌 
  		function getKeyUp(event) {
@@ -504,8 +460,6 @@
  				window.event.preventDefault();
  			} else {
  				keyValue = event.keyCode;
- 				
- 				console.log(keyValue);
  				
  				if (keyValue == "123" || keyValue == "116"){} // f12 ,f5
  				else{
@@ -523,12 +477,12 @@
  			keyPressOn[keyValue] = false;
 
  			// 점프
- 			if (keyValue == "90") { /* z : 90 / alt :18 / ctrl : 17 / shift : 16 / space : 32 */
+ 			if (keyValue == "32") {
  				// 점프 꾸욱 누른다고 연점 되는거 아니니까 그냥 up에서 점프 처리하게 바꾸기
  				spacekey = false;
  				calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
  			}
- 			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함		
+ 			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함
  		}
  		// 방향키 입력 처리
  		function calcKeyInnput() {
@@ -561,14 +515,8 @@
  		// 스타트 버튼 클릭 시 
  		$('#startBtn').click(function(){
              $("#startBtn").hide();
-    
- 			 $("#gameGuideBtn").show();
- 		});
- 		
- 		// 게임 가이드 버튼 클릭 시
- 		$('#gameGuideBtn').click(function(){
- 			
-             $("#gameGuideBtn").hide();
+             /* $('#startBtn').remove(); // 스타트 버튼을 화면에서 없애기 */
+ 			 /* $('#startBtn').css("display", "none"); */
  			
  			 $.ajax({
 	            url : "<c:url value="/WordBookJSON"/>", 
@@ -610,68 +558,82 @@
  		         }
  	        });
  	 	});
- 		
- 		// 스킬 바
-  		jQuery('.skillbar').each(function(){
-  		       jQuery(this).find('.skillbar-bar').animate({
-  		        	width:jQuery(this).attr('data-percent')
-  		       },6000);
-  		});
+ 		// 캔버스 영역 터치시 발동
+  		$("canvas").on("tap",function(){
+  		    console.log("asdsd");
+  	    });        
  	});
 </script>
-
 </head>
 <body>
-<div id="fullpage">
-	<!-- 메인 -->
-    <div class="section active" id="section0">
-     <div class="intro">
-    			<h2 class="rw-sentence">
-					<span><img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/></span>
-					<!-- <br /> -->
-					<div class="rw-words rw-words-1"><!-- 추가 되면 span:nth-child(num)에도 추가 -->
-						<span>황인영</span>
-						<span>취업준비생</span>
-						<span>뉴비개발자</span>
-						<span>게이머</span>
-						<span>사자</span>
-						<span>파랑색</span>
-					</div>
-				</h2>
+	<!-- Navigation -->
+	<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i
+		class="fa fa-bars"></i></a>
+	<nav id="sidebar-wrapper">
+	<ul class="sidebar-nav">
+		<a class="menu-close" href="#"
+			class="btn btn-light btn-lg pull-right toggle"><i
+			class="fa fa-times"></i></a>
+		<li class="sidebar-brand"><a href="#top" class="menu-close">Ik
+				ben</a></li>
+		<li><a href="#game" class="menu-close">Game</a></li>
+		<li><a href="#word" class="menu-close">Word</a></li>
+		<li><a href="#about" class="menu-close">about</a></li>
+		<li><a href="#picture" class="menu-close">picture</a></li>
+		<li><a href="#git" class="menu-close">코딩 일지</a></li>
+		<li><a href="#skill" class="menu-close">skill</a></li>
+	</ul>
+	</nav>
+
+	<!-- Header -->
+	<header id="top" class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center" id="title">
+				<!-- <h1>Ik ben</h1> -->
+				<img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" style="width: 250px; height: auto;">
 			</div>
-    </div>
-   
-   <!-- 자기 소개 -->
-    <div class="section" id="section1">
-        <div class="intro">
-            <h1>개발자가 되고 싶어요</h1>
-            <p>코딩 할 때가 제일 행복했어요. 코딩 너무 즐겁다.. </p>
-        </div>
-    </div>
-    
-    <!-- 게임 -->
-    <div class="section" id="section2">
-        <div class="slide active" id="slide1">
-            <div class="intro">
-                <h1>게임</h1>
-                <canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
 
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </header>
+
+	<!-- game -->
+	<section id="game" class="game">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-1">
+				<!-- col-lg-12 glasspane -->
+				<canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
+				
 				<div class="row">
-					<div class="" id="playbutton">
-						<img id="startBtn" src="<%=cp%>/resources/images/startImgInvi.png" alt="PlayButton">
-						<img id="gameGuideBtn" src="<%=cp%>/resources/images/gameG.png" alt="gameguide" style="display: none;">
-
+<!-- 					<div class="col-md-12"></div>
+					<div class="col-md-12"></div> -->
+					<div class="" id="playbutton"> <!--  col-md-offset-4-->
+						<!--  col-lg-12  glasspane -->
+						<img id="startBtn" src="<%=cp%>/resources/images/startImg02.png" alt="PlayButton"
+							>
+						<!-- align="middle"  play-button width: 150px; height: 150px; -->
 					</div>
 				</div>
-            </div>
-        </div>
-        
-        <div class="slide" id="slide2">
-            <h1>단어추가</h1>
-            <div class="form">
-            		<form>
+				
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </section>
+
+	<!-- word-->
+	<section id="word" class="word">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2>단어 추가</h2>
+				<hr class="small">
+				<form>
 					<div class="col-md-4 col-md-offset-1">
-						<input type="text" class="form-control" id="newWord" name="wordbook_word" placeholder="단어 입력"/>
+						<input type="text" class="form-control" id="newWord" name="wordbook_word" />
 					</div>
 					<div class="col-md-4">
 						<select class="form-control" id="newWordCheck"
@@ -681,101 +643,251 @@
 						</select>
 					</div>
 					<div class="col-md-2">
-						<button type="button" name="submit" id="wordInsertBtn" class="btn btn-primary">추가</button>
+						<button type="button" name="submit" id="wordInsertBtn"
+							class="btn btn-primary" style="float: left;">추가</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </section>
+
+	<!-- / Services -->
+	<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+	<section id="about" class="about bg-primary">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-lg-10 col-lg-offset-1">
+				<h2>캐릭터 정보</h2>
+				<hr class="small">
+				<div class="row">
+
+					<div class="col-md-4">
+						<div class="service-item">
+							<span class="fa-stack fa-4x"> <i
+								class="fa fa-circle fa-stack-2x"></i> <i
+								class="fa fa-user fa-stack-1x text-primary"></i>
+							</span>
+							<h4>
+								<strong>상세 정보</strong>
+							</h4>
+							<p>
+								이력서에 쓰던 자기소개 짧게 <br> 구글링을 잘해요!
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="service-item">
+							<span class="fa-stack fa-4x"> <i
+								class="fa fa-circle fa-stack-2x"></i> <i
+								class="fa fa-bookmark fa-stack-1x text-primary"></i>
+							</span>
+							<h4>
+								<strong>선호 하는 것</strong>
+							</h4>
+							<p>전시회 가기</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service-item">
+							<span class="fa-stack fa-4x"> <i
+								class="fa fa-circle fa-stack-2x"></i> <i
+								class="fa fa-code fa-stack-1x text-primary"></i>
+							</span>
+							<h4>
+								<strong>수상 경력</strong>
+							</h4>
+							<p>1 <br> 2 <br> 3 </p>
+						</div>
+					</div>
+
+					<!--                 <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div> -->
+				</div>
+				<!-- /.row (nested) -->
+			</div>
+			<!-- /.col-lg-10 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </section>
+
+	<!-- picture -->
+	<section id="picture">
+	<div id="carousel-example-generic" class="carousel slide"
+		data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="<%=cp%>/resources/images/carouselFix/dumo_fix2.png">
+			</div>
+			<div class="item">
+				<img src="<%=cp%>/resources/images/carouselFix/IMG_5491_fix2.png">
+			</div>
+			<div class="item">
+				<img src="<%=cp%>/resources/images/carouselFix/IMG_5513_fix2.png">
+			</div>
+			<div class="item">
+				<img src="<%=cp%>/resources/images/carouselFix/IMG_5655_fix2.png">
+			</div>
+			<div class="item">
+				<img src="<%=cp%>/resources/images/carouselFix/IMG_4948_fix2.png">
+			</div>
+		</div>
+	</div>
+	</section>
+	<!-- Portfolio -->
+	<section id="git" class="git">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1 text-center">
+				<h2>코딩 일기</h2>
+				<hr class="small">
+				<div class="row">
+				
+					<div class="col-md-6">
+						<a href="http://teqoo.tistory.com/" target="_blank"> <img
+								class="img-portfolio img-responsive"
+								src="<%=cp%>/resources/images/Tistory.png"
+								style="width: 100px; height: 100px;">
+						</a>
 					</div>
 					
-					</form>
-        </div>
-        
-    </div>
-    </div>
-    
-    <!-- 블로그 -->
-    <div class="section" id="section3">
-        <div class="intro">
-            <h1>블로그도 있어요</h1>
-			<div id="st-trigger-effects" >
-				<c:forEach items="<%=posts%>" var="i" varStatus="Status">
-					<a href="${i.postUrl}" target="_blank"><button data-effect="st-effect-\${Status}">${i.title}</button></a> 
-				</c:forEach>
+					<div class="col-md-6">
+							<p>
+								<c:forEach items="<%=posts%>" var="i" varStatus="Status">
+									<a href="${i.postUrl}" target="_blank">${i.title}</a> 
+									<c:if test="${!Status.last}"> | </c:if>
+								</c:forEach>
+							</p>
+					</div>
+					<%-- <div class="portfolio-item">
+							<a href="https://github.com/tehon" target="_blank"> <img
+								class="img-portfolio img-responsive"
+								src="<%=cp%>/resources/images/GitHub.png"
+								style="width: 100px; height: 100px;">
+							</a>
+						</div> --%>
+				</div>
+				<!-- /.row (nested) -->
 			</div>
-        </div>
-    </div>
-    
-    <!-- 프로젝트 사진 / 설명 -->
-    <div class="section" id="section4">
-        <div class="slide active" id="slide1">
-            <h1>Shooting Game Project</h1>
-            <div class="main clearfix">
-							<div id="st-trigger-effects" class="column">
-								<img src="<%=cp%>/resources/images/project/SGP01.png" width="300" height="auto">
-							</div>
-							<div class="column">
-								<!-- <p>게임 화면</p> -->
-								<p>좌측에는 내가 플레이 하는 화면이 보여지고 <br/>우측에는 상대방의 플레이 화면이 실시간으로 보여진다.</p>
-							</div>
-						
-						</div><!-- /main -->
-       		 </div>
-        
-        <div class="slide" id="slide2">
-            <h1>프로젝트2</h1>
-        </div>
-        
-        <div class="slide" id="slide3">
-            <h1>프로젝트3</h1>
-        </div>
-    </div>
-    
-     <!-- 뇌구조 -->
-    <div class="section" id="section5">
-           <div class="intro">
-            <h1>기술</h1>
-            
-				<div class="skillbar clearfix " data-percent="40%">
-					<div class="skillbar-title" style="background: #d35400;"><span>HTML5</span></div>
-					<div class="skillbar-bar" style="background: #e67e22;"></div>
-					<div class="skill-bar-percent">40%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix" data-percent="25%"> <!--  clearfix -->
-					<div class="skillbar-title" style="background: #2980b9;"><span>CSS3</span></div>
-					<div class="skillbar-bar" style="background: #3498db;"></div>
-					<div class="skill-bar-percent">25%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix " data-percent="60%">
-					<div class="skillbar-title" style="background: #2c3e50;"><span>jQuery</span></div>
-					<div class="skillbar-bar" style="background: #2c3e50;"></div>
-					<div class="skill-bar-percent">60%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix " data-percent="80%">
-					<div class="skillbar-title" style="background: #46465e;"><span>JAVA</span></div>
-					<div class="skillbar-bar" style="background: #5a68a5;"></div>
-					<div class="skill-bar-percent">80%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix " data-percent="75%">
-					<div class="skillbar-title" style="background: #333333;"><span>Oracle</span></div>
-					<div class="skillbar-bar" style="background: #525252;"></div>
-					<div class="skill-bar-percent">75%</div>
-				</div> <!-- End Skill Bar -->
-			
-    		</div>
-    </div>
-    
-   <!-- special으로 능력치 -->
-     <!-- 
-     <div class="section" id="section6">
-           <div class="intro">
-            <h1>새로운 것이 들어올 공간</h1>
-            
-        	</div>
-    </div> 
-    -->
-    
-</div>
+			<!-- /.col-lg-10 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </section>
 
+	<!-- Call to Action -->
+	<aside class="call-to-action bg-primary" id="skill">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1 text-center">
+				<h2>스킬</h2>
+				<hr class="small">
+				<div class="row">
+					<div class="col-md-6">
+						<h3>사용할 줄 아는 스킬</h3>
+						<br />
+						<p>Java</p>
+					</div>
+					<div class="col-md-6">
+						<h3>배우고 싶은 스킬</h3>
+						<p>
+							Python <br /> Node.js<br />
+						</p>
+					</div>
+				</div>
+				<!-- /.row (nested) -->
+			</div>
+			<!-- /.col-lg-10 -->
+		</div>
+	</div>
+	</aside>
+
+	<!-- Footer -->
+	<!--  <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer> -->
+
+	<!-- Custom Theme JavaScript -->
+	<script>
+    // Closes the sidebar menu
+    $(".menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    </script>
 </body>
 </html>
