@@ -785,6 +785,7 @@
           		</div>
           	</div>
           </div>
+          
      </div>
         
         <div class="slide" id="slide2">
@@ -798,7 +799,7 @@
 								<p>좌측에는 내가 플레이 하는 화면이 보여지고 <br/>우측에는 상대방의 플레이 화면이 실시간으로 보여진다.</p>
 							</div>
 						
-			</div>
+			 </div>
         </div>
         
         <div class="slide" id="slide3">
