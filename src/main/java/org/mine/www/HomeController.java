@@ -54,7 +54,10 @@ public class HomeController
 	public String home(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		String tistoryJson = getTistory();
+		String tistoryCategoryJson = getTistoryCategory();
+		System.out.println(tistoryCategoryJson);
 		model.addAttribute("tistoryJson", tistoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
+		model.addAttribute("tistoryCategoryJson", tistoryCategoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
 		return "index";
 	}
 	
@@ -127,6 +130,62 @@ public class HomeController
 
 		String perfectUrl = url + "?" + "access_token=" + access_token + "&" + "blogName=" + blogName + "&" + "output=" + output;
 
+		try
+		{
+
+			URL connectUrl = new URL(perfectUrl);
+			HttpURLConnection con = (HttpURLConnection) connectUrl.openConnection();
+			con.setRequestMethod("GET");
+
+			int responseCode = con.getResponseCode();
+			BufferedReader br;
+			if (responseCode == 200)
+			{ // 정상 호출
+				br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			} else
+			{ // 에러 발생
+				br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+			}
+
+			String inputLine;
+			StringBuffer sb = new StringBuffer();
+			while ((inputLine = br.readLine()) != null)
+			{
+				//br.readLine()가 널이 아닐때만 inputLine에 br.readLine()값 집어넣고 while문 실행
+				sb.append(inputLine);
+			}
+			br.close();
+			//System.out.println(sb.toString());
+			// sb 로 뭔가를 하면 됨 그럼?
+			return sb.toString();
+
+		} catch (MalformedURLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "저런..";
+	}
+	
+	public String getTistoryCategory()
+	{
+		// 클라이언트 인증받아서 access_token 나오면 그때 받아오는 거 하기
+		String client_id = "a5bffb32c3f38197aa7b8702e9eba13b";
+		String access_url = "https://www.tistory.com/oauth/authorize/";
+
+		String access_token = "16a64460b8e806090590e226aeb9c656_cc2ca422f94f3d2c4959f40025d28f21";
+		String url = "https://www.tistory.com/apis/category/list";
+
+		String output = "json";
+		String blogName = "teqoo";
+		String targetUrl = ""; // 2차도메인 안쓰니까 필요없을 것같다
+
+		String perfectUrl = url + "?" + "access_token=" + access_token + "&" + "blogName=" + blogName + "&" + "output=" + output;
+		
 		try
 		{
 

@@ -20,6 +20,15 @@
 	JSONObject item = (JSONObject) tistory.get("item"); //"item"
 	JSONArray posts = (JSONArray)item.get("posts"); //"posts" 
 %>
+<% 
+	String tempCate = (String) request.getAttribute("tistoryCategoryJson");
+	Object objCate = JSONValue.parse(tempCate);
+	JSONObject objectCate = (JSONObject) objCate;
+	
+	JSONObject tistoryCate = (JSONObject) objectCate.get("tistory"); //"tistory"
+	JSONObject itemCate = (JSONObject) tistoryCate.get("item"); //"item"
+	JSONArray categories = (JSONArray)itemCate.get("categories"); //"categories" 
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -701,6 +710,9 @@
 				<c:forEach items="<%=posts%>" var="i" varStatus="Status">
 					<a href="${i.postUrl}" target="_blank"><button data-effect="st-effect-\${Status}">${i.title}</button></a> 
 				</c:forEach>
+				<c:forEach items="<%=categories%>" var="i" varStatus="Status">
+					<button data-effect="st-effect-\${Status}">${i.name}</button>
+				</c:forEach>
 			</div>
         </div>
     </div>
@@ -710,7 +722,10 @@
      <div class="slide" id="slide1">
             <div class="intro">
                 <h1>게임 소개</h1>
+                <p>
+                이력서를 쓸 때 맞춤법 수정을 하는 걸 게임화 했다.
                 
+                </p>
             </div>
         </div>
       <div class="slide active" id="slide2">
