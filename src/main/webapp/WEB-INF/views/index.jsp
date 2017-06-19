@@ -54,7 +54,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#fullpage').fullpage({
-              sectionsColor: ['#FFEFAB', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#B29E98', '#FFEFAB'],
+              sectionsColor: ['', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#B29E98', '#FFEFAB'],
               anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage'],
               menu: '#menu',
             });
@@ -725,8 +725,13 @@
             <div class="intro">
                 <h1>게임 소개</h1>
                 <p>
-                이력서를 쓸 때 맞춤법 수정을 하는 걸 게임화 했다.
-                
+                	이력서를 쓸 때 맞춤법 수정을 하는 걸 게임화 했다. <br/>
+                	올바른 맞춤법이나 잘못된 맞춤법으로 작성된 단어가 캐릭터 쪽으로 날아온다.<br/>
+                	z키를 눌러 점프를 할 수 있으며 3개의 단어를 먹으면 게임이 끝난다.<br/>
+                	3개의 단어 중 2개 이상 먹은 쪽으로 엔딩이 나온다.<br/>
+                	<br/>
+                	사용자가 단어를 가져오는 단어DB에 직접 단어를 추가할 수도 있다.
+                	
                 </p>
             </div>
         </div>

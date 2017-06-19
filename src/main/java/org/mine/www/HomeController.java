@@ -55,19 +55,11 @@ public class HomeController
 	{
 		String tistoryJson = getTistory();
 		String tistoryCategoryJson = getTistoryCategory();
-		System.out.println(tistoryCategoryJson);
 		model.addAttribute("tistoryJson", tistoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
 		model.addAttribute("tistoryCategoryJson", tistoryCategoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
 		return "index";
 	}
 	
-	// 임시
-	@RequestMapping(value = "metro", method = RequestMethod.GET)
-	public String metro(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		return "metro";
-	}
-
 	@ResponseBody
 	@RequestMapping(value = "WordBookJSON", method = RequestMethod.POST, produces = "application/json; charset=utf8")
 	public String WordBookJSON(Model model)
