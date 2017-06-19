@@ -136,7 +136,7 @@
  		var EnemyHangul; // 스테이지1 적객체 배열
  		var hangulViewCount=1; // 화면에 보이는 적객체 수 설정
  		var EnemyHangulMax = 10; // 미리 준비해두는 적객체 최대수
- 		var hangulWord= new Array(); // 한글 저장용
+ 		var hangulWord = new Array(); // 한글 저장용
  		var hangulSpeed = 4; // 한글 적 객체 스피드
 
  		var stageOneInterval; // 타이머 변수용
@@ -192,6 +192,9 @@
  				
  				// 지정된 속도를 기준으로 스크롤의 값이 늘어난다(그리는 위치가 변경된다)
  				scrollVal -= speed;
+ 				
+ 				// 배경음악 시작
+ 				backGroundMusic.play();
  				
  				// 단어 움직임 로직
  				useEnemyHangul();
@@ -305,7 +308,11 @@
  		function clearGame(){
  			// 지우기
  			ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+ 			
+ 			// 배경음악 종료
+			backGroundMusic.pause();
+			backGroundMusic.currentTime = 0;
+ 			
 	 		if(checkScore>Math.floor(scoreMax/2)){ //scoreMax/2 Math.Floor
 	 			// 굿 엔딩
 	 			ctx.drawImage(goodEndImg,0,0);
@@ -452,8 +459,6 @@
  			} else {
  				keyValue = event.keyCode;
  				
- 				console.log(keyValue);
- 				
  				if (keyValue == "123" || keyValue == "116"){} // f12 ,f5
  				else{
  					event.preventDefault(); //키값 들어오면 js에서만 해당 키를 이용함
@@ -551,7 +556,7 @@
   		        		$('#newWord').val("");
  		        		alert("잘 들어감");
  		        	 }else{
- 		        		console.log("ㄴㄴ 큰일남");
+ 		        		console.log("무언가 잘못됨");
  		        	 }
  		         },
  		         error : function(request,status,error) { //xhr, status, 
