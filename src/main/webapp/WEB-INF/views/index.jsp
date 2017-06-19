@@ -586,8 +586,8 @@
 <body>
 <div id="fullpage">
 	<!-- 메인 -->
-    <div class="section active" id="section0" style="background-image: ">
-     <div class="intro">
+    <div class="section active" id="section0" <%-- style="background-image:url('<%=cp%>/resources/images/web/background/dumo.png')"  --%>>
+     <div id="mainWord">
     			<h2 class="rw-sentence">
 					<span><img src="<%=cp%>/resources/images/web/logo/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/></span>
 					<!-- <br /> -->

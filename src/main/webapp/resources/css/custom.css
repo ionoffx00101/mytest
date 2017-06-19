@@ -5,6 +5,22 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css); /* 폰트 많이 이상함 */
 @import url(//fonts.googleapis.com/earlyaccess/notosansoriyaui.css);
 
+/* 배경화면을 사진으로 만들기 위한 css */
+#section0{
+	background: url(../images/web/background/greg-rakozy-129733.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+/* 배경화면에 가려 안보이는 글씨를 위한 배려 */
+#mainWord{
+	background-color: rgba(76, 76, 76, 0.9);
+	width: 100%;
+	height: 30%;
+}
+/* 글씨 위치 수정은 rw의 style.css .rw-sentence에서 */
+
 /* 링크 글씨 색 변경용 */
 a:hover{
 	color: #000000;

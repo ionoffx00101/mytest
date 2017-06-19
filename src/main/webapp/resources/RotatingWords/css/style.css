@@ -9,6 +9,9 @@ body{
 	padding: 10px;
 }
 .rw-sentence{
+	vertical-align:middle;
+	padding-top: 120px; /* 5%; */
+	padding-right: 200px;
 	margin: 0;
 	/* text-align: left; */
 	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
@@ -17,10 +20,12 @@ body{
 	color: #ccc;
 	font-size: 200%;
 	font-weight: normal;
+	margin-top: -1%; /* -15px */
 }
 .rw-words{
 	display: inline;
 	text-indent: 10px;
+
 }
 .rw-words-1 span{
 	position: absolute;
