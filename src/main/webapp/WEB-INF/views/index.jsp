@@ -306,7 +306,7 @@
  		
  		// 게임 끝났을 때 화면
  		function clearGame(){
- 			// 지우기
+ 			// 캔버스 화면 지우기
  			ctx.clearRect(0, 0, canvas.width, canvas.height);
  			
  			// 배경음악 종료
