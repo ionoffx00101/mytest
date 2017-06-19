@@ -101,21 +101,8 @@
 <!-- 내 스크립트 -->
 <script type="text/javascript">
  $(function() {
-	 	var stageOneEnd = false;
+	 	var stageOneEnd = false; // 스테이지의 종료 여부 확인
 	 
-		/* 	
-		//크기 조정 친구들
-		var windowWidth = $(window).width()*2/3; //document -350
-		$("canvas").attr("width", windowWidth).attr("height", 500);
-		//$("#startBtn").attr("width", canvas.getWidth()/2).attr("height", canvas.getHeigth()/2);
-		 
-		// 창 크기 바뀌면 할 것...
-	    $( window ).resize(function() {
-	    	 windowWidth = $(window).width()*2/3; //document -350
-	    	 $("canvas").attr("width", windowWidth).attr("height", 500);
-	    }); 
-		*/
-		
 	 	// 캔버스 친구들
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d"); // 캔버스 객체 생성
@@ -131,8 +118,8 @@
  		var speed = 1; // 스크롤 속도 // 빠른 거 2
  		
  		// 스크롤 이미지 크기
- 		var canvasWidth = 2937;//canvas.width;
- 		var canvasHeight = 532;//canvas.height;
+ 		var canvasWidth = 2937; //canvas.width;
+ 		var canvasHeight = 532; //canvas.height;
  		
  		// 스크롤 이미지
  		var scrollImg= new Image();
@@ -207,12 +194,7 @@
  		}
  		
  		// 게임 실행
- 		function startGame(){
- 			
- 			// 캐릭터 짬프는 키보드 입력 받는 곳에서 해결됨
- 			// 캐릭터 짬프 애니메이션 - 3씩 올라갔다가 3씩 내려옴
- 			// 점프 애니메이션이 실행되는 동안에는 점프 키 입력을 받아도 모른척 해야함
- 			// 라잌 쿠키런
+ 		function startGame(){	
  						
  			// 적이 지정된 시간마다 움직임
  			stageOneInterval = setInterval(() => {
@@ -262,18 +244,18 @@
  				// 그리기
  				renderGame();
  				
- 				// 게임 끝나는 지 여부 확인 하고 엔딩 화면 그려줌..?
+ 				// 게임 끝나는 지 여부 확인 하고 엔딩 화면 그려줌
  				if(scoreOne>=scoreMax){
  					stageOneEnd=true;
  					clearInterval(stageOneInterval);
  					clearGame();
  				}
- 			},  1000 / 60);  //60
+ 			},  1000 / 60);  //60프레임
  		}
  		
  		// 지우고 전체 다 다시 그려주는 곳
  		function renderGame(){
- 			// 지우기
+ 			// 캔버스 지우기
  			ctx.clearRect(0, 0, canvas.width, canvas.height);
  			
  			// 배경 그리기
@@ -283,8 +265,6 @@
  			// 배경 스크롤을 그려주는 부분
  			imageData = tempContext.getImageData(0, 0, canvasWidth - scrollVal, canvasHeight);
  			ctx.putImageData(imageData, scrollVal,0 , 0, 0, imgWidth, canvasHeight);
- 			
- 			// ctx.fillText(scoreOne+"",playerUnit.x,playerUnit.y); // x, y 점수 체크용
  			
  			// 플레이어 그리기
  			if(!spacekey){ //playerUnit.jump
@@ -319,8 +299,8 @@
  			 	 if(oneHangul.use){
  					ctx.font="30px Noto Sans KR";
  					// 그냥 글씨
- 					//ctx.fillStyle = 'white';
- 					//ctx.fillText(oneHangul.word,oneHangul.x,oneHangul.y); // x, y
+ 					// ctx.fillStyle = 'white';
+ 					// ctx.fillText(oneHangul.word,oneHangul.x,oneHangul.y); // x, y
  					
  					// 두꺼운 글씨
  					ctx.lineWidth = 2;
@@ -334,6 +314,7 @@
  				}
  			}		
  		}
+ 		
  		// 게임 끝났을 때 화면
  		function clearGame(){
  			// 지우기
@@ -353,8 +334,8 @@
  		// 배경 이미지 로딩
  		function loadImage() {
  			/* 사용된 이미지의 폭과 너비를 저장하고 그림용 펜의 역할을 수행하는 캔버스 템프에도 담아둔다  */
- 			imgWidth =  scrollImg.width || scrollImg.naturalWidth;//scrollImg.width;
- 			imgHeight = scrollImg.height || scrollImg.naturalHeight;//scrollImg.height;
+ 			imgWidth =  scrollImg.width || scrollImg.naturalWidth; // scrollImg.width;
+ 			imgHeight = scrollImg.height || scrollImg.naturalHeight; // scrollImg.height;
  			canvasTemp.width = imgWidth;
  			canvasTemp.height = imgHeight;
 
@@ -368,7 +349,7 @@
  		
  		// 플레이어 객체 만드는 곳
  		function makePlayerUnit(){
- 			
+ 			// 플레이어 고정값
  			var imgWalkWidth = 80;
  			var imgWalkHeight = 92;
  			
@@ -389,40 +370,38 @@
  					y : 600,
  					width:0,
  					height:0,
- 					word:"",//Math.floor(Math.random() * 10);// 랜덤수 // 그냥 123 할까
+ 					word:"", // 단어 저장 공간
  					wordCheck:false, // 단어의 정답 여부
- 					use :false //1 캔버스에 그려주는 지 스킵하는지 용도
+ 					use :false // 캔버스에 그려주는 지 스킵할지 용도
  				};
  				EnemyHangul.push(enemy);
  			}
  		}
+ 		
  		// 한글 객체를 쓰는 곳
  		function useEnemyHangul() {
  			
- 			// DB에서 가져온 배열중 
- 			// 한개를 뽑아서 밑에 집어넣는다
- 			//hangulWord
- 			
  			var useCount = 0;
- 			// 화면에 보이는 단어 3개로 조정하기 위해서
+ 			
+ 			// 화면에 보이는 단어 이동 로직
  			for(var i=0; i<EnemyHangul.length;i++){
  				if(EnemyHangul[i].use){
  					useCount++;
- 					// true인 친구들은 왼쪽으로 보냄
+ 					// true인 친구들은 x값을 감소시킴으로 왼쪽으로 이동하는 것처럼 보임
  					// 한글 객체 속도
  					EnemyHangul[i].x=EnemyHangul[i].x-hangulSpeed;
  				}
  			}
+ 			
  			// 화면에 보이는 게 hangulViewCount이하면 한개 내보냄
  			if(useCount<hangulViewCount){
  				// 랜덤 Y값 준비
- 				var startY=((Math.random() <= 0.5) ? 350 : 420);//)*150;
- 				// X값 초기화, Y값이랑 word값, use 값을 고쳐야함
+ 				var startY=((Math.random() <= 0.5) ? 350 : 420); 
  				
+ 				// X값 초기화, Y값이랑 word값, use 값을 고쳐야함			
  				var bool = true;
  				while(bool){
  					var randomNum = Math.floor((Math.random() * 10));
- 					console.log();
  					
  					if(!EnemyHangul[randomNum].use){
  						bool=false; // 반복문 내보냄
@@ -439,22 +418,10 @@
  		}
 
  		// 키 누름 
- 		function getKeyDown(event) { 
-
- 			/* 버블 해결용 근데 안됨 */
- 		/* 	event = event || window.event;
-		    if (typeof event.stopPropagation != "undefined") {
-		    	event.stopPropagation();
-		    } else {
-		    	event.cancelBubble = true;
-		    }
-		    if (event.keyCode == 32) { 
-		        $(this).val($(this).val() + "-"); // append '-' to input
-		        return false; // return false to prevent space from being added
-		    } */
-		    /* 버블 해결용 근데 안됨 */
-		    
- 	 		var keyValue;		
+ 		function getKeyDown(event) {
+ 			
+ 	 		var keyValue;
+ 	 		
  			if (event == null) {
  				return;
  			} else {
@@ -487,9 +454,9 @@
  				spacekey = true;
  	 			calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
  			}
- 			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함
  			
  		}
+ 		
  		// 키 뗌 
  		function getKeyUp(event) {
  			var keyValue;
@@ -518,12 +485,11 @@
 
  			// 점프
  			if (keyValue == "90") { /* z : 90 / alt :18 / ctrl : 17 / shift : 16 / space : 32 */
- 				// 점프 꾸욱 누른다고 연점 되는거 아니니까 그냥 up에서 점프 처리하게 바꾸기
  				spacekey = false;
  				calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 
  			}
- 			//calcKeyInnput(); // 방향키 입력 // 플레이어 위치값 // 여기 두니까 스페이스 말고도 처리함		
  		}
+ 		
  		// 방향키 입력 처리
  		function calcKeyInnput() {
  
@@ -546,7 +512,6 @@
  		function makeBackGroungMusic(){
  			backGroundMusic = document.createElement("audio");
  			backGroundMusic.volume = 1.0;
- 			// BackGroundMusic.src = "<c:url value="../resources/sound/war.mp3"/>"; // 안됨
  			backGroundMusic.src = "<%=cp%>/resources/sound/war.mp3";
  			backGroundMusic.setAttribute('id', 'backGroundMusic');
  			document.body.appendChild(backGroundMusic);
@@ -554,16 +519,18 @@
  		
  		// 스타트 버튼 클릭 시 
  		$('#startBtn').click(function(){
+ 			 // #startBtn을 숨김
              $("#startBtn").hide();
-    
+          	 // #gameGuideBtn을 보여줌
  			 $("#gameGuideBtn").show();
  		});
  		
  		// 게임 가이드 버튼 클릭 시
  		$('#gameGuideBtn').click(function(){
- 			
+ 		  	 // #gameGuideBtn을 숨김
              $("#gameGuideBtn").hide();
- 			
+ 		  	 
+             // ajax를 이용해 DB에 있는 한글 단어를 가져옴
  			 $.ajax({
 	            url : "<c:url value="/WordBookJSON"/>", 
 	            type : "post",
@@ -580,10 +547,12 @@
 	            	console.log("에러"+error);
 	            }
         	 });
+             
+ 			 // #canvas을 보여줌
  			 $("#canvas").show();
  		});
  		
- 		// 추가버튼 클릭
+ 		// 단어 추가버튼 클릭
  	 	$('#wordInsertBtn').click(function(){
  	 		 $.ajax({
  		         url : "<c:url value="/InsertWordBook"/>", 
@@ -618,7 +587,7 @@
 <body>
 <div id="fullpage">
 	<!-- 메인 -->
-    <div class="section active" id="section0">
+    <div class="section active" id="section0" style="background-image: ">
      <div class="intro">
     			<h2 class="rw-sentence">
 					<span><img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/></span>
@@ -758,17 +727,6 @@
 			
     		</div>
     </div>
-    
-   <!-- special으로 능력치 -->
-     <!-- 
-     <div class="section" id="section6">
-           <div class="intro">
-            <h1>새로운 것이 들어올 공간</h1>
-            
-        	</div>
-    </div> 
-    -->
-    
 </div>
 
 </body>
