@@ -12,8 +12,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <!-- for metro -->
-	<link rel="stylesheet" type="text/css" href="fullpage/css/examples.css" />
-	
     <link href="<%=cp%>/resources/metro/css/metro.css" rel="stylesheet">
     <link href="<%=cp%>/resources/metro/css/metro-icons.css" rel="stylesheet">
     <link href="<%=cp%>/resources/metro/css/metro-responsive.css" rel="stylesheet">
@@ -24,27 +22,23 @@
 <body>
 
 	<div class="grid">
-		<div class="row cells2">
-			<div class="cell">
-				<label>Input with placeholder</label>
-				<div class="input-control text full-size">
-					<input type="text" placeholder="Input you text here...">
-				</div>
-			</div>
+		<div class="input-control text">
+			<input type="text" placeholder="Input you text here...">
 		</div>
-		<div class="row cells2">
-			<div class="input-control select">
-				<select>
-					<option>클릭</option>
-					<option>올바른 맞춤법</option>
-					<option>잘못된 맞춤법</option>
-				</select>
-			</div>
+		
+		<br />
+		
+		<div class="input-control select">
+			<select>
+				<option>클릭</option>
+				<option>올바른 맞춤법</option>
+				<option>잘못된 맞춤법</option>
+			</select>
 		</div>
-		<div class="row cells2">
-
-			<button class="button">Caption</button>
-		</div>
+		
+		<br />
+		
+		<button class="button">Caption</button>
 	</div>
 
 </body>

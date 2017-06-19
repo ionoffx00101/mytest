@@ -77,7 +77,15 @@
 		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/Transitions/css/icons.css" />
 		<link rel="stylesheet" type="text/css" href="<%=cp%>/resources/Transitions/css/component.css" />
 		<script src="<%=cp%>/resources/Transitions/js/modernizr.custom.js"></script>
-		
+
+<!-- for metro -->
+    <link href="<%=cp%>/resources/metro/css/metro.css" rel="stylesheet">
+    <link href="<%=cp%>/resources/metro/css/metro-icons.css" rel="stylesheet">
+    <link href="<%=cp%>/resources/metro/css/metro-responsive.css" rel="stylesheet">
+
+    <%-- <script src="<%=cp%>/resources/metro/js/jquery-2.1.3.min.js"></script> --%>
+    <script src="<%=cp%>/resources/metro/js/metro.js"></script>
+
 <!-- for fontawesome -->
 	<link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
@@ -624,24 +632,23 @@
             <h1>단어추가</h1>
             <div class="form">
             		<form>
-					<div class="col-md-4 col-md-offset-1">
-						<input type="text" class="form-control" id="newWord" name="wordbook_word" placeholder="단어 입력"/>
-					</div>
-					<div class="col-md-4">
-						<select class="form-control" id="newWordCheck"
-							name="wordbook_wordcheck">
-							<option value="1">올바른 맞춤법</option>
-							<option value="0">잘못된 맞춤법</option>
-						</select>
-					</div>
-					<div class="col-md-2">
-						<button type="button" name="submit" id="wordInsertBtn" class="btn btn-primary">추가</button>
-					</div>
-					
+						<div class="grid">
+							<div class="input-control text">
+								<input type="text" placeholder="단어 입력" id="newWord" name="wordbook_word">
+							</div>
+							<br />
+							<div class="input-control select" >
+								<select id="newWordCheck" name="wordbook_wordcheck">
+									<option value="1">올바른 맞춤법</option>
+									<option value="0">잘못된 맞춤법</option>
+								</select>
+							</div>
+							<br />
+							<button class="button" type="button" name="submit" id="wordInsertBtn">추가</button>
+						</div>
 					</form>
-        </div>
-        
-    </div>
+       		 </div>
+    	</div>
     </div>
     
     <!-- 블로그 -->
