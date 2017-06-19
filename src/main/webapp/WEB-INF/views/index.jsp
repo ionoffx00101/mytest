@@ -787,21 +787,44 @@
           </div>
           
      </div>
-        
+        <!-- 2 -->
         <div class="slide" id="slide2">
-              <h1>Shooting Game Project</h1>
-            <div class="main clearfix">
-							<div id="st-trigger-effects" class="column">
-								<img src="<%=cp%>/resources/images/web/myoldproject/SGP01_up.png" width="100%" height="auto">
+             <div class="grid">
+          		<div class="row cells4">
+	          		<div class="cell"></div>
+	          		<div class="cell">
+	          			<img src="<%=cp%>/resources/images/web/myoldproject/student01.png" width="100%" height="auto">
+	          		</div>
+	          		<div class="cell">
+	          			<h2>학생 관리 프로그램</h2>
+	          			<div class="row cells2">
+		          			<div class="cell align-right v-align-middle"> 
+			          			프로젝트 이름 : 
+								<br/>
+								사용한 기술 : 
+								<br/>
+								프로젝트 소개 : 
+								<br/>
+								프로젝트 내용 : 
+								<br/>
 							</div>
-							<div class="column">
-								<!-- <p>게임 화면</p> -->
-								<p>좌측에는 내가 플레이 하는 화면이 보여지고 <br/>우측에는 상대방의 플레이 화면이 실시간으로 보여진다.</p>
-							</div>
-						
-			 </div>
+		          			<div class="cell align-left v-align-middle">
+		          				학생 관리 프로그램
+								<br/>
+								Java | Swing | Oracle
+								<br/>
+								Java Swing 을 활용한 학생관리 프로그램
+								<br/>
+								학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
+								<br/>
+		          			</div>
+						</div>
+	          		</div>
+	          		<div class="cell"></div>
+          		</div>
+          </div>
         </div>
-        
+        <!-- 3 -->
         <div class="slide" id="slide3">
             <h1>프로젝트3</h1>
         </div>
