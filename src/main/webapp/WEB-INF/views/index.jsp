@@ -707,11 +707,13 @@
         <div class="intro">
             <h1>블로그도 있어요</h1>
 			<div id="st-trigger-effects" >
+				<!-- 최신 글 10개 -->
 				<c:forEach items="<%=posts%>" var="i" varStatus="Status">
 					<a href="${i.postUrl}" target="_blank"><button data-effect="st-effect-\${Status}">${i.title}</button></a> 
 				</c:forEach>
+				<!-- 블로그 카테고리 -->
 				<c:forEach items="<%=categories%>" var="i" varStatus="Status">
-					<button data-effect="st-effect-\${Status}">${i.name}</button>
+					<a href="http://teqoo.tistory.com/category/${i.label}" target="_blank"><button data-effect="st-effect-\${Status}">${i.name}</button></a> 
 				</c:forEach>
 			</div>
         </div>
