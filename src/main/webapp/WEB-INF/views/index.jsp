@@ -157,8 +157,8 @@
  			// 기본 객체들 채워주기
  			canvasBuffer = document.createElement("canvas"); // 캔버스에 펜있다고 넣어주기
  			
- 			// 백그라운드 이미지
- 			scrollImg.src = "<%=cp%>/resources/images/game/background/city.png";
+ 			// 백그라운드 이미지 투명 배경 city.png
+ 			scrollImg.src = "<%=cp%>/resources/images/game/background/cityWhite.png";
  			scrollImg.onload = loadImage; // 스크롤 이미지 불러오기 완료되야 loadimage를 호출한다
  			
  			// 배경음악 객체 채워주는 함수 호출
