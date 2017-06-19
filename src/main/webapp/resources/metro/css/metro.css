@@ -56,7 +56,11 @@ img {
 .google-maps img {
   max-width: none;
 }
-button,
+button{
+	 /* margin: 0;
+  font-size: 100%;
+  vertical-align: middle; */
+}
 input,
 select,
 textarea {
