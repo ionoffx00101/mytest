@@ -611,9 +611,98 @@
         </div>
     </div>
     
-    <!-- 게임 -->
+    <!-- 기술 -->
     <div class="section" id="section2">
-        <div class="slide active" id="slide1">
+      <div class="intro">
+            <h1>기술</h1>
+                <!-- HTML5 -->
+				<div class="skillbar clearfix " data-percent="50%">
+					<div class="skillbar-title" style="background: #d35400;"><span>HTML5</span></div>
+					<div class="skillbar-bar" style="background: #e67e22;"></div>
+					<div class="skill-bar-percent">50%</div>
+				</div> 
+				<!-- CSS3 -->
+				<div class="skillbar clearfix" data-percent="30%">
+					<div class="skillbar-title" style="background: #d35400;"><span>CSS3</span></div>
+					<div class="skillbar-bar" style="background: #e67e22;"></div>
+					<div class="skill-bar-percent">30%</div>
+				</div> 
+				
+				<!-- js -->
+				<div class="skillbar clearfix " data-percent="60%">
+					<div class="skillbar-title" style="background: #2980b9;"><span>JavaScript</span></div>
+					<div class="skillbar-bar" style="background: #3498db;"></div>
+					<div class="skill-bar-percent">60%</div>
+				</div> 
+				<!-- jQuery -->
+				<div class="skillbar clearfix " data-percent="50%">
+					<div class="skillbar-title" style="background: #2980b9;"><span>jQuery</span></div>
+					<div class="skillbar-bar" style="background: #3498db;"></div>
+					<div class="skill-bar-percent">50%</div>
+				</div> 
+				<!-- Ajax -->
+				<div class="skillbar clearfix " data-percent="75%">
+					<div class="skillbar-title" style="background: #2980b9;"><span>Ajax</span></div>
+					<div class="skillbar-bar" style="background: #3498db;"></div>
+					<div class="skill-bar-percent">75%</div>
+				</div> 
+				
+				<!-- JAVA -->
+				<div class="skillbar clearfix " data-percent="80%">
+					<div class="skillbar-title" style="background: #2c3e50;"><span>JAVA</span></div>
+					<div class="skillbar-bar" style="background: #525252;"></div>
+					<div class="skill-bar-percent">80%</div>
+				</div> 
+				<!-- Spring -->
+				<div class="skillbar clearfix " data-percent="75%">
+					<div class="skillbar-title" style="background: #2c3e50;"><span>Spring</span></div>
+					<div class="skillbar-bar" style="background: #525252;"></div>
+					<div class="skill-bar-percent">75%</div>
+				</div> 
+				<!-- MyBatis -->
+				<div class="skillbar clearfix " data-percent="70%">
+					<div class="skillbar-title" style="background: #2c3e50;"><span>MyBatis</span></div>
+					<div class="skillbar-bar" style="background: #525252;"></div>
+					<div class="skill-bar-percent">70%</div>
+				</div> 
+				
+				<!-- Oracle -->
+				<div class="skillbar clearfix " data-percent="80%">
+					<div class="skillbar-title" style="background: #46465e;"><span>Oracle</span></div>
+					<div class="skillbar-bar" style="background: #5a68a5;"></div>
+					<div class="skill-bar-percent">80%</div>
+				</div>
+				<!-- pl/sql -->
+				<div class="skillbar clearfix " data-percent="45%">
+					<div class="skillbar-title" style="background: #46465e;"><span>pl/sql</span></div>
+					<div class="skillbar-bar" style="background: #5a68a5;"></div>
+					<div class="skill-bar-percent">45%</div>
+				</div>
+				<!-- SQLite -->
+				<div class="skillbar clearfix " data-percent="15%">
+					<div class="skillbar-title" style="background: #46465e;"><span>SQLite</span></div>
+					<div class="skillbar-bar" style="background: #5a68a5;"></div>
+					<div class="skill-bar-percent">15%</div>
+				</div> 
+    		</div>
+        
+    </div>
+    
+    <!-- 블로그 -->
+    <div class="section" id="section3">
+        <div class="intro">
+            <h1>블로그도 있어요</h1>
+			<div id="st-trigger-effects" >
+				<c:forEach items="<%=posts%>" var="i" varStatus="Status">
+					<a href="${i.postUrl}" target="_blank"><button data-effect="st-effect-\${Status}">${i.title}</button></a> 
+				</c:forEach>
+			</div>
+        </div>
+    </div>
+    
+    <!-- 게임 -->
+    <div class="section" id="section4">
+      <div class="slide active" id="slide1">
             <div class="intro">
                 <h1>게임</h1>
                 <canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
@@ -651,25 +740,13 @@
     	</div>
     </div>
     
-    <!-- 블로그 -->
-    <div class="section" id="section3">
-        <div class="intro">
-            <h1>블로그도 있어요</h1>
-			<div id="st-trigger-effects" >
-				<c:forEach items="<%=posts%>" var="i" varStatus="Status">
-					<a href="${i.postUrl}" target="_blank"><button data-effect="st-effect-\${Status}">${i.title}</button></a> 
-				</c:forEach>
-			</div>
-        </div>
-    </div>
-    
     <!-- 프로젝트 사진 / 설명 -->
-    <div class="section" id="section4">
-        <div class="slide active" id="slide1">
+    <div class="section" id="section5">
+     <div class="slide active" id="slide1">
             <h1>Shooting Game Project</h1>
             <div class="main clearfix">
 							<div id="st-trigger-effects" class="column">
-								<img src="<%=cp%>/resources/images/web/myoldproject/SGP01.png" width="300" height="auto">
+								<img src="<%=cp%>/resources/images/web/myoldproject/SGP01_up.png" width="100%" height="auto">
 							</div>
 							<div class="column">
 								<!-- <p>게임 화면</p> -->
@@ -686,44 +763,7 @@
         <div class="slide" id="slide3">
             <h1>프로젝트3</h1>
         </div>
-    </div>
-    
-     <!-- 뇌구조 -->
-    <div class="section" id="section5">
-           <div class="intro">
-            <h1>기술</h1>
-            
-				<div class="skillbar clearfix " data-percent="40%">
-					<div class="skillbar-title" style="background: #d35400;"><span>HTML5</span></div>
-					<div class="skillbar-bar" style="background: #e67e22;"></div>
-					<div class="skill-bar-percent">40%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix" data-percent="25%"> <!--  clearfix -->
-					<div class="skillbar-title" style="background: #2980b9;"><span>CSS3</span></div>
-					<div class="skillbar-bar" style="background: #3498db;"></div>
-					<div class="skill-bar-percent">25%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix " data-percent="60%">
-					<div class="skillbar-title" style="background: #2c3e50;"><span>jQuery</span></div>
-					<div class="skillbar-bar" style="background: #2c3e50;"></div>
-					<div class="skill-bar-percent">60%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix " data-percent="80%">
-					<div class="skillbar-title" style="background: #46465e;"><span>JAVA</span></div>
-					<div class="skillbar-bar" style="background: #5a68a5;"></div>
-					<div class="skill-bar-percent">80%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix " data-percent="75%">
-					<div class="skillbar-title" style="background: #333333;"><span>Oracle</span></div>
-					<div class="skillbar-bar" style="background: #525252;"></div>
-					<div class="skill-bar-percent">75%</div>
-				</div> <!-- End Skill Bar -->
-			
-    		</div>
+          
     </div>
 </div>
 
