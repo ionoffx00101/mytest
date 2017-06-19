@@ -613,7 +613,7 @@
     
     <!-- 기술 -->
     <div class="section" id="section2">
-      <div class="intro">
+      <div id="skillbarDiv"> <!-- class="intro" -->
             <h1>기술</h1>
                 <!-- HTML5 -->
 				<div class="skillbar clearfix " data-percent="50%">
@@ -664,7 +664,13 @@
 					<div class="skillbar-title" style="background: #2c3e50;"><span>MyBatis</span></div>
 					<div class="skillbar-bar" style="background: #525252;"></div>
 					<div class="skill-bar-percent">70%</div>
-				</div> 
+				</div>
+				<!-- hibernate -->
+				<div class="skillbar clearfix " data-percent="35%">
+					<div class="skillbar-title" style="background: #2c3e50;"><span>hibernate</span></div>
+					<div class="skillbar-bar" style="background: #525252;"></div>
+					<div class="skill-bar-percent">35%</div>
+				</div>
 				
 				<!-- Oracle -->
 				<div class="skillbar clearfix " data-percent="80%">
@@ -679,10 +685,10 @@
 					<div class="skill-bar-percent">45%</div>
 				</div>
 				<!-- SQLite -->
-				<div class="skillbar clearfix " data-percent="15%">
+				<div class="skillbar clearfix " data-percent="25%">
 					<div class="skillbar-title" style="background: #46465e;"><span>SQLite</span></div>
 					<div class="skillbar-bar" style="background: #5a68a5;"></div>
-					<div class="skill-bar-percent">15%</div>
+					<div class="skill-bar-percent">25%</div>
 				</div> 
     		</div>
         

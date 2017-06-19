@@ -33,11 +33,15 @@ a:FOCUS {
 }
 
 /* 스킬바 관련 css */
+/* 내가 넣은 것 */
+#skillbarDiv{
+	
+}
 .skillbar {
 	position:relative; /* relative */
 	display:block; /* block */
 	margin-bottom:15px;
-	margin-left : 200px; /* 프로그레스 바 위치 강제로 지정 / 임시 */
+	margin-left : 15%;	/* 200px; /프로그레스 바 위치 강제로 지정 */
 	width:70%; /* 100% 브라우저에 비례한 프로세스 바 길이 */
 	background:#eee;
 	height:35px;
