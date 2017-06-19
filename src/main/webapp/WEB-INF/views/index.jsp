@@ -26,7 +26,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>Ik ben</title>
 
 <!-- for Fullpage -->
     <link rel="stylesheet" type="text/css" href="<%=cp%>/resources/fullpage/css/jquery.fullPage.css" />
@@ -45,7 +45,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#fullpage').fullpage({
-              sectionsColor: ['#FFEFAB', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#ccddff', '#ccddff'],
+              sectionsColor: ['#FFEFAB', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#B29E98', '#FFEFAB'],
               anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage'],
               menu: '#menu',
             });
@@ -603,7 +603,7 @@
 			</div>
     </div>
    
-   <!-- 자기 소개 -->
+    <!-- 자기 소개 -->
     <div class="section" id="section1">
         <div class="intro">
             <h1>개발자가 되고 싶어요</h1>
@@ -691,7 +691,6 @@
 					<div class="skill-bar-percent">25%</div>
 				</div> 
     		</div>
-        
     </div>
     
     <!-- 블로그 -->
@@ -708,7 +707,13 @@
     
     <!-- 게임 -->
     <div class="section" id="section4">
-      <div class="slide active" id="slide1">
+     <div class="slide" id="slide1">
+            <div class="intro">
+                <h1>게임 소개</h1>
+                
+            </div>
+        </div>
+      <div class="slide active" id="slide2">
             <div class="intro">
                 <h1>게임</h1>
                 <canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
@@ -723,7 +728,7 @@
             </div>
         </div>
         
-        <div class="slide" id="slide2">
+        <div class="slide" id="slide3">
             <h1>단어추가</h1>
             <div class="form">
             		<form>
@@ -744,12 +749,46 @@
 					</form>
        		 </div>
     	</div>
+    	
     </div>
     
     <!-- 프로젝트 사진 / 설명 -->
     <div class="section" id="section5">
      <div class="slide active" id="slide1">
-            <h1>Shooting Game Project</h1>
+     
+          <div class="grid">
+          	<div class="row cells2">
+          		<div class="cell">
+          			<img src="<%=cp%>/resources/images/web/myoldproject/SGP01_up.png" width="100%" height="auto">
+          		</div>
+          		<div class="cell">
+          			<h2>Shooting Game Project - Game</h2>
+          			<span class="v-align-middle"><!-- align-center -->
+	          			1. 좌측에는 내가 플레이 하는 화면이 보여지고 우측에는 상대방의 플레이 화면이 실시간으로 보여진다.
+						<br/>
+						2. 중앙에는 나의 닉네임과 스코어를 확인 할 수 있다.
+						<br/>
+						3. 게임 페이지로 이동 시 캔버스에 ready, go가 표시된 후 게임이 시작된다.
+						<br/>
+						4. 방어아이템을 먹으면 플레이 하는 화면테두리가 잠시 초록색이 된다.
+						<br/>
+						5. 공격아이템을 먹으면 상대방 플레이 화면테두리가 잠시 빨간색이 된다.
+						<br/>
+						6. 상대방이 공격아이템을 먹으면 내가 플레이 하는 화면 테두리가 잠시 빨간색이 된다.
+						<br/>
+						7. 아이템은 일정시간이 되면 랜덤으로 아이템종류가 정해져서 나온다.
+						<br/>
+						8. 모든 객체는 게임 시작 시 생성해놓고 필요할 때 값만 바꿔준다.
+						<br/>
+						9. 게임 종료 시 승패여부가 화면에 표시되고 3초 후 방으로 이동된다.
+					</span>
+          		</div>
+          	</div>
+          </div>
+     </div>
+        
+        <div class="slide" id="slide2">
+              <h1>Shooting Game Project</h1>
             <div class="main clearfix">
 							<div id="st-trigger-effects" class="column">
 								<img src="<%=cp%>/resources/images/web/myoldproject/SGP01_up.png" width="100%" height="auto">
@@ -759,19 +798,14 @@
 								<p>좌측에는 내가 플레이 하는 화면이 보여지고 <br/>우측에는 상대방의 플레이 화면이 실시간으로 보여진다.</p>
 							</div>
 						
-						</div><!-- /main -->
-       		 </div>
-        
-        <div class="slide" id="slide2">
-            <h1>프로젝트2</h1>
+			</div>
         </div>
         
         <div class="slide" id="slide3">
             <h1>프로젝트3</h1>
         </div>
-          
-    </div>
-</div>
-
+    </div><!-- section5 end -->
+    
+</div> <!-- fullpage end -->
 </body>
 </html>

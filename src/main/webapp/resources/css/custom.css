@@ -33,10 +33,6 @@ a:FOCUS {
 }
 
 /* 스킬바 관련 css */
-/* 내가 넣은 것 */
-#skillbarDiv{
-	
-}
 .skillbar {
 	position:relative; /* relative */
 	display:block; /* block */
