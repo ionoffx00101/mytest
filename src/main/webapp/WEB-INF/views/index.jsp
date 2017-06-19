@@ -150,22 +150,22 @@
  			canvasBuffer = document.createElement("canvas"); // 캔버스에 펜있다고 넣어주기
  			
  			// 백그라운드 이미지
- 			scrollImg.src = "<%=cp%>/resources/images/city.png";
+ 			scrollImg.src = "<%=cp%>/resources/images/game/background/city.png";
  			scrollImg.onload = loadImage; // 스크롤 이미지 불러오기 완료되야 loadimage를 호출한다
  			
  			// 배경음악 객체 채워주는 함수 호출
  			makeBackGroungMusic();
  			
  			// 엔딩 이미지 추가 
- 			goodEndImg.src = "<%=cp%>/resources/images/End2.png";
- 			sadEndImg.src = "<%=cp%>/resources/images/End1.png";
+ 			goodEndImg.src = "<%=cp%>/resources/images/game/end/End2.png";
+ 			sadEndImg.src = "<%=cp%>/resources/images/game/end/End1.png";
 
  			// 플레이어 객체들 채워주기
  			makePlayerUnit();
  			// 플레이어 이미지 추가
- 			playerImgWalk1.src = "<%=cp%>/resources/images/charactor/female_walk1_re.png";
- 			playerImgWalk2.src = "<%=cp%>/resources/images/charactor/female_walk2_re.png";
- 			playerImgJump.src = "<%=cp%>/resources/images/charactor/female_jump_re.png";
+ 			playerImgWalk1.src = "<%=cp%>/resources/images/game/charactor/female_walk1_re.png";
+ 			playerImgWalk2.src = "<%=cp%>/resources/images/game/charactor/female_walk2_re.png";
+ 			playerImgJump.src = "<%=cp%>/resources/images/game/charactor/female_jump_re.png";
  			
  			// 한글 적 객체 채우기
  			EnemyHangul= new Array();
@@ -576,7 +576,7 @@
     <div class="section active" id="section0" style="background-image: ">
      <div class="intro">
     			<h2 class="rw-sentence">
-					<span><img src="<%=cp%>/resources/images/carouselFix/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/></span>
+					<span><img src="<%=cp%>/resources/images/web/logo/IMG_6049_fix2.png" alt="logo" style="width: 250px; height: auto;"/></span>
 					<!-- <br /> -->
 					<div class="rw-words rw-words-1"><!-- 추가 되면 span:nth-child(num)에도 추가 -->
 						<span>황인영</span>
@@ -607,8 +607,8 @@
 
 				<div class="row">
 					<div class="" id="playbutton">
-						<img id="startBtn" src="<%=cp%>/resources/images/startImgInvi.png" alt="PlayButton">
-						<img id="gameGuideBtn" src="<%=cp%>/resources/images/gameG.png" alt="gameguide" style="display: none;">
+						<img id="startBtn" src="<%=cp%>/resources/images/game/start/startImgInvi.png" alt="PlayButton">
+						<img id="gameGuideBtn" src="<%=cp%>/resources/images/game/start/gameG.png" alt="gameguide" style="display: none;">
 
 					</div>
 				</div>
@@ -657,7 +657,7 @@
             <h1>Shooting Game Project</h1>
             <div class="main clearfix">
 							<div id="st-trigger-effects" class="column">
-								<img src="<%=cp%>/resources/images/project/SGP01.png" width="300" height="auto">
+								<img src="<%=cp%>/resources/images/web/myoldproject/SGP01.png" width="300" height="auto">
 							</div>
 							<div class="column">
 								<!-- <p>게임 화면</p> -->
