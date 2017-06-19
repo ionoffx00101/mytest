@@ -53,29 +53,16 @@ public class HomeController
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		//processRequest(request,response);
 		String tistoryJson = getTistory();
-		//System.out.println(tistoryJson);
 		model.addAttribute("tistoryJson", tistoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
 		return "index";
 	}
 	
 	// 임시
-	@RequestMapping(value = "maybe", method = RequestMethod.GET)
-	public String maybe(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	@RequestMapping(value = "metro", method = RequestMethod.GET)
+	public String metro(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		//String tistoryJson = getTistory();
-		//model.addAttribute("tistoryJson", tistoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
-		return "maybe";
-	}
-	
-	// 임시
-	@RequestMapping(value = "sad", method = RequestMethod.GET)
-	public String sad(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		String tistoryJson = getTistory();
-		model.addAttribute("tistoryJson", tistoryJson); //  이 이름으로 받으면 메인 페이지에서 데이터를 볼 수 있을 것이다. 
-		return "sad";
+		return "metro";
 	}
 
 	@ResponseBody
