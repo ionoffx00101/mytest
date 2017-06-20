@@ -779,23 +779,6 @@
     
     <!-- 프로젝트 사진 / 설명 -->
     <div class="section" id="section5">
-     <div class="slide active" id="slide1">
-     
-     
-  
-     </div> <!-- slide1 끝-->
-        <!-- 2 -->
-        <div class="slide" id="slide2">
-             
-        </div><!-- slide2 끝-->
-        <!-- 3 -->
-        <div class="slide" id="slide3">
-             
-        </div><!-- slide3 끝-->
-    </div><!-- section5 end -->
-    
-    <!-- 마인드맵 -->
-    <div class="section" id="section6">
         <div class="flex-grid">
                 <div class="row">
 	                    <div class="cell colspan1 "><!-- 빈공간 --></div>
@@ -846,7 +829,7 @@
 	                    <div class="cell colspan1"><!-- 빈공간 --></div>
                 </div><!-- row end -->
      	</div><!-- flex-grid 끝  -->
-    </div>
+    </div> <!-- section5 끝 -->
     
 </div> <!-- fullpage end -->
 </body>
