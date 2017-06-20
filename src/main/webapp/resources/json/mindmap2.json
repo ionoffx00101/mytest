@@ -5,48 +5,42 @@
       "name": "황인영",
       "parent": "0",
       "locX": "0",
-      "locY": "0",
-      "node": "0"
+      "locY": "0"
     },
     {
       "id": "1",
       "name": "Java Script",
       "parent": "0",
       "locX": "0",
-      "locY": "0",
-      "node": "1"
+      "locY": "0"
     },
     {
       "id": "2",
       "name": "HTML5 & CSS3",
       "parent": "0",
       "locX": "0",
-      "locY": "0",
-      "node": "1"
+      "locY": "0"
     },
     {
       "id": "3",
       "name": "Java Script",
       "parent": "1",
       "locX": "0",
-      "locY": "0",
-      "node": "2"
+      "locY": "0"
     },
     {
       "id": "4",
       "name": "HTML5 & CSS3",
       "parent": "1",
       "locX": "0",
-      "locY": "0",
-      "node": "2"
+      "locY": "0"
     },
     {
       "id": "5",
       "name": "HTML5 & CSS3",
       "parent": "1",
       "locX": "0",
-      "locY": "0",
-      "node": "2"
+      "locY": "0"
     }
   ]
 }

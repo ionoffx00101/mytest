@@ -92,7 +92,7 @@ $(function() {
 	var ctx = canvas.getContext("2d"); // 캔버스 객체 생성
 	
 	var mindmap = new Array();
-
+	var childnode = 100;
 	
 	$.getJSON("<c:url value="/resources/json/mindmap.json"/>", function(json) {
 	    // console.log(json); // this will show the info it in firebug console
@@ -123,17 +123,19 @@ $(function() {
 				for (var j = 0; j < mindmap.length; j++) {
 					if(mindmap[i].parent == mindmap[j].id){
 						mindmap[i].locX = mindmap[j].locX+200;
+						//부모 Y/2
 						mindmap[i].locY = (mindmap[j].locY)/2;
 						
+						// 다른 자식 개체 유무를 확인해서 Y값 조절
 						for (var x = 0; x < mindmap.length; x++) {
-							//if(엄마가 같으면 id가 큰게 한단계 내려감)
 							if(mindmap[i].parent == mindmap[x].parent){
 								if(mindmap[i].id > mindmap[x].id){
 									mindmap[i].locY = mindmap[i].locY+100;
 								}
 							}
 						}
-						
+						// 몇번째 트리인지에 따라 Y값 조절
+						mindmap[i].locY = (mindmap[i].locY)/mindmap[i].node;
 					}
 				}
 			}
@@ -141,8 +143,8 @@ $(function() {
 		
 		// 그리기
 		for (var i = 0; i < mindmap.length; i++) {
-			//ctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
-			ctx.fillText(mindmap[i].locX+" , "+mindmap[i].locY,mindmap[i].locX,mindmap[i].locY); // x, y
+			ctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
+			//ctx.fillText(mindmap[i].locX+" , "+mindmap[i].locY,mindmap[i].locX,mindmap[i].locY); // x, y
 		}	
 		
 		// 부모 있으면 부모 - 자식 위치
@@ -157,8 +159,12 @@ $(function() {
 						
 						ctx.lineWidth = 1;
 				        ctx.beginPath();
-				        ctx.moveTo(mindmap[j].locX,mindmap[j].locY);
-				        ctx.lineTo(mindmap[i].locX,mindmap[i].locY);
+				        /* 
+				        ctx.moveTo(mindmap[j].locX, mindmap[j].locY);
+				        ctx.lineTo(mindmap[i].locX, mindmap[i].locY);
+				        */
+				        ctx.moveTo(mindmap[j].locX +50, mindmap[j].locY -5);
+				        ctx.lineTo(mindmap[i].locX +50, mindmap[i].locY -5);
 				        ctx.strokeStyle = '#dddddd';
 				        ctx.stroke();
 						
@@ -166,15 +172,6 @@ $(function() {
 				}
 			}
 		}
-		
-		/* ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(50,canvas.height/2);
-        ctx.lineTo(250,(canvas.height/2)/2);
-        ctx.strokeStyle = '#dddddd';
-        ctx.stroke();
-		
-		ctx.fillText('컴퓨터',250,(canvas.height/2)/2); // x, y 부모 y의 2 for 문 돌릴때 형제는 -20 식으로 */
 	}
 	
 	function mindmapRederBack(){
