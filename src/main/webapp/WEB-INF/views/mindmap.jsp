@@ -88,8 +88,8 @@
 <script type="text/javascript">
 $(function() {
 	// 캔버스 친구들
-	var canvas = document.getElementById("canvas");
-	var ctx = canvas.getContext("2d"); // 캔버스 객체 생성
+	var mindCanvas = document.getElementById("mindCanvas");
+	var mindctx = mindCanvas.getContext("2d"); // 캔버스 객체 생성
 	
 	var mindmap = new Array();
 	var childnode = 100;
@@ -106,18 +106,18 @@ $(function() {
 
 	function mindmapReder(){
 		// 캔버스 지우기
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		mindctx.clearRect(0, 0, mindCanvas.width, mindCanvas.height);
 		
-		ctx.font="30px Noto Sans KR";
+		mindctx.font="30px Noto Sans KR";
 		// 그냥 글씨
-		ctx.fillStyle = 'white';
+		mindctx.fillStyle = 'white';
 		
 		//xy 값 지정
 		for (var i = 0; i < mindmap.length; i++) {
 			if(mindmap[i].parent == mindmap[i].id){
 				
-				mindmap[i].locX = 100; /* canvas.width/2 */
-				mindmap[i].locY = canvas.height/2;
+				mindmap[i].locX = 100; /* mindCanvas.width/2 */
+				mindmap[i].locY = mindCanvas.height/2;
 			}
 			else{
 				for (var j = 0; j < mindmap.length; j++) {
@@ -143,7 +143,7 @@ $(function() {
 		
 		// 그리기
 		for (var i = 0; i < mindmap.length; i++) {
-			ctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
+			mindctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
 			//ctx.fillText(mindmap[i].locX+" , "+mindmap[i].locY,mindmap[i].locX,mindmap[i].locY); // x, y
 		}	
 		
@@ -157,41 +157,21 @@ $(function() {
 				for (var j = 0; j < mindmap.length; j++) {
 					if(mindmap[i].parent == mindmap[j].id){
 						
-						ctx.lineWidth = 1;
-				        ctx.beginPath();
+						mindctx.lineWidth = 1;
+						mindctx.beginPath();
 				        /* 
-				        ctx.moveTo(mindmap[j].locX, mindmap[j].locY);
-				        ctx.lineTo(mindmap[i].locX, mindmap[i].locY);
+				        mindctx.moveTo(mindmap[j].locX, mindmap[j].locY);
+				        mindctx.lineTo(mindmap[i].locX, mindmap[i].locY);
 				        */
-				        ctx.moveTo(mindmap[j].locX +50, mindmap[j].locY -5);
-				        ctx.lineTo(mindmap[i].locX +50, mindmap[i].locY -5);
-				        ctx.strokeStyle = '#dddddd';
-				        ctx.stroke();
+				        mindctx.moveTo(mindmap[j].locX +50, mindmap[j].locY -5);
+				        mindctx.lineTo(mindmap[i].locX +50, mindmap[i].locY -5);
+				        mindctx.strokeStyle = '#dddddd';
+				        mindctx.stroke();
 						
 					}
 				}
 			}
 		}
-	}
-	
-	function mindmapRederBack(){
-		// 캔버스 지우기
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		
-		ctx.font="30px Noto Sans KR";
-		// 그냥 글씨
-		ctx.fillStyle = 'white';
-		ctx.fillText('황인영',50,canvas.height/2); // x, y
-		// 부모가 없는 거부터
-		
-		ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(50,canvas.height/2);
-        ctx.lineTo(250,(canvas.height/2)/2);
-        ctx.strokeStyle = '#dddddd';
-        ctx.stroke();
-		
-		ctx.fillText('컴퓨터',250,(canvas.height/2)/2); // x, y 부모 y의 2 for 문 돌릴때 형제는 -20 식으로
 	}
 });
 </script>
@@ -201,7 +181,7 @@ $(function() {
 <div id="fullpage">
 	<div class="section" id="section0">
 
-	                <canvas id="canvas" width="1500" height="700" style="border: 1px solid black;"></canvas>
+	                <canvas id="mindCanvas" width="1500" height="700" style="border: 1px solid black;"></canvas>
 	</div>
 </div> <!-- fullpage end -->
 </body>
