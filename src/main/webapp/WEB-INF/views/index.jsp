@@ -54,7 +54,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#fullpage').fullpage({
-              sectionsColor: ['', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#D9D9D9', '#5390FF'],
+              sectionsColor: ['', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#5390FF', '#5390FF'],
               anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage'],
               menu: '#menu',
             });
@@ -781,170 +781,16 @@
     <div class="section" id="section5">
      <div class="slide active" id="slide1">
      
-     <div class="flex-grid">
-                <div class="row">
-	                    <div class="cell colspan1"><!-- 빈공간 --></div>
-	                    <!-- 사진 -->
-	                    <div class="cell colspan5">
-	                    	<img src="<%=cp%>/resources/images/web/myoldproject/SGP01_up.png" width="100%" height="auto">
-	                    </div>
-	                    <!-- 설명 -->
-	                    <div class="cell colspan5"> 
-		                    <div class="row">
-	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
-	                		</div>
-	                		
-	                		<div class="row">
-	                			<div class="cell colspan12 align-center">
-		                    	<h2>Shooting game Project - Game 화면</h2>
-		                    	</div>
-		                    </div>
-		                    
-		                    <div class="row"> 
-	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
-	                		</div>
-	                		
-		          			<div class="row">
-			          			<div class="cell colspan4 align-right"> <!--  v-align-middle -->
-				          			프로젝트 이름
-									<br/>
-									사용한 기술
-									<br/>
-									프로젝트 소개
-									<br/>
-									프로젝트 내용 
-									<br/>
-								</div>
-								<div class="cell colspan1 align-center"> <!--  v-align-middle -->
-				          			: 
-									<br/>
-									: 
-									<br/>
-									: 
-									<br/>
-									: 
-									<br/>
-								</div>
-			          			<div class="cell colspan7 align-left"><!--  v-align-middle -->
-			          				Shooting game Project
-									<br/>
-									Java | Swing | Oracle | 
-									<br/>
-									Java Swing 을 활용한 학생관리 프로그램
-									<br/>
-									학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
-									<br/>
-			          			</div>
-			          		</div>
-	                    </div><!-- 설명 div 끝-->
-	                    <div class="cell colspan1"><!-- 빈공간 --></div>
-                </div>  
-     </div><!-- flex-grid 끝  -->
+     
   
      </div> <!-- slide1 끝-->
         <!-- 2 -->
         <div class="slide" id="slide2">
-             <div class="flex-grid">
-                <div class="row">
-	                    <div class="cell colspan1"><!-- 빈공간 --></div>
-	                    <!-- 사진 -->
-	                    <div class="cell colspan5">
-	                    	<img src="<%=cp%>/resources/images/web/myoldproject/student01.png" width="100%" height="auto">
-	                    </div>
-	                    <!-- 설명 -->
-	                    <div class="cell colspan5"> 
-		                    <div class="row">
-	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
-	                		</div>
-	                		
-	                		<div class="row">
-	                			<div class="cell colspan12 align-center">
-		                    	<h2>학생 관리 프로그램</h2>
-		                    	</div>
-		                    </div>
-		                    
-		                    <div class="row"> 
-	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
-	                		</div>
-	                		
-		          			<div class="row">
-			          			<div class="cell colspan5 align-right"> <!--  v-align-middle -->
-				          			프로젝트 이름 : 
-									<br/>
-									사용한 기술 : 
-									<br/>
-									프로젝트 소개 : 
-									<br/>
-									프로젝트 내용 : 
-									<br/>
-								</div>
-			          			<div class="cell colspan7 align-left"><!--  v-align-middle -->
-			          				학생 관리 프로그램
-									<br/>
-									Java | Swing | Oracle
-									<br/>
-									Java Swing 을 활용한 학생관리 프로그램
-									<br/>
-									학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
-									<br/>
-			          			</div>
-			          		</div>
-	                    </div><!-- 설명 div 끝-->
-	                    <div class="cell colspan1"><!-- 빈공간 --></div>
-                </div>  
-     </div><!-- flex-grid 끝  -->
+             
         </div><!-- slide2 끝-->
         <!-- 3 -->
         <div class="slide" id="slide3">
-              <div class="flex-grid">
-                <div class="row">
-	                    <div class="cell colspan1"><!-- 빈공간 --></div>
-	                    <!-- 사진 -->
-	                    <div class="cell colspan5">
-	                    	<img src="<%=cp%>/resources/images/web/myoldproject/student01.png" width="100%" height="auto">
-	                    </div>
-	                    <!-- 설명 -->
-	                    <div class="cell colspan5"> 
-		                    <div class="row">
-	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
-	                		</div>
-	                		
-	                		<div class="row">
-	                			<div class="cell colspan12 align-center">
-		                    	<h2>학생 관리 프로그램</h2>
-		                    	</div>
-		                    </div>
-		                    
-		                    <div class="row"> 
-	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
-	                		</div>
-	                		
-		          			<div class="row">
-			          			<div class="cell colspan5 align-right"> <!--  v-align-middle -->
-				          			프로젝트 이름 : 
-									<br/>
-									사용한 기술 : 
-									<br/>
-									프로젝트 소개 : 
-									<br/>
-									프로젝트 내용 : 
-									<br/>
-								</div>
-			          			<div class="cell colspan7 align-left"><!--  v-align-middle -->
-			          				학생 관리 프로그램
-									<br/>
-									Java | Swing | Oracle
-									<br/>
-									Java Swing 을 활용한 학생관리 프로그램
-									<br/>
-									학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
-									<br/>
-			          			</div>
-			          		</div>
-	                    </div><!-- 설명 div 끝-->
-	                    <div class="cell colspan1"><!-- 빈공간 --></div>
-                </div>  
-     		</div><!-- flex-grid 끝  -->
+             
         </div><!-- slide3 끝-->
     </div><!-- section5 end -->
     
@@ -964,40 +810,41 @@
 		                    <div class="row">
 		                    	<div class="cell colspan1 "></div>
 		                    	<div class="cell colspan11 ">
-		                    		<p class="projectHead align-left v-align-middle">Head</p>
+		                    		<p class="projectHead align-left v-align-middle">Ik ben</p>
 		                    	</div>
 		                	</div> <!-- row end -->    	
 		                	
 		                	 <div class="row">
-		                    	<!-- <div class="cell colspan1 "></div> -->
-		                    	<div class="cell colspan3 debug">
-		                    		<p class="projectText align-right v-align-middle">
+		                    	<div class="cell colspan1 "></div>
+		                    	<div class="cell colspan3 ">
+		                    		<p class="projectText align-left v-align-middle">
 		                    		프로젝트 이름
 									<br/>
 									사용한 기술
 									<br/>
 									프로젝트 소개
 									<br/>
-									프로젝트 내용 ddddddddddd
+									프로젝트에서의 역활 
 									<br/>
 		                    		</p>
 		                    	</div>
-		                    	<div class="cell colspan9 debug">
+		                    	<div class="cell colspan8 ">
 		                    		<p class="projectText align-left v-align-middle">
-		                    		학생 관리 프로그램
+		                    		Ik ben
 									<br/>
-									Java | Swing | Oracle
+									Java | Oracle | JS | Jquery | html | css | Spring | mybatis
 									<br/>
-									Java Swing 을 활용한 학생관리 프로그램
+									개인 웹 포트폴리오
 									<br/>
-									학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
+									화면 제작, 게임 디자인, 게임 로직 구현, DB 제작, DB 연동, 디자인
 									<br/>
 		                    		</p>
 		                    	</div>
+		                    	
 		                	</div> <!-- row end -->
 		                </div><!-- 설명 끝 -->
 	                    <div class="cell colspan1"><!-- 빈공간 --></div>
-                </div>  
+                </div><!-- row end -->
      	</div><!-- flex-grid 끝  -->
     </div>
     
