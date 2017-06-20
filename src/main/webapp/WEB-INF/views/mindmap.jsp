@@ -129,7 +129,7 @@ $(function() {
 							//if(엄마가 같으면 id가 큰게 한단계 내려감)
 							if(mindmap[i].parent == mindmap[x].parent){
 								if(mindmap[i].id > mindmap[x].id){
-									mindmap[i].locY = mindmap[i].locY-50;
+									mindmap[i].locY = mindmap[i].locY+100;
 								}
 							}
 						}
@@ -139,12 +139,33 @@ $(function() {
 			}
 		}
 		
-		
-		// 부모가 없는 거부터
 		// 그리기
 		for (var i = 0; i < mindmap.length; i++) {
-			ctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
+			//ctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
+			ctx.fillText(mindmap[i].locX+" , "+mindmap[i].locY,mindmap[i].locX,mindmap[i].locY); // x, y
 		}	
+		
+		// 부모 있으면 부모 - 자식 위치
+		
+		for (var i = 0; i < mindmap.length; i++) {
+			if(mindmap[i].parent == mindmap[i].id){
+				
+			}
+			else{
+				for (var j = 0; j < mindmap.length; j++) {
+					if(mindmap[i].parent == mindmap[j].id){
+						
+						ctx.lineWidth = 1;
+				        ctx.beginPath();
+				        ctx.moveTo(mindmap[j].locX,mindmap[j].locY);
+				        ctx.lineTo(mindmap[i].locX,mindmap[i].locY);
+				        ctx.strokeStyle = '#dddddd';
+				        ctx.stroke();
+						
+					}
+				}
+			}
+		}
 		
 		/* ctx.lineWidth = 1;
         ctx.beginPath();
