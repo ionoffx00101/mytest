@@ -87,6 +87,8 @@
 <!-- 내 스크립트 -->
 <script type="text/javascript">
 $(function() {
+	
+	/* 마인드 맵 */
 	// 캔버스 친구들
 	var mindCanvas = document.getElementById("mindCanvas");
 	var mindctx = mindCanvas.getContext("2d"); // 캔버스 객체 생성
@@ -117,7 +119,7 @@ $(function() {
 			if(mindmap[i].parent == mindmap[i].id){
 				
 				mindmap[i].locX = 100; /* mindCanvas.width/2 */
-				mindmap[i].locY = mindCanvas.height/2;
+				mindmap[i].locY = mindCanvas.height/2; /*  mindCanvas.height/2; */
 			}
 			else{
 				for (var j = 0; j < mindmap.length; j++) {
@@ -125,55 +127,24 @@ $(function() {
 						// 부모로부터 x+200
 						mindmap[i].locX = mindmap[j].locX+200;
 						
-						// node에 속하는 수 세고
-						// width를 1/n로 분할 0+1/n
-						// 두번째 부터는 첫번째 + 1/n
+						//부모 Y/2
+						mindmap[i].locY = (mindmap[j].locY)/2;
 						
-						var sameNode = 0 ;
-						var sameNodeSmallId = mindmap.length;
-						var temp=0;
+						// 다른 자식 개체 유무를 확인해서 Y값 조절
 						for (var x = 0; x < mindmap.length; x++) {
-							if(mindmap[i].node = mindmap[x].node){
-								sameNode++;
-								
-								if(mindmap[i].id < mindmap[x].id){
-									temp = mindmap[i].id;
-									if(sameNodeSmallId>temp){
-										sameNodeSmallId = temp;
-									}	
-								}
+							
+							if(mindmap[i].parent == mindmap[x].parent){
+								if(mindmap[i].id > mindmap[x].id){
+									mindmap[i].locY = mindmap[i].locY+100; //100 (mindmap[j].locY)/2
+							
 								
 							}
-							
-						}
-						// 같은 노드 중에 제일 작으면
-						if(sameNodeSmallId = mindmap[i].id){
-							mindmap[i].locY = mindCanvas.height/sameNode;
-						}
-						else{
-							
-							var findsameNodeSmallId = mindmap.length;
-							var findtemp=0;
-							var findsameNode=0;
-							for (var x = 0; x < mindmap.length; x++) {
-								if(mindmap[i].node = mindmap[x].node){
-									findsameNode++;
-									
-									if(mindmap[i].id < mindmap[x].id){
-										findtemp = mindmap[i].id;
-										if(findsameNodeSmallId>findtemp){
-											findsameNodeSmallId = findtemp;
-										}	
-									}
-									
-								}
-								
-							}
-							
-							mindmap[i].locY = mindmap[findsameNodeSmallId].locY/findsameNode;
+								// 몇번째 트리인지에 따라 Y값 조절
+								//mindmap[i].locY = (mindmap[i].locY) +50; //mindmap[i].node
 						}
 
 					}
+				  }
 				}
 			}
 		}

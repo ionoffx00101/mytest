@@ -593,6 +593,104 @@
   		});
  	});
 </script>
+<script type="text/javascript">
+$(function() {
+	
+	/* 마인드 맵 */
+	// 캔버스 친구들
+	var mindCanvas = document.getElementById("mindCanvas");
+	var mindctx = mindCanvas.getContext("2d"); // 캔버스 객체 생성
+	
+	var mindmap = new Array();
+	var childnode = 100;
+	
+	$.getJSON("<c:url value="/resources/json/mindmap.json"/>", function(json) {
+	    // console.log(json); // this will show the info it in firebug console
+	    for(var i in json.categories){
+	    	mindmap[i]=json.categories[i];
+        }
+	    //console.log(mindmap[3].name);
+	    
+	    mindmapReder();
+	});
+
+	function mindmapReder(){
+		// 캔버스 지우기
+		mindctx.clearRect(0, 0, mindCanvas.width, mindCanvas.height);
+		
+		mindctx.font="30px Noto Sans KR";
+		// 그냥 글씨
+		mindctx.fillStyle = 'white';
+		
+		//xy 값 지정
+		for (var i = 0; i < mindmap.length; i++) {
+			if(mindmap[i].parent == mindmap[i].id){
+				
+				mindmap[i].locX = 100; /* mindCanvas.width/2 */
+				mindmap[i].locY = mindCanvas.height/2; /*  mindCanvas.height/2; */
+			}
+			else{
+				for (var j = 0; j < mindmap.length; j++) {
+					if(mindmap[i].parent == mindmap[j].id){
+						// 부모로부터 x+200
+						mindmap[i].locX = mindmap[j].locX+200;
+						
+						//부모 Y/2
+						mindmap[i].locY = (mindmap[j].locY)/2;
+						
+						// 다른 자식 개체 유무를 확인해서 Y값 조절
+						for (var x = 0; x < mindmap.length; x++) {
+							
+							if(mindmap[i].parent == mindmap[x].parent){
+								if(mindmap[i].id > mindmap[x].id){
+									mindmap[i].locY = mindmap[i].locY+100; //100 (mindmap[j].locY)/2
+							
+								
+							}
+								// 몇번째 트리인지에 따라 Y값 조절
+								//mindmap[i].locY = (mindmap[i].locY) +50; //mindmap[i].node
+						}
+
+					}
+				  }
+				}
+			}
+		}
+		
+		// 그리기
+		for (var i = 0; i < mindmap.length; i++) {
+			//mindctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
+			mindctx.fillText(mindmap[i].locX+" , "+mindmap[i].locY,mindmap[i].locX,mindmap[i].locY); // x, y
+		}	
+		
+		// 부모 있으면 부모 - 자식 위치
+		
+		for (var i = 0; i < mindmap.length; i++) {
+			if(mindmap[i].parent == mindmap[i].id){
+				
+			}
+			else{
+				for (var j = 0; j < mindmap.length; j++) {
+					if(mindmap[i].parent == mindmap[j].id){
+						
+						mindctx.lineWidth = 1;
+						mindctx.beginPath();
+				        /* 
+				        mindctx.moveTo(mindmap[j].locX, mindmap[j].locY);
+				        mindctx.lineTo(mindmap[i].locX, mindmap[i].locY);
+				        */
+				        mindctx.moveTo(mindmap[j].locX +50, mindmap[j].locY -5);
+				        mindctx.lineTo(mindmap[i].locX +50, mindmap[i].locY -5);
+				        mindctx.strokeStyle = '#dddddd';
+				        mindctx.stroke();
+						
+					}
+				}
+			}
+		}
+	}
+});
+</script>
 
 </head>
 <body>
@@ -617,32 +715,7 @@
    
     <!-- 자기 소개 -->
     <div class="section" id="section1">
-      <!--   <div class="intro">
-            <h1>개발자가 되고 싶어요</h1>
-            <p>코딩 할 때가 제일 행복했어요. 코딩 너무 즐겁다.. </p>
-        </div> -->
-         <div class="flex-grid">
-                <div class="row"><!--  mindmapHand -->
-	       			<div class="cell colspan1 debug"><!-- 빈공간 --></div>
-	       			<div class="cell colspan1 debug v-align-middle"><h2 class="v-align-middle">황인영</h2></div>
-	       			
-	       			<div class="cell colspan1 debug"><h2>컴퓨터</h2><h2>취미</h2></div>
-					<!-- 	       			
-					<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug"></div>
-	       			<div class="cell colspan1 debug">빈공간</div>
-	       			 -->
-	       			
-                </div><!-- row end -->
-     		</div><!-- flex-grid 끝  -->
+      <canvas id="mindCanvas" width="1500" height="700" style="border: 1px solid black;"></canvas>
     </div>
     
     <!-- 기술 -->
