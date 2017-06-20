@@ -54,8 +54,8 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#fullpage').fullpage({
-              sectionsColor: ['', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#5390FF', '#5390FF'],
-              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage'],
+              sectionsColor: ['', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#5390FF', '#5390FF', '#5390FF'],
+              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage', '8thpage'],
               menu: '#menu',
             });
         });
@@ -803,11 +803,11 @@
 		                    		<p class="projectText align-left v-align-middle">
 		                    		프로젝트 이름
 									<br/>
-									사용한 기술
+									사용 기술
 									<br/>
 									프로젝트 소개
 									<br/>
-									프로젝트에서의 역활 
+									담당 분야 
 									<br/>
 		                    		</p>
 		                    	</div>
@@ -815,7 +815,7 @@
 		                    		<p class="projectText align-left v-align-middle">
 		                    		Ik ben
 									<br/>
-									Java | Oracle | JS | Jquery | html | css | Spring | mybatis
+									Java | Oracle | JS | Jquery | html | css | Spring | mybatis | AJAX
 									<br/>
 									개인 웹 포트폴리오
 									<br/>
@@ -830,6 +830,120 @@
                 </div><!-- row end -->
      	</div><!-- flex-grid 끝  -->
     </div> <!-- section5 끝 -->
+    
+    <!-- 프로젝트 사진 / 설명 -->
+    <div class="section" id="section6">
+  
+            <div class="flex-grid">
+                <div class="row">
+	                    <div class="cell colspan1 "><!-- 빈공간 --></div>
+	                    
+	                    <!-- 사진 -->
+	                    <div class="cell colspan5 ">
+		                    <img src="<%=cp%>/resources/images/web/myoldproject/SGP01_up.png" width="100%" height="auto">	
+	                    </div>
+	                    
+	                    <!-- 설명 -->
+	                    <div class="cell colspan5 ">
+		                    <div class="row">
+		                    	<div class="cell colspan1 "></div>
+		                    	<div class="cell colspan11 ">
+		                    		<!-- 큰 제목 -->
+		                    		<p class="projectHead align-left v-align-middle">SGP</p>
+		                    	</div>
+		                	</div> <!-- row end -->    	
+		                	
+		                	 <div class="row">
+		                    	<div class="cell colspan1 "></div>
+		                    	<div class="cell colspan3 ">
+		                    		<p class="projectText align-left v-align-middle">
+		                    		프로젝트 이름
+									<br/>
+									사용 기술
+									<br/>
+									프로젝트 소개
+									<br/>
+									담당 분야 
+									<br/>
+		                    		</p>
+		                    	</div>
+		                    	<div class="cell colspan8 ">
+		                    		<p class="projectText align-left v-align-middle">
+		                    		Shooting Game Project
+									<br/>
+									Java | Oracle | JS | Jquery | html | css | Spring | mybatis | websocket | AJAX | PL/SQL | Tomcat8
+									<br/>
+									Html5와 JSP를 활용하여 슈팅 게임을 제작하고 해당 게임의 홈페이지를 제작
+									<br/>
+									FAQ, QnA 게시판 구현 / DB 설계, 구현 및 DB 연동, 슈팅게임제작
+									<br/>
+		                    		</p>
+		                    	</div>
+		                    	
+		                	</div> <!-- row end -->
+		                </div><!-- 설명 끝 -->
+	                    <div class="cell colspan1"><!-- 빈공간 --></div>
+                </div><!-- row end -->
+     		</div><!-- flex-grid 끝  -->
+      
+    </div> <!-- section6 끝 -->
+    
+     <!-- 프로젝트 사진 / 설명 -->
+    <div class="section" id="section7">
+  
+            <div class="flex-grid">
+                <div class="row">
+	                    <div class="cell colspan1 "><!-- 빈공간 --></div>
+	                    
+	                    <!-- 사진 -->
+	                    <div class="cell colspan5 ">
+		                    <img src="<%=cp%>/resources/images/web/myoldproject/student01.png" width="100%" height="auto">	
+	                    </div>
+	                    
+	                    <!-- 설명 -->
+	                    <div class="cell colspan5 ">
+		                    <div class="row">
+		                    	<div class="cell colspan1 "></div>
+		                    	<div class="cell colspan11 ">
+		                    		<!-- 큰 제목 -->
+		                    		<p class="projectHead align-left v-align-middle">학생 관리 프로그램</p>
+		                    	</div>
+		                	</div> <!-- row end -->    	
+		                	
+		                	 <div class="row">
+		                    	<div class="cell colspan1 "></div>
+		                    	<div class="cell colspan3 ">
+		                    		<p class="projectText align-left v-align-middle">
+		                    		프로젝트 이름
+									<br/>
+									사용 기술
+									<br/>
+									프로젝트 소개
+									<br/>
+									담당 분야 
+									<br/>
+		                    		</p>
+		                    	</div>
+		                    	<div class="cell colspan8 ">
+		                    		<p class="projectText align-left v-align-middle">
+		                    		학생 관리 프로그램
+									<br/>
+									Java | Swing | Oracle
+									<br/>
+									Java Swing 을 활용한 학생관리 프로그램
+									<br/>
+									학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
+									<br/>
+		                    		</p>
+		                    	</div>
+		                    	
+		                	</div> <!-- row end -->
+		                </div><!-- 설명 끝 -->
+	                    <div class="cell colspan1"><!-- 빈공간 --></div>
+                </div><!-- row end -->
+     		</div><!-- flex-grid 끝  -->
+      
+    </div> <!-- section7 끝 -->
     
 </div> <!-- fullpage end -->
 </body>
