@@ -54,8 +54,8 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#fullpage').fullpage({
-              sectionsColor: ['', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#B29E98', '#FFEFAB'],
-              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage'],
+              sectionsColor: ['', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff', '#D9D9D9', '#5390FF'],
+              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage'],
               menu: '#menu',
             });
         });
@@ -783,6 +783,69 @@
 	                    <div class="cell colspan1"><!-- 빈공간 --></div>
 	                    <!-- 사진 -->
 	                    <div class="cell colspan5">
+	                    	<img src="<%=cp%>/resources/images/web/myoldproject/SGP01_up.png" width="100%" height="auto">
+	                    </div>
+	                    <!-- 설명 -->
+	                    <div class="cell colspan5"> 
+		                    <div class="row">
+	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
+	                		</div>
+	                		
+	                		<div class="row">
+	                			<div class="cell colspan12 align-center">
+		                    	<h2>Shooting game Project - Game 화면</h2>
+		                    	</div>
+		                    </div>
+		                    
+		                    <div class="row"> 
+	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
+	                		</div>
+	                		
+		          			<div class="row">
+			          			<div class="cell colspan4 align-right"> <!--  v-align-middle -->
+				          			프로젝트 이름
+									<br/>
+									사용한 기술
+									<br/>
+									프로젝트 소개
+									<br/>
+									프로젝트 내용 
+									<br/>
+								</div>
+								<div class="cell colspan1 align-center"> <!--  v-align-middle -->
+				          			: 
+									<br/>
+									: 
+									<br/>
+									: 
+									<br/>
+									: 
+									<br/>
+								</div>
+			          			<div class="cell colspan7 align-left"><!--  v-align-middle -->
+			          				Shooting game Project
+									<br/>
+									Java | Swing | Oracle | 
+									<br/>
+									Java Swing 을 활용한 학생관리 프로그램
+									<br/>
+									학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
+									<br/>
+			          			</div>
+			          		</div>
+	                    </div><!-- 설명 div 끝-->
+	                    <div class="cell colspan1"><!-- 빈공간 --></div>
+                </div>  
+     </div><!-- flex-grid 끝  -->
+  
+     </div> <!-- slide1 끝-->
+        <!-- 2 -->
+        <div class="slide" id="slide2">
+             <div class="flex-grid">
+                <div class="row">
+	                    <div class="cell colspan1"><!-- 빈공간 --></div>
+	                    <!-- 사진 -->
+	                    <div class="cell colspan5">
 	                    	<img src="<%=cp%>/resources/images/web/myoldproject/student01.png" width="100%" height="auto">
 	                    </div>
 	                    <!-- 설명 -->
@@ -826,87 +889,80 @@
 	                    </div><!-- 설명 div 끝-->
 	                    <div class="cell colspan1"><!-- 빈공간 --></div>
                 </div>  
-     </div>
-        
-          
-     </div>
-        <!-- 2 -->
-        <div class="slide" id="slide2">
-             <div class="grid">
-          		<div class="row cells4">
-	          		<div class="cell"></div>
-	          		<div class="cell">
-	          			<img src="<%=cp%>/resources/images/web/myoldproject/student01.png" width="100%" height="auto">
-	          		</div>
-	          		<div class="cell">
-	          			<h2>학생 관리 프로그램</h2>
-	          			<div class="row cells2">
-		          			<div class="cell align-right v-align-middle"> 
-			          			프로젝트 이름 : 
-								<br/>
-								사용한 기술 : 
-								<br/>
-								프로젝트 소개 : 
-								<br/>
-								프로젝트 내용 : 
-								<br/>
-							</div>
-		          			<div class="cell align-left v-align-middle">
-		          				학생 관리 프로그램
-								<br/>
-								Java | Swing | Oracle
-								<br/>
-								Java Swing 을 활용한 학생관리 프로그램
-								<br/>
-								학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
-								<br/>
-		          			</div>
-						</div>
-	          		</div>
-	          		<div class="cell"></div>
-          		</div>
-          </div>
-        </div>
+     </div><!-- flex-grid 끝  -->
+        </div><!-- slide2 끝-->
         <!-- 3 -->
         <div class="slide" id="slide3">
-              <div class="grid">
-          	<div class="row cells2">
-          		<div class="cell">
-          			<img src="<%=cp%>/resources/images/web/myoldproject/SGP01_up.png" width="100%" height="auto">
-          		</div>
-          		<div class="cell">
-          			<h2>Shooting Game Project - Game</h2>
-          			<span class="v-align-middle"><!-- align-center -->
-	          			1. 좌측에는 내가 플레이 하는 화면이 보여지고 우측에는 상대방의 플레이 화면이 실시간으로 보여진다.
-						<br/>
-						2. 중앙에는 나의 닉네임과 스코어를 확인 할 수 있다.
-						<br/>
-						3. 게임 페이지로 이동 시 캔버스에 ready, go가 표시된 후 게임이 시작된다.
-						<br/>
-						4. 방어아이템을 먹으면 플레이 하는 화면테두리가 잠시 초록색이 된다.
-						<br/>
-						5. 공격아이템을 먹으면 상대방 플레이 화면테두리가 잠시 빨간색이 된다.
-						<br/>
-						6. 상대방이 공격아이템을 먹으면 내가 플레이 하는 화면 테두리가 잠시 빨간색이 된다.
-						<br/>
-						7. 아이템은 일정시간이 되면 랜덤으로 아이템종류가 정해져서 나온다.
-						<br/>
-						8. 모든 객체는 게임 시작 시 생성해놓고 필요할 때 값만 바꿔준다.
-						<br/>
-						9. 게임 종료 시 승패여부가 화면에 표시되고 3초 후 방으로 이동된다.
-					</span>
-          		</div>
-          	</div>
-          </div>
-        </div>
+              <div class="flex-grid">
+                <div class="row">
+	                    <div class="cell colspan1"><!-- 빈공간 --></div>
+	                    <!-- 사진 -->
+	                    <div class="cell colspan5">
+	                    	<img src="<%=cp%>/resources/images/web/myoldproject/student01.png" width="100%" height="auto">
+	                    </div>
+	                    <!-- 설명 -->
+	                    <div class="cell colspan5"> 
+		                    <div class="row">
+	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
+	                		</div>
+	                		
+	                		<div class="row">
+	                			<div class="cell colspan12 align-center">
+		                    	<h2>학생 관리 프로그램</h2>
+		                    	</div>
+		                    </div>
+		                    
+		                    <div class="row"> 
+	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
+	                		</div>
+	                		
+		          			<div class="row">
+			          			<div class="cell colspan5 align-right"> <!--  v-align-middle -->
+				          			프로젝트 이름 : 
+									<br/>
+									사용한 기술 : 
+									<br/>
+									프로젝트 소개 : 
+									<br/>
+									프로젝트 내용 : 
+									<br/>
+								</div>
+			          			<div class="cell colspan7 align-left"><!--  v-align-middle -->
+			          				학생 관리 프로그램
+									<br/>
+									Java | Swing | Oracle
+									<br/>
+									Java Swing 을 활용한 학생관리 프로그램
+									<br/>
+									학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
+									<br/>
+			          			</div>
+			          		</div>
+	                    </div><!-- 설명 div 끝-->
+	                    <div class="cell colspan1"><!-- 빈공간 --></div>
+                </div>  
+     		</div><!-- flex-grid 끝  -->
+        </div><!-- slide3 끝-->
     </div><!-- section5 end -->
     
     <!-- 마인드맵 -->
     <div class="section" id="section6">
-        <div class="intro">
-            <h1>개발자가 되고 싶어요</h1>
-            <p>코딩 할 때가 제일 행복했어요. 코딩 너무 즐겁다.. </p>
-        </div>
+        <div class="flex-grid">
+                <div class="row">
+	                    <div class="cell colspan1 debug"><!-- 빈공간 --></div>
+	                    
+	                    <!-- 사진 -->
+	                    <div class="cell colspan5 debug">
+	                    	<img src="<%=cp%>/resources/images/web/myoldproject/Honeycam 2017-06-16 14-39-26.gif" width="100%" height="auto">
+	                    </div>
+	                    
+	                    <!-- 설명 -->
+	                    <div class="cell colspan5 debug"> 
+	                    
+		                </div> 
+	                    <div class="cell colspan1 debug"><!-- 빈공간 --></div>
+                </div>  
+     	</div><!-- flex-grid 끝  -->
     </div>
     
 </div> <!-- fullpage end -->
