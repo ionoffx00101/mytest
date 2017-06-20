@@ -39,6 +39,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.core.io.JsonStringEncoder;
+
 /**
  * Handles requests for the application home page.
  */
@@ -66,6 +68,8 @@ public class HomeController
 		return "mindmap";
 	}
 	
+	
+	
 	@ResponseBody
 	@RequestMapping(value = "WordBookJSON", method = RequestMethod.POST, produces = "application/json; charset=utf8")
 	public String WordBookJSON(Model model)
@@ -81,9 +85,9 @@ public class HomeController
 			json.put("word", vo.getWordbook_word());
 			json.put("check", vo.getWordbook_wordcheck());
 
-			jsonArr.put(json); // [{"num":1,"check":"1","word":"멍멍이"}]
-			//jsonArr.put(vo); // "[WordBookVO [wordbook_num=1, wordbook_word=멍멍이, wordbook_wordcheck=1]]"
+			jsonArr.put(json);
 		}
+		
 		return jsonArr.toString(); /* "redirect:경로" */
 	}
 

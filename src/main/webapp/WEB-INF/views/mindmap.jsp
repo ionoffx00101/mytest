@@ -91,8 +91,19 @@ $(function() {
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d"); // 캔버스 객체 생성
 	
-	mindmapReder();
+	var mindmap = new Array();
+
 	
+	$.getJSON("<c:url value="/resources/json/mindmap.json"/>", function(json) {
+	    // console.log(json); // this will show the info it in firebug console
+	    for(var i in json.categories){
+	    	mindmap[i]=json.categories[i];
+        }
+	    //console.log(mindmap[3].name);
+	    
+	    mindmapReder();
+	});
+
 	function mindmapReder(){
 		// 캔버스 지우기
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -100,9 +111,69 @@ $(function() {
 		ctx.font="30px Noto Sans KR";
 		// 그냥 글씨
 		ctx.fillStyle = 'white';
-		ctx.fillText('황인영',canvas.width/2,canvas.height/2); // x, y
+		
+		//xy 값 지정
+		for (var i = 0; i < mindmap.length; i++) {
+			if(mindmap[i].parent == mindmap[i].id){
+				
+				mindmap[i].locX = 100; /* canvas.width/2 */
+				mindmap[i].locY = canvas.height/2;
+			}
+			else{
+				for (var j = 0; j < mindmap.length; j++) {
+					if(mindmap[i].parent == mindmap[j].id){
+						mindmap[i].locX = mindmap[j].locX+200;
+						mindmap[i].locY = (mindmap[j].locY)/2;
+						
+						for (var x = 0; x < mindmap.length; x++) {
+							//if(엄마가 같으면 id가 큰게 한단계 내려감)
+							if(mindmap[i].parent == mindmap[x].parent){
+								if(mindmap[i].id > mindmap[x].id){
+									mindmap[i].locY = mindmap[i].locY-50;
+								}
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		
 		
 		// 부모가 없는 거부터
+		// 그리기
+		for (var i = 0; i < mindmap.length; i++) {
+			ctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
+		}	
+		
+		/* ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(50,canvas.height/2);
+        ctx.lineTo(250,(canvas.height/2)/2);
+        ctx.strokeStyle = '#dddddd';
+        ctx.stroke();
+		
+		ctx.fillText('컴퓨터',250,(canvas.height/2)/2); // x, y 부모 y의 2 for 문 돌릴때 형제는 -20 식으로 */
+	}
+	
+	function mindmapRederBack(){
+		// 캔버스 지우기
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		
+		ctx.font="30px Noto Sans KR";
+		// 그냥 글씨
+		ctx.fillStyle = 'white';
+		ctx.fillText('황인영',50,canvas.height/2); // x, y
+		// 부모가 없는 거부터
+		
+		ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(50,canvas.height/2);
+        ctx.lineTo(250,(canvas.height/2)/2);
+        ctx.strokeStyle = '#dddddd';
+        ctx.stroke();
+		
+		ctx.fillText('컴퓨터',250,(canvas.height/2)/2); // x, y 부모 y의 2 for 문 돌릴때 형제는 -20 식으로
 	}
 });
 </script>

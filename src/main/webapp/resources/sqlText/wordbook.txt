@@ -1,0 +1,40 @@
+﻿drop table wordbook;
+drop SEQUENCE wordbook_seq;
+
+create table wordbook (
+wordbook_num number(4) PRIMARY key,
+wordbook_word varchar2(50) not null,
+wordbook_wordcheck varchar2(2) not null
+);
+-- 0:false , 1:true
+create SEQUENCE wordbook_seq;
+
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'페이지','1');
+
+select wordbook_num,wordbook_word,wordbook_wordcheck from wordbook;
+
+COMMIT;
+
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'멍멍이','1');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'맞춤법','1');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'왜안돼','1');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'배고프다','1');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'껌을 씹다','1');
+
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'댕댕이','0');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'마춤뻡','0');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'외않되','0');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'껌을 싶다','0');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'안 그레요','0');
+--
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'멍멍이','true');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'맞춤법','true');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'왜안돼','true');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'배고프다','true');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'껌을 씹다','true');
+
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'댕댕이','false');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'마춤뻡','false');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'외않되','false');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'껌을 싶다','false');
+INSERT INTO wordbook(wordbook_num,wordbook_word,wordbook_wordcheck) VALUES (wordbook_seq.NEXTVAL,'안 그레요','false');

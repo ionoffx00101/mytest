@@ -21,6 +21,10 @@
 }
 /* 글씨 위치 수정은 rw의 style.css .rw-sentence에서 */
 
+.mindmapHand{
+	height:700px;
+}
+
 /* 링크 글씨 색 변경용 */
 a:hover{
 	color: #000000;

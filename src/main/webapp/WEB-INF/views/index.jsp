@@ -622,9 +622,24 @@
             <p>코딩 할 때가 제일 행복했어요. 코딩 너무 즐겁다.. </p>
         </div> -->
          <div class="flex-grid">
-                <div class="row">
+                <div class="row"><!--  mindmapHand -->
 	       			<div class="cell colspan1 debug"><!-- 빈공간 --></div>
-	       			<div class="cell colspan1 debug" style="height: 100%"><h2>황인영</h2></div>
+	       			<div class="cell colspan1 debug v-align-middle"><h2 class="v-align-middle">황인영</h2></div>
+	       			
+	       			<div class="cell colspan1 debug"><h2>컴퓨터</h2><h2>취미</h2></div>
+					<!-- 	       			
+					<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug"></div>
+	       			<div class="cell colspan1 debug">빈공간</div>
+	       			 -->
 	       			
                 </div><!-- row end -->
      		</div><!-- flex-grid 끝  -->
