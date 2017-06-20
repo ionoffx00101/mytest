@@ -688,10 +688,10 @@
 					<div class="skill-bar-percent">80%</div>
 				</div>
 				<!-- pl/sql -->
-				<div class="skillbar clearfix " data-percent="45%">
+				<div class="skillbar clearfix " data-percent="35%">
 					<div class="skillbar-title" style="background: #46465e;"><span>pl/sql</span></div>
 					<div class="skillbar-bar" style="background: #5a68a5;"></div>
-					<div class="skill-bar-percent">45%</div>
+					<div class="skill-bar-percent">35%</div>
 				</div>
 				<!-- SQLite -->
 				<div class="skillbar clearfix " data-percent="25%">
@@ -780,17 +780,29 @@
      
      <div class="flex-grid">
                 <div class="row">
-	                    <div class="cell colspan1"></div>
+	                    <div class="cell colspan1"><!-- 빈공간 --></div>
 	                    <!-- 사진 -->
 	                    <div class="cell colspan5">
 	                    	<img src="<%=cp%>/resources/images/web/myoldproject/student01.png" width="100%" height="auto">
 	                    </div>
 	                    <!-- 설명 -->
-	                    <div class="cell colspan5">
-	                    	<h2>학생 관리 프로그램</h2>
+	                    <div class="cell colspan5"> 
+		                    <div class="row">
+	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
+	                		</div>
+	                		
+	                		<div class="row">
+	                			<div class="cell colspan12 align-center">
+		                    	<h2>학생 관리 프로그램</h2>
+		                    	</div>
+		                    </div>
+		                    
+		                    <div class="row"> 
+	                    		<div class="cell colspan12"><h2><!-- 빈공간 --></h2></div>
+	                		</div>
+	                		
 		          			<div class="row">
-		          				<!-- <div class="cell colspan1"> </div> -->
-			          			<div class="cell colspan5 align-right v-align-middle"> 
+			          			<div class="cell colspan5 align-right"> <!--  v-align-middle -->
 				          			프로젝트 이름 : 
 									<br/>
 									사용한 기술 : 
@@ -800,7 +812,7 @@
 									프로젝트 내용 : 
 									<br/>
 								</div>
-			          			<div class="cell colspan5 align-left v-align-middle">
+			          			<div class="cell colspan7 align-left"><!--  v-align-middle -->
 			          				학생 관리 프로그램
 									<br/>
 									Java | Swing | Oracle
@@ -810,10 +822,9 @@
 									학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
 									<br/>
 			          			</div>
-			          		</div>	
-	                    </div>
-	                    
-	                    <div class="cell colspan1"></div>
+			          		</div>
+	                    </div><!-- 설명 div 끝-->
+	                    <div class="cell colspan1"><!-- 빈공간 --></div>
                 </div>  
      </div>
         
@@ -889,6 +900,14 @@
           </div>
         </div>
     </div><!-- section5 end -->
+    
+    <!-- 마인드맵 -->
+    <div class="section" id="section6">
+        <div class="intro">
+            <h1>개발자가 되고 싶어요</h1>
+            <p>코딩 할 때가 제일 행복했어요. 코딩 너무 즐겁다.. </p>
+        </div>
+    </div>
     
 </div> <!-- fullpage end -->
 </body>
