@@ -10,16 +10,6 @@
 <!-- 추가됨 -->
 <!-- ContextPath 선언 -->
 <% String cp = request.getContextPath(); %>
-<!-- Json 파싱 하는 곳 -->
-<% 
-	String temp = (String) request.getAttribute("tistoryJson");
-	Object obj = JSONValue.parse(temp);
-	JSONObject object = (JSONObject) obj;
-	
-	JSONObject tistory = (JSONObject) object.get("tistory"); //"tistory"
-	JSONObject item = (JSONObject) tistory.get("item"); //"item"
-	JSONArray posts = (JSONArray)item.get("posts"); //"posts" 
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -113,7 +103,6 @@ $(function() {
 		ctx.fillText('황인영',canvas.width/2,canvas.height/2); // x, y
 		
 		// 부모가 없는 거부터
-		
 	}
 });
 </script>
@@ -121,8 +110,10 @@ $(function() {
 </head>
 <body>
 <div id="fullpage">
-    <!-- 게임 -->
-                <canvas id="canvas" width="1000" height="1000" style="border: 1px solid black;"></canvas>
+	<div class="section" id="section0">
+
+	                <canvas id="canvas" width="1500" height="700" style="border: 1px solid black;"></canvas>
+	</div>
 </div> <!-- fullpage end -->
 </body>
 </html>

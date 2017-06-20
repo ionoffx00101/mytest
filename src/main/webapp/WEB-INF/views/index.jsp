@@ -617,10 +617,17 @@
    
     <!-- 자기 소개 -->
     <div class="section" id="section1">
-        <div class="intro">
+      <!--   <div class="intro">
             <h1>개발자가 되고 싶어요</h1>
             <p>코딩 할 때가 제일 행복했어요. 코딩 너무 즐겁다.. </p>
-        </div>
+        </div> -->
+         <div class="flex-grid">
+                <div class="row">
+	       			<div class="cell colspan1 debug"><!-- 빈공간 --></div>
+	       			<div class="cell colspan1 debug" style="height: 100%"><h2>황인영</h2></div>
+	       			
+                </div><!-- row end -->
+     		</div><!-- flex-grid 끝  -->
     </div>
     
     <!-- 기술 -->

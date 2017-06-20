@@ -63,19 +63,7 @@ public class HomeController
 	@RequestMapping(value = "mind", method = RequestMethod.GET)
 	public String mind(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		/*String mindmapJson = "{ "nodeDataArray": [
-				{"key":0, "text":"Mind Map", "loc":"0 0"},
-				{"key":1, "parent":0, "text":"Getting more time", "brush":"skyblue", "dir":"right", "loc":"77 -22"},
-				{"key":11, "parent":1, "text":"Wake up early", "brush":"skyblue", "dir":"right", "loc":"200 -48"},
-				{"key":12, "parent":1, "text":"Delegate", "brush":"skyblue", "dir":"right", "loc":"200 -22"},
-				{"key":13, "parent":1, "text":"Simplify", "brush":"skyblue", "dir":"right", "loc":"200 4"},
-				{"key":2, "parent":0, "text":"More effective use", "brush":"darkseagreen", "dir":"right", "loc":"77 43"},
-				{"key":21, "parent":2, "text":"Planning", "brush":"darkseagreen", "dir":"right", "loc":"203 30"},
-				{"key":211, "parent":21, "text":"Priorities", "brush":"darkseagreen", "dir":"right", "loc":"274 17"},
-				{"key":212, "parent":21, "text":"Ways to focus", "brush":"darkseagreen", "dir":"right", "loc":"274 43"},
-				]}";
-		 */	
-				return "mindmap";
+		return "mindmap";
 	}
 	
 	@ResponseBody
