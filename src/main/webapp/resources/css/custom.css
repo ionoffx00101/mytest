@@ -21,8 +21,6 @@
 }
 /* 글씨 위치 수정은 rw의 style.css .rw-sentence에서 */
 
-/* section5 - 1 */
-
 /* 링크 글씨 색 변경용 */
 a:hover{
 	color: #000000;
@@ -30,6 +28,20 @@ a:hover{
 a:FOCUS {
 	color: #000000;
 	text-decoration: none;
+}
+
+/* 프로젝트 소개 글씨체 */
+.projectText{
+	font-family: 'Raleway',sans-serif;
+	color: #ffffff;
+	font-size: 20px;
+	
+}
+.projectHead{
+	font-family: 'Raleway',sans-serif;
+	color: #ffffff;
+	font-size: 40px; font-weight: 800; line-height: 36px;
+	border-bottom: 3px solid #bbb; padding: 0 0 15px 0; margin-bottom: 8px;
 }
 
 /* 스킬바 관련 css */

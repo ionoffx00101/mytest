@@ -94,13 +94,16 @@
 
     <%-- <script src="<%=cp%>/resources/metro/js/jquery-2.1.3.min.js"></script> --%>
     <script src="<%=cp%>/resources/metro/js/metro.js"></script>
-
+	
 <!-- for fontawesome -->
 	<link href="<%=cp%>/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 <!-- 내 css -->	
 	<link href="<%=cp%>/resources/css/custom.css" rel="stylesheet">
-
+	
+<!-- 내 폰트 -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	
 <!-- 내 스크립트 -->
 <script type="text/javascript">
  $(function() {
@@ -540,7 +543,7 @@
  		  	 
              // ajax를 이용해 DB에 있는 한글 단어를 가져옴
  			 $.ajax({
-	            url : "<c:url value="/WordBookJSON"/>", 
+	            url : "<c:url value="/WordBookJSON"/>",
 	            type : "post",
 	            dataType : "json",
 	            contentType : 'application/json',
@@ -949,18 +952,51 @@
     <div class="section" id="section6">
         <div class="flex-grid">
                 <div class="row">
-	                    <div class="cell colspan1 debug"><!-- 빈공간 --></div>
+	                    <div class="cell colspan1 "><!-- 빈공간 --></div>
 	                    
 	                    <!-- 사진 -->
-	                    <div class="cell colspan5 debug">
-	                    	<img src="<%=cp%>/resources/images/web/myoldproject/Honeycam 2017-06-16 14-39-26.gif" width="100%" height="auto">
+	                    <div class="cell colspan5 ">
+		                    <img src="<%=cp%>/resources/images/web/myoldproject/Honeycam 2017-06-16 14-39-26.gif" width="100%" height="auto">	
 	                    </div>
 	                    
 	                    <!-- 설명 -->
-	                    <div class="cell colspan5 debug"> 
-	                    
-		                </div> 
-	                    <div class="cell colspan1 debug"><!-- 빈공간 --></div>
+	                    <div class="cell colspan5 ">
+		                    <div class="row">
+		                    	<div class="cell colspan1 "></div>
+		                    	<div class="cell colspan11 ">
+		                    		<p class="projectHead align-left v-align-middle">Head</p>
+		                    	</div>
+		                	</div> <!-- row end -->    	
+		                	
+		                	 <div class="row">
+		                    	<!-- <div class="cell colspan1 "></div> -->
+		                    	<div class="cell colspan3 debug">
+		                    		<p class="projectText align-right v-align-middle">
+		                    		프로젝트 이름
+									<br/>
+									사용한 기술
+									<br/>
+									프로젝트 소개
+									<br/>
+									프로젝트 내용 ddddddddddd
+									<br/>
+		                    		</p>
+		                    	</div>
+		                    	<div class="cell colspan9 debug">
+		                    		<p class="projectText align-left v-align-middle">
+		                    		학생 관리 프로그램
+									<br/>
+									Java | Swing | Oracle
+									<br/>
+									Java Swing 을 활용한 학생관리 프로그램
+									<br/>
+									학생 정보 관련 DB 설계, 구현 및 DB 연동, 학생정보 조회 및 입력수정 화면제작
+									<br/>
+		                    		</p>
+		                    	</div>
+		                	</div> <!-- row end -->
+		                </div><!-- 설명 끝 -->
+	                    <div class="cell colspan1"><!-- 빈공간 --></div>
                 </div>  
      	</div><!-- flex-grid 끝  -->
     </div>
