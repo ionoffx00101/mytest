@@ -8,9 +8,10 @@
       "locY": "0",
       "node": "0"
     },
+    
     {
       "id": "1",
-      "name": "Java Script",
+      "name": "개발자",
       "parent": "0",
       "locX": "0",
       "locY": "0",
@@ -18,15 +19,16 @@
     },
     {
       "id": "2",
-      "name": "HTML5 & CSS3",
+      "name": "사람",
       "parent": "0",
       "locX": "0",
       "locY": "0",
       "node": "1"
     },
+    
     {
       "id": "3",
-      "name": "Java Script",
+      "name": "Java",
       "parent": "1",
       "locX": "0",
       "locY": "0",
@@ -34,7 +36,7 @@
     },
     {
       "id": "4",
-      "name": "HTML5 & CSS3",
+      "name": "Java Script",
       "parent": "1",
       "locX": "0",
       "locY": "0",
@@ -42,11 +44,132 @@
     },
     {
       "id": "5",
-      "name": "HTML5 & CSS3",
+      "name": "Python",
       "parent": "1",
       "locX": "0",
       "locY": "0",
       "node": "2"
+    },
+    
+    {
+      "id": "6",
+      "name": "Spring",
+      "parent": "3",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "7",
+      "name": "JSON",
+      "parent": "3",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "8",
+      "name": "mybatis",
+      "parent": "3",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "9",
+      "name": "Jquery",
+      "parent": "4",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "10",
+      "name": "Node.js",
+      "parent": "4",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "11",
+      "name": "게임",
+      "parent": "2",
+      "locX": "0",
+      "locY": "0",
+      "node": "2"
+    },
+    {
+      "id": "12",
+      "name": "INTP",
+      "parent": "2",
+      "locX": "0",
+      "locY": "0",
+      "node": "2"
+    },
+    {
+      "id": "13",
+      "name": "책",
+      "parent": "2",
+      "locX": "0",
+      "locY": "0",
+      "node": "2"
+    },
+    {
+      "id": "14",
+      "name": "영화",
+      "parent": "2",
+      "locX": "0",
+      "locY": "0",
+      "node": "2"
+    },
+    {
+      "id": "15",
+      "name": "폴아웃",
+      "parent": "11",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "16",
+      "name": "디스아너드",
+      "parent": "11",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "17",
+      "name": "매스이펙트",
+      "parent": "11",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "18",
+      "name": "검은사막",
+      "parent": "11",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "19",
+      "name": "바람이 불 때에",
+      "parent": "13",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
+    },
+    {
+      "id": "20",
+      "name": "컨택트",
+      "parent": "14",
+      "locX": "0",
+      "locY": "0",
+      "node": "3"
     }
   ]
 }

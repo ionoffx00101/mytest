@@ -130,12 +130,12 @@ $(function() {
 						for (var x = 0; x < mindmap.length; x++) {
 							if(mindmap[i].parent == mindmap[x].parent){
 								if(mindmap[i].id > mindmap[x].id){
-									mindmap[i].locY = mindmap[i].locY+100;
+									mindmap[i].locY = mindmap[i].locY+100; //100 (mindmap[j].locY)/2
 								}
 							}
 						}
 						// 몇번째 트리인지에 따라 Y값 조절
-						mindmap[i].locY = (mindmap[i].locY)/mindmap[i].node;
+						mindmap[i].locY = (mindmap[i].locY) +50; ///mindmap[i].node
 					}
 				}
 			}
