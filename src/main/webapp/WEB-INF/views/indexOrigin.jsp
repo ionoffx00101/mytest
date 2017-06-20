@@ -624,60 +624,43 @@ $(function() {
 		
 		//xy 값 지정
 		for (var i = 0; i < mindmap.length; i++) {
-			// 부모 ㄴㄴ
 			if(mindmap[i].parent == mindmap[i].id){
 				
 				mindmap[i].locX = 100; /* mindCanvas.width/2 */
 				mindmap[i].locY = mindCanvas.height/2; /*  mindCanvas.height/2; */
 			}
-			// 부모 ㅇㅇ
 			else{
-				// 부모의 x값을 이용해 자식의 x값을 만듬
 				for (var j = 0; j < mindmap.length; j++) {
 					if(mindmap[i].parent == mindmap[j].id){
 						// 부모로부터 x+200
-						mindmap[i].locX = mindmap[j].locX+200;	
-					}
-				}
-				
-				// y값 만드는 곳
-				var samenode= 0;
-				var smallnode = mindmap.length;
-				var smallme = 0;
-				for (var k = 0; k < mindmap.length; k++) {
-					//노드 값 비교
-					if(mindmap[i].node == mindmap[k].node){
-						samenode++;
-						// 노드 중 가장 작은 id 값 찾기
-						if(mindmap[k].id<smallnode){
-							smallnode =mindmap[k].id;
+						mindmap[i].locX = mindmap[j].locX+200;
+						
+						//부모 Y/2
+						mindmap[i].locY = (mindmap[j].locY)/2;
+						
+						// 다른 자식 개체 유무를 확인해서 Y값 조절
+						for (var x = 0; x < mindmap.length; x++) {
 							
+							if(mindmap[i].parent == mindmap[x].parent){
+								if(mindmap[i].id > mindmap[x].id){
+									mindmap[i].locY = mindmap[i].locY+100; //100 (mindmap[j].locY)/2
+							
+								
+							}
+								// 몇번째 트리인지에 따라 Y값 조절
+								//mindmap[i].locY = (mindmap[i].locY) +50; //mindmap[i].node
 						}
-						// 나보다 작은 노드 몇개인지 찾기
-						// 노드가 같은 친구 < 내id
-						if(mindmap[k].id<mindmap[i].id){
-							smallme++;
-						}
-						console.log(mindmap[i].name+" / "+mindmap[i].node+"/"+smallnode);
+
 					}
-				}
-				// 가장 작다고 찾은 id 랑 i의 id를 비교함
-				if(mindmap[i].id == smallnode){
-					// 가장 작으면 캔버스 사이즈/노드 수 *2 를 y 값으로 가짐
-					mindmap[i].locY = mindCanvas.height/(samenode*2);
-					
-				}
-				else{
-					//console.log(mindmap[i].name+" / "+ smallme);
-					mindmap[i].locY = mindmap[smallnode].locY + (smallme* 50); //(mindCanvas.height/(samenode*2))
+				  }
 				}
 			}
 		}
 		
 		// 그리기
 		for (var i = 0; i < mindmap.length; i++) {
-			mindctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
-			//mindctx.fillText(mindmap[i].locX+" , "+mindmap[i].locY,mindmap[i].locX,mindmap[i].locY); // x, y
+			//mindctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
+			mindctx.fillText(mindmap[i].locX+" , "+mindmap[i].locY,mindmap[i].locX,mindmap[i].locY); // x, y
 		}	
 		
 		// 부모 있으면 부모 - 자식 위치
