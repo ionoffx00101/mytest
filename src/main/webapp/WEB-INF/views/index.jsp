@@ -799,7 +799,7 @@ $(function() {
     <!-- 기술 -->
     <div class="section" id="section2">
       <div id="skillbarDiv"> <!-- class="intro" -->
-            <h1>기술</h1>
+            <!-- <h1>기술</h1> -->
                 <!-- HTML5 -->
 				<div class="skillbar clearfix " data-percent="50%">
 					<div class="skillbar-title" style="background: #d35400;"><span>HTML5</span></div>
@@ -882,6 +882,7 @@ $(function() {
     <div class="section" id="section3">
         <div class="intro">
             <h1>블로그도 있어요</h1>
+            
 			<div id="st-trigger-effects" >
 				<!-- 최신 글 10개 -->
 				<c:forEach items="<%=posts%>" var="i" varStatus="Status">
@@ -1033,7 +1034,7 @@ $(function() {
 		                    		프로젝트 이름
 									<br/>
 									사용 기술
-									<br/><br/><br/>
+									<br/><br/>
 									프로젝트 소개
 									<br/>
 									담당 분야 
