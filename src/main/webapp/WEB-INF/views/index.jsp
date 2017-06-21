@@ -694,16 +694,8 @@ $(function() {
 		// xy 값 넣기 끝
 		
 		// 그리기
-		for (var i = 0; i < mindmap.length; i++) {
-			// 사각형
-			mindctx.rect(mindmap[i].locX-10, mindmap[i].locY-30, 220, 40); // x,y,width,height
-			mindctx.stroke();
-			
-			// 글씨
-			mindctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // 글씨, x, y
-		}	
 		
-		// 부모 있으면 부모 - 자식 위치
+		// 부모 있으면 부모 - 자식 위치 /  선 그리기
 		for (var i = 0; i < mindmap.length; i++) {
 			if(mindmap[i].parent == mindmap[i].id){
 				
@@ -712,21 +704,65 @@ $(function() {
 				for (var j = 0; j < mindmap.length; j++) {
 					if(mindmap[i].parent == mindmap[j].id){
 						
-						mindctx.lineWidth = 1;
 						mindctx.beginPath();
-				        /* 
-				        mindctx.moveTo(mindmap[j].locX, mindmap[j].locY);
-				        mindctx.lineTo(mindmap[i].locX, mindmap[i].locY);
-				        */
+						mindctx.lineWidth = 1;
 				        mindctx.moveTo(mindmap[j].locX +50, mindmap[j].locY -5);
 				        mindctx.lineTo(mindmap[i].locX +50, mindmap[i].locY -5);
 				        mindctx.strokeStyle = '#dddddd';
 				        mindctx.stroke();
+				        mindctx.closePath();
 						
 					}
 				}
 			}
 		}
+		// 사각형
+		for (var i = 0; i < mindmap.length; i++) {
+			
+			/* 
+			mindctx.beginPath();
+			mindctx.strokeStyle = '#dddddd';
+			mindctx.fillRect(mindmap[i].locX-10, mindmap[i].locY-30, 220, 40); // x,y,width,height
+			mindctx.closePath(); 
+			*/
+			
+			var rectX = mindmap[i].locX-10;
+			var rectY = mindmap[i].locY-30;
+			var rectWidth = 220;
+			var rectHeight = 40;
+			var cornerRadius = 20;
+
+			// Set faux rounded corners
+			mindctx.lineJoin = "round";
+			mindctx.lineWidth = cornerRadius;
+
+			mindctx.beginPath();
+			mindctx.strokeStyle = '#dddddd';
+			mindctx.fillStyle = '#dddddd';
+			// Change origin and dimensions to match true size (a stroke makes the shape a bit larger)
+			mindctx.strokeRect(rectX+(cornerRadius/2), rectY+(cornerRadius/2), rectWidth-cornerRadius, rectHeight-cornerRadius);
+			mindctx.fillRect(rectX+(cornerRadius/2), rectY+(cornerRadius/2), rectWidth-cornerRadius, rectHeight-cornerRadius);
+
+			
+			
+	/* 		mindctx.beginPath();
+			mindctx.fillStyle = '#dddddd';
+			mindctx.moveTo(x + radius, y); //오른쪽 상단 모서리를 그리기 위한 시작점으로 이동
+			mindctx.arcTo((x+width), y, (x+width), (y+height), radius);  //오른쪽 상단 모서리
+			mindctx.arcTo((x+width), (y+height), x, (y+height), radius); //오른쪽 하단 모서리
+			mindctx.arcTo(x, (y+height), x, y, radius); //왼쪽 하단 모서리
+			mindctx.arcTo(x, y, (x+radius), y, radius); //왼쪽 상단 모서리
+			mindctx.stroke(); */
+
+		}
+		// 글씨
+		for (var i = 0; i < mindmap.length; i++) {
+	
+		// mindctx.font = 'bold 55px Verdana';
+		mindctx.fillStyle = '#111111';
+		mindctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // 글씨, x, y
+		}	
+		
 		// 그리기 끝
 	} /* mindmapReder() */
 });
