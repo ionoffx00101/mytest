@@ -414,7 +414,9 @@
  				// X값 초기화, Y값이랑 word값, use 값을 고쳐야함			
  				var bool = true;
  				while(bool){
- 					var randomNum = Math.floor((Math.random() * 10));
+ 					// var randomNum = Math.floor(((Math.random() * 10));
+ 					
+ 					var randomNum = randomRange(0, EnemyHangulMax);
  					
  					if(!EnemyHangul[randomNum].use){
  						bool=false; // 반복문 내보냄
@@ -429,7 +431,12 @@
  				
  			}
  		}
-
+ 		
+ 		// 지정된 범위 내에서 랜덤값 출력
+ 		function randomRange(n1, n2) {
+ 			  return Math.floor( (Math.random() * (n2 - n1 + 1)) + n1 );
+ 		}
+ 		
  		// 키 누름 
  		function getKeyDown(event) {
  			
