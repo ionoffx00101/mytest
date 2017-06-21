@@ -902,7 +902,8 @@ $(function() {
             <div class="intro">
                 <h1>게임 소개</h1>
                 <p>
-                	이력서를 쓸 때 맞춤법 수정을 하는 것을 게임으로 만들었다.. <br/>
+                	이력서를 쓸 때 맞춤법 수정을 하는 것을 게임으로 만들었다. <br/>
+                	스타트 버튼을 누르면 게임이 시작된다.<br/>
                 	올바른 맞춤법이나 잘못된 맞춤법으로 작성된 단어가 캐릭터 쪽으로 날아온다.<br/>
                 	z키를 눌러 점프를 할 수 있으며 3개의 단어를 먹으면 게임이 끝난다.<br/>
                 	3개의 단어 중 2개 이상 먹은 쪽으로 엔딩이 나온다.<br/>
@@ -914,7 +915,7 @@ $(function() {
         </div>
       <div class="slide active" id="slide2">
             <div class="intro">
-                <h1>게임</h1>
+               <h1>게임</h1>
                 <canvas id="canvas" width="1000" height="500" style="display: none;"></canvas>
 
 				<div class="row">
