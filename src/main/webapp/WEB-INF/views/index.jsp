@@ -415,7 +415,6 @@
  				var bool = true;
  				while(bool){
  					// var randomNum = Math.floor(((Math.random() * 10));
- 					
  					var randomNum = randomRange(0, EnemyHangulMax);
  					
  					if(!EnemyHangul[randomNum].use){
