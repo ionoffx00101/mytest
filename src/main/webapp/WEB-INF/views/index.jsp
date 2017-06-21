@@ -755,7 +755,9 @@ $(function() {
    
     <!-- 자기 소개 / 트리구조 -->
     <div class="section" id="section1">
-      <canvas id="mindCanvas" width="1500" height="700" style="border: 1px solid black;"></canvas>
+    	<div id="mindmapWorld">
+      		<canvas id="mindCanvas" width="1500" height="700"></canvas> <!--  style="border: 1px solid black;" -->
+    	</div>
     </div>
     
     <!-- 기술 -->

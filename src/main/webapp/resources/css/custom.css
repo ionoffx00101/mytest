@@ -21,9 +21,29 @@
 }
 /* 글씨 위치 수정은 rw의 style.css .rw-sentence에서 */
 
+/* section 1 */
 .mindmapHand{
 	height:700px;
 }
+
+#section1{
+	background: url(../images/web/background/luca-bravo-217276.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#mindmapWorld{
+	background-color: rgba(76, 76, 76, 0.9);
+	width: 80%;
+	height: 80%;
+	margin-left: 10%;
+}
+#mindCanvas{
+	margin-top: 2%;
+}
+
 
 /* 링크 글씨 색 변경용 */
 a:hover{
