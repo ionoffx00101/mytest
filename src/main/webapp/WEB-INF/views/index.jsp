@@ -593,10 +593,11 @@
   		});
  	});
 </script>
+	
 <script type="text/javascript">
 $(function() {
-	
 	/* 마인드 맵 */
+
 	// 캔버스 친구들
 	var mindCanvas = document.getElementById("mindCanvas");
 	var mindctx = mindCanvas.getContext("2d"); // 캔버스 객체 생성
@@ -622,10 +623,6 @@ $(function() {
 		// 그냥 글씨
 		mindctx.fillStyle = 'white';
 		
-		
-		// 미리 작은 값을 구해둠 
-		
-		
 		//xy 값 지정
 		for (var i = 0; i < mindmap.length; i++) {
 			// 부모 ㄴㄴ
@@ -640,7 +637,10 @@ $(function() {
 				for (var j = 0; j < mindmap.length; j++) {
 					if(mindmap[i].parent == mindmap[j].id){
 						// 부모로부터 x+200
-						mindmap[i].locX = mindmap[j].locX+200;	
+						// mindmap[i].locX = mindmap[j].locX + 200;
+						
+						// 하위 노드일수록 더 멀어지게 해볼까
+						mindmap[i].locX = mindmap[j].locX+(150 *mindmap[i].node);	
 					}
 				}
 				
@@ -657,7 +657,7 @@ $(function() {
 						samenode++;
 								
 						// 같은 노드 중 가장 작은 id 값 찾기
-						console.log(" minnode - "+minnode +" / 들어온 id - "+ mindmap[k].id);
+						//console.log(" minnode - "+minnode +" / 들어온 id - "+ mindmap[k].id);
 						if(mindmap[k].id<minnode) // 들어온 아이디가 저장되있는것보다 작으면 바꿈
 						{ 
 							minnode = mindmap[k].id;	
@@ -695,6 +695,11 @@ $(function() {
 		
 		// 그리기
 		for (var i = 0; i < mindmap.length; i++) {
+			// 사각형
+			mindctx.rect(mindmap[i].locX-10, mindmap[i].locY-30, 220, 40); // x,y,width,height
+			mindctx.stroke();
+			
+			// 글씨
 			mindctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // 글씨, x, y
 		}	
 		
@@ -748,7 +753,7 @@ $(function() {
 			</div>
     </div>
    
-    <!-- 자기 소개 -->
+    <!-- 자기 소개 / 트리구조 -->
     <div class="section" id="section1">
       <canvas id="mindCanvas" width="1500" height="700" style="border: 1px solid black;"></canvas>
     </div>
