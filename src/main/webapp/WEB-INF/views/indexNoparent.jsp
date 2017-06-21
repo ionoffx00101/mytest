@@ -622,10 +622,6 @@ $(function() {
 		// 그냥 글씨
 		mindctx.fillStyle = 'white';
 		
-		
-		// 미리 작은 값을 구해둠 
-		
-		
 		//xy 값 지정
 		for (var i = 0; i < mindmap.length; i++) {
 			// 부모 ㄴㄴ
@@ -648,14 +644,13 @@ $(function() {
 				var samenode= 0;
 				var minnode = mindmap.length; /* 현재 mindmap.length = 21*/
 				var smallme = 0;
-				var minParentnode = mindmap.length;
 				
 				for (var k = 0; k < mindmap.length; k++) { // 전체 노드 반복문
 					// 노드 값 비교 / 같은 노드 값인것만  계산
 					if(mindmap[i].node == mindmap[k].node){
 						// 같은 노드 카운트 올림
 						samenode++;
-								
+						
 						// 같은 노드 중 가장 작은 id 값 찾기
 						console.log(" minnode - "+minnode +" / 들어온 id - "+ mindmap[k].id);
 						if(mindmap[k].id<minnode) // 들어온 아이디가 저장되있는것보다 작으면 바꿈
@@ -672,33 +667,29 @@ $(function() {
 					}
 					
 				}
-				
-				// 노드 리스트를 배정해 주는 로직을 짜기
-				// 부모 값 비교 > 같은 부모를 두고 같은 노드인 값에서 id 비교 > 순서 넣기
-				// 부모 값 2번째면 >  같은 부모를 두고 같은 노드인 값에서 id 비교 > 상단 부모 마지막 노드리스트 + 나의 노드리스트 
-				mindmap[i].locY = mindCanvas.height/(samenode*2) + ( (mindmap[i].nodelist-1) * (mindCanvas.height/(samenode)) );
+				console.log(" ");
 				
 				// 가장 작다고 찾은 id 랑 i의 id를 비교함
-		/* 		if(mindmap[i].id == minnode){
+				if(mindmap[i].id == minnode){
 					// 가장 작으면 캔버스 사이즈/노드 수 *2 를 y 값으로 가짐
 					mindmap[i].locY = mindCanvas.height/(samenode*2);	
 				}
 				else{
 					// 중간에 있는 거면 자기보다 작은 노드수 세서 제일 작은 노드의 Y + 작은 노드수 만큼 떨어짐
-					
-					mindmap[i].locY = mindCanvas.height/(samenode*2) + ( smallme * (mindCanvas.height/(samenode)) );
-				} */
+					mindmap[i].locY = mindmap[minnode].locY + ( smallme * (mindCanvas.height/(samenode*2)) ); //(mindCanvas.height/(samenode*2)) smallme* 50
+				}
 				
 			}
 		}
-		// xy 값 넣기 끝
 		
 		// 그리기
 		for (var i = 0; i < mindmap.length; i++) {
-			mindctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // 글씨, x, y
+			mindctx.fillText(mindmap[i].name,mindmap[i].locX,mindmap[i].locY); // x, y
+			//mindctx.fillText(mindmap[i].locX+" , "+mindmap[i].locY,mindmap[i].locX,mindmap[i].locY); // x, y
 		}	
 		
 		// 부모 있으면 부모 - 자식 위치
+		
 		for (var i = 0; i < mindmap.length; i++) {
 			if(mindmap[i].parent == mindmap[i].id){
 				
@@ -722,8 +713,7 @@ $(function() {
 				}
 			}
 		}
-		// 그리기 끝
-	} /* mindmapReder() */
+	}
 });
 </script>
 

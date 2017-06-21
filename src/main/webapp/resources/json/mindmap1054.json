@@ -6,8 +6,7 @@
       "parent": "0",
       "locX": "0",
       "locY": "0",
-      "node": "0",
-      "nodelist": "1"
+      "node": "0"
     },
     
     {
@@ -16,8 +15,7 @@
       "parent": "0",
       "locX": "0",
       "locY": "0",
-      "node": "1",
-      "nodelist": "1"
+      "node": "1"
     },
     {
       "id": "2",
@@ -25,8 +23,7 @@
       "parent": "0",
       "locX": "0",
       "locY": "0",
-      "node": "1",
-      "nodelist": "2"
+      "node": "1"
     },
     
     {
@@ -35,8 +32,7 @@
       "parent": "1",
       "locX": "0",
       "locY": "0",
-      "node": "2",
-      "nodelist": "1"
+      "node": "2"
     },
     {
       "id": "4",
@@ -44,8 +40,7 @@
       "parent": "1",
       "locX": "0",
       "locY": "0",
-      "node": "2",
-      "nodelist": "2"
+      "node": "2"
     },
     {
       "id": "5",
@@ -53,8 +48,7 @@
       "parent": "1",
       "locX": "0",
       "locY": "0",
-      "node": "2",
-      "nodelist": "3"
+      "node": "2"
     },
     
     {
@@ -63,8 +57,7 @@
       "parent": "3",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "1"
+      "node": "3"
     },
     {
       "id": "7",
@@ -72,8 +65,7 @@
       "parent": "3",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "2"
+      "node": "3"
     },
     {
       "id": "8",
@@ -81,8 +73,7 @@
       "parent": "3",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "3"
+      "node": "3"
     },
     {
       "id": "9",
@@ -90,8 +81,7 @@
       "parent": "4",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "4"
+      "node": "3"
     },
     {
       "id": "10",
@@ -99,8 +89,7 @@
       "parent": "4",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "5"
+      "node": "3"
     },
     {
       "id": "11",
@@ -108,8 +97,7 @@
       "parent": "2",
       "locX": "0",
       "locY": "0",
-      "node": "2",
-      "nodelist": "4"
+      "node": "2"
     },
     {
       "id": "12",
@@ -117,8 +105,7 @@
       "parent": "2",
       "locX": "0",
       "locY": "0",
-      "node": "2",
-      "nodelist": "5"
+      "node": "2"
     },
     {
       "id": "13",
@@ -126,8 +113,7 @@
       "parent": "2",
       "locX": "0",
       "locY": "0",
-      "node": "2",
-      "nodelist": "6"
+      "node": "2"
     },
     {
       "id": "14",
@@ -135,8 +121,7 @@
       "parent": "2",
       "locX": "0",
       "locY": "0",
-      "node": "2",
-      "nodelist": "7"
+      "node": "2"
     },
     {
       "id": "15",
@@ -144,8 +129,7 @@
       "parent": "11",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "6"
+      "node": "3"
     },
     {
       "id": "16",
@@ -153,8 +137,7 @@
       "parent": "11",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "7"
+      "node": "3"
     },
     {
       "id": "17",
@@ -162,8 +145,7 @@
       "parent": "11",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "8"
+      "node": "3"
     },
     {
       "id": "18",
@@ -171,8 +153,7 @@
       "parent": "11",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "9"
+      "node": "3"
     },
     {
       "id": "19",
@@ -180,8 +161,7 @@
       "parent": "13",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "10"
+      "node": "3"
     },
     {
       "id": "20",
@@ -189,8 +169,7 @@
       "parent": "14",
       "locX": "0",
       "locY": "0",
-      "node": "3",
-      "nodelist": "11"
+      "node": "3"
     }
   ]
 }
