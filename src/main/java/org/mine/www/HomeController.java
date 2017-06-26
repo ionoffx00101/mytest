@@ -62,14 +62,6 @@ public class HomeController
 		return "index";
 	}
 	
-	@RequestMapping(value = "mind", method = RequestMethod.GET)
-	public String mind(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		return "mindmap";
-	}
-	
-	
-	
 	@ResponseBody
 	@RequestMapping(value = "WordBookJSON", method = RequestMethod.POST, produces = "application/json; charset=utf8")
 	public String WordBookJSON(Model model)
